@@ -1,5 +1,65 @@
 {
   "dependencies": {
+    "com.coffee.git-dependency-resolver": {
+      "version": "https://github.com/mob-sakai/GitDependencyResolverForUnity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d4fc38c92fb139b4184912f20556ab27a3b519fa"
+    },
+    "com.lemon-inc.core.input": {
+      "version": "https://github.com/Mathieu-Schmerber/LemonInc.Packages.git#core.input",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.inputsystem": "1.6.1"
+      },
+      "hash": "4cf59d1a41ad261a4170067e07d8a658002dd9bd"
+    },
+    "com.lemon-inc.core.pooling": {
+      "version": "https://github.com/Mathieu-Schmerber/LemonInc.Packages.git#core.pooling",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "8c1f0ce8fecce2485e4f894cdb038b489cc60af5"
+    },
+    "com.lemon-inc.core.utilities": {
+      "version": "https://github.com/Mathieu-Schmerber/LemonInc.Packages.git#core.utilities",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "249deabac073f1810b22d61ba1e3c9d16a7ad0fe"
+    },
+    "com.lemon-inc.editor.toolbar": {
+      "version": "https://github.com/Mathieu-Schmerber/LemonInc.Packages.git#editor.toolbar",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a29812d69dac93d7c0239bfa3fd1fe26a8ac2ec9"
+    },
+    "com.lemon-inc.tools.packager": {
+      "version": "https://github.com/Mathieu-Schmerber/LemonInc.Packages.git#tools.packager",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.editorcoroutines": "1.0.0"
+      },
+      "hash": "bf70e0190ad4080543b05d3b7026ef0aaa51bcc5"
+    },
+    "com.lemon-inc.tools.panels": {
+      "version": "https://github.com/Mathieu-Schmerber/LemonInc.Packages.git#tools.panels",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "63e120a77544c7ed21bcafae4ec1177f0b4172c8"
+    },
+    "com.lemon-inc.tools.scene-switcher": {
+      "version": "https://github.com/Mathieu-Schmerber/LemonInc.Packages.git#tools.scene-switcher",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b5b6c77afd463941d3b19927a33cbf987b84844f"
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.4",
       "depth": 0,
@@ -36,6 +96,13 @@
         "com.unity.nuget.mono-cecil": "1.11.4",
         "com.unity.test-framework.performance": "3.0.3"
       },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.editorcoroutines": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
