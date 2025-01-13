@@ -1,4 +1,5 @@
 using Game.Systems.StateMachine;
+using UnityEngine;
 
 namespace Game.Entities.Player.States
 {
@@ -6,15 +7,20 @@ namespace Game.Entities.Player.States
     { 
         private IInputProvider _input;
         private Controller _controller;
+        private Animator _animator;
+        
+        private static readonly int Speed = Animator.StringToHash("Speed");
         
         public override void Awake()
         {
+            _animator = StateMachine.Owner.GetComponentInChildren<Animator>();
             _input = StateMachine.Owner.GetComponent<IInputProvider>();
             _controller = StateMachine.Owner.GetComponent<Controller>();
         }
 
         public override void Enter()
         {
+            _animator.SetFloat(Speed, _input.MovementDirection.magnitude);
             _controller.SetSpeed(0);
         }
 
