@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8965499ab2121346b6cae6c3e0111e5, type: 3}
-  m_Name: PanelsConfiguration
+  m_Script: {fileID: 11500000, guid: 1915e152521441b9881c829f0b13112b, type: 3}
+  m_Name: PlayerStat
   m_EditorClassIdentifier: 
-  Panels:
-    _keyData:
-    - Game Design
-    _valueData:
-    - TargetFolder: Assets/Game/Resources
-      LastSelectedElementId: -1014896821
+  MovementSpeed: 8
+  DashDistance: 4
+  DashDuration: 0.2
+  DashCooldown: 0.5
