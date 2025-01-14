@@ -17,11 +17,13 @@ namespace Game.Entities.Player
         );
         
         private readonly PhysicalInput _dash = new();
+        private readonly PhysicalInput _push = new();
         private PhysicalInputValue<Vector2, Vector3> _aim;
 
         public Vector3 MovementDirection => _movement.Value;
         public Vector3 AimDirection => _aim.Value;
         public InputState Dash => _dash;
+        public InputState Push => _push;
 
         protected override void Awake()
         {
@@ -33,6 +35,7 @@ namespace Game.Entities.Player
         {
             _movement.Subscribe(Controls.Player.Movement);
             _dash.Subscribe(Controls.Player.Dash);
+            _push.Subscribe(Controls.Player.Push);
             _aim.Subscribe(Controls.Player.Aim);
         }
 
@@ -41,6 +44,7 @@ namespace Game.Entities.Player
             _movement.UnSubscribe();
             _dash.UnSubscribe();
             _aim.UnSubscribe();
+            _push.UnSubscribe();
         }
         
         private Vector3 CalculateAimPosition(Vector2 mousePosition)

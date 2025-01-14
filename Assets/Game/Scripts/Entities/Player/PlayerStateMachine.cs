@@ -1,7 +1,9 @@
 using System;
 using Databases;
+using Game.Entities.Player.Abilities;
 using Game.Entities.Player.States;
 using Game.Systems.StateMachine;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Game.Entities.Player
@@ -11,13 +13,16 @@ namespace Game.Entities.Player
         private PlayerStates _payload;
         private readonly StateMachine<PlayerStates> _stateMachine = new();
         private IInputProvider _input;
-        private Controller _controller;
+        private DashAbility _dash;
+
+        [ShowInInspector]
+        public string CurrentStateName => _stateMachine.CurrentState?.GetType().Name ?? "None";
         
         private void Awake()
         {
             _input = GetComponent<IInputProvider>();
-            _controller = GetComponent<Controller>();
-            _controller.SetMoveAbilityCooldown(RuntimeDatabase.Data.PlayerData.DashCooldown);
+            _dash = GetComponent<DashAbility>();
+            _dash.SetCooldown(RuntimeDatabase.Data.PlayerData.DashCooldown);
             
             _stateMachine.SetOwnership(transform);
             _payload = new PlayerStates
@@ -41,7 +46,7 @@ namespace Game.Entities.Player
 		
         private void OnDashPressed()
         {
-            if (_controller.CanPerformMoveAbility())
+            if (_dash.IsReady())
                 _stateMachine.SwitchState(_payload.Dash);
         }
         
