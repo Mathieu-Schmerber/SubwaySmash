@@ -12,5 +12,9 @@ namespace Game.Entities.Player
         public float DashDistance;
         public float DashDuration;
         public float DashCooldown;
+        
+        [Header("Push")]
+        public float PushCooldown;
+        public float PushForce;
     }
 }

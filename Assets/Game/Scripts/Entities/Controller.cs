@@ -17,8 +17,6 @@ namespace Game.Entities
 		private Rigidbody _rb;
 		private IInputProvider _inputProvider;
 
-		private readonly Timer _moveAbilityTimer = new();
-
 		private float _speed;
 		private float _targetSpeed;
 		private Vector3 _input;
@@ -108,9 +106,5 @@ namespace Game.Entities
 
 			return distance;
 		}
-		
-		public void SetMoveAbilityCooldown(float cooldown) => _moveAbilityTimer.Start(cooldown, false);
-		public bool CanPerformMoveAbility() => _moveAbilityTimer.IsOver();
-		public void RestartMoveAbilityCooldown() => _moveAbilityTimer.Restart();
 	}
 }
