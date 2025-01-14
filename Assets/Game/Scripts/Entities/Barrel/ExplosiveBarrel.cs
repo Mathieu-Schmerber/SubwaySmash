@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Game.Systems.Push;
 using LemonInc.Core.Pooling;
@@ -46,10 +47,10 @@ namespace Game.Entities.Barrel
             Destroy(gameObject);
         }
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position + _explosionOffset, _explosionRadius);
+            Gizmos.DrawWireSphere(transform.position + _explosionOffset, _explosionRadius);        
         }
     }
 }
