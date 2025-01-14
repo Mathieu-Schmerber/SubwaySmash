@@ -108,7 +108,6 @@ namespace Game.Entities
 
 			return distance;
 		}
-
 		
 		public void SetMoveAbilityCooldown(float cooldown) => _moveAbilityTimer.Start(cooldown, false);
 		public bool CanPerformMoveAbility() => _moveAbilityTimer.IsOver();
