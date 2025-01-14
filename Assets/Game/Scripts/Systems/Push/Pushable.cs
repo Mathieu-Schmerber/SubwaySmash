@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.Systems.Push
@@ -6,13 +7,13 @@ namespace Game.Systems.Push
     public class Pushable : MonoBehaviour
     {
         private Rigidbody _rigidbody;
-
+        
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
         }
 
-        public void ApplyPush(Vector3 direction, float force)
+        public virtual void ApplyPush(Vector3 direction, float force)
         {
             _rigidbody.AddForce(direction * force, ForceMode.Impulse);
         }
