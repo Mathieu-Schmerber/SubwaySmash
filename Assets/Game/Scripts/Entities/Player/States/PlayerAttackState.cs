@@ -1,3 +1,4 @@
+using Databases;
 using Game.Entities.Player.Abilities;
 using Game.Systems.StateMachine;
 using LemonInc.Core.Utilities.Extensions;
@@ -22,6 +23,7 @@ namespace Game.Entities.Player.States
 
         public override void Enter()
         {
+            _controller.SetSpeed(RuntimeDatabase.Data.PlayerData.MovementSpeed);
             _dash.SetLocked(true);
             _controller.LockAim(true, _input.AimDirection);
             _push.Perform(() =>
