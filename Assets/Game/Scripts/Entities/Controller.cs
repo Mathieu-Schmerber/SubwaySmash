@@ -1,6 +1,4 @@
-using System;
 using Game.Entities.Player;
-using LemonInc.Core.Utilities;
 using UnityEngine;
 
 namespace Game.Entities
@@ -44,9 +42,12 @@ namespace Game.Entities
         }
 
         private void FixedUpdate()
-		{
-			var movement = _input * (_speed * Time.fixedDeltaTime);
-			_rb.MovePosition(_rb.position + movement);
+        {
+	        var velocity = _input * _speed;
+			if (velocity.magnitude == 0)
+				return;
+			
+			_rb.linearVelocity = new Vector3(velocity.x, _rb.linearVelocity.y, velocity.z);
         }
 
 		public void SetSpeed(float speed)

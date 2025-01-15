@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Game.Systems.StateMachine
@@ -9,6 +10,11 @@ namespace Game.Systems.StateMachine
     public class StateMachine<TPayload>
         where TPayload : struct
     {
+        /// <summary>
+        /// Locked state.
+        /// </summary>
+        public State<TPayload> LockedState { get; private set; }
+        
         /// <summary>
         /// The current state.
         /// </summary>
@@ -30,9 +36,25 @@ namespace Game.Systems.StateMachine
         /// <param name="state">state.</param>
         public void SwitchState(State<TPayload> state)
         {
+            if (LockedState != null)
+                return;
+            
             CurrentState?.Exit();
             state.Enter();
             CurrentState = state;
+        }
+
+        public void LockState(State<TPayload> state)
+        {
+            if (state == null) return;
+            
+            SwitchState(state);
+            LockedState = state;
+        }
+
+        public void UnlockState()
+        {
+            LockedState = null;
         }
 
         /// <summary>

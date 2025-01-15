@@ -1,4 +1,5 @@
 using System;
+using Pixelplacement;
 using UnityEngine;
 
 namespace Game.Systems.Push
@@ -8,7 +9,7 @@ namespace Game.Systems.Push
     {
         private Rigidbody _rigidbody;
         
-        private void Awake()
+        protected virtual void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
         }

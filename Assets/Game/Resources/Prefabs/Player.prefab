@@ -108,10 +108,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 356762809593850558}
+  - component: {fileID: 3883291310724394920}
   - component: {fileID: 953917332832680345}
   - component: {fileID: 519953554880207298}
   - component: {fileID: 3528049846249707922}
-  - component: {fileID: 3883291310724394920}
   - component: {fileID: 3069981332371420000}
   - component: {fileID: 8798479092349692153}
   m_Layer: 0
@@ -138,6 +138,33 @@ Transform:
   - {fileID: 6443775581362472578}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!54 &3883291310724394920
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6037357776347567063}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
 --- !u!114 &953917332832680345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,33 +204,6 @@ MonoBehaviour:
   _accelerationLerp: 4
   _turnSpeed: 10
   _graphic: {fileID: 8043032575660203575}
---- !u!54 &3883291310724394920
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6037357776347567063}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 84
-  m_CollisionDetection: 0
 --- !u!114 &3069981332371420000
 MonoBehaviour:
   m_ObjectHideFlags: 0
