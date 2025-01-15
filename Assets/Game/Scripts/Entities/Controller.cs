@@ -1,4 +1,5 @@
 using Game.Entities.Player;
+using LemonInc.Core.Utilities.Extensions;
 using UnityEngine;
 
 namespace Game.Entities
@@ -30,9 +31,9 @@ namespace Game.Entities
         private void Update()
         {
 	        // Graphics
-	        if (_input.magnitude > 0)
+	        if (_input.magnitude > 0 && !_aimLocked)
 	        {
-		        _targetRotation = Quaternion.LookRotation(_input);
+		        _targetRotation = Quaternion.LookRotation(_input.WithY(0));
 		        _graphic.rotation = Quaternion.Lerp(_graphic.rotation, _targetRotation,
 			        Mathf.Clamp(_turnSpeed * Time.deltaTime, 0, .99f));
 	        }
@@ -69,7 +70,7 @@ namespace Game.Entities
 			if (!_aimLocked) return;
 			
 			var dirInput = forceRotation ?? _inputProvider.AimDirection;
-			_targetRotation = Quaternion.LookRotation(dirInput);
+			_targetRotation = Quaternion.LookRotation(dirInput.WithY(0));
 			_graphic.rotation = _targetRotation;
 		}
 

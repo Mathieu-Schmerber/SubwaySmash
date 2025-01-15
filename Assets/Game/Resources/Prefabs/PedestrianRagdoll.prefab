@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1680069443266905165}
   - component: {fileID: 3820741630799524164}
   - component: {fileID: 4801215652907820914}
-  - component: {fileID: 4159370006553332932}
+  - component: {fileID: 7957803000016303569}
   m_Layer: 0
   m_Name: head
   m_TagString: Untagged
@@ -107,8 +107,8 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!135 &4159370006553332932
-SphereCollider:
+--- !u!136 &7957803000016303569
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,9 +125,11 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.17648657
-  m_Center: {x: 4.038968e-28, y: 0.19732034, z: -0.00000011920929}
+  serializedVersion: 2
+  m_Radius: 0.16258995
+  m_Height: 0.39764357
+  m_Direction: 1
+  m_Center: {x: -4.422789e-18, y: 0.23550797, z: 0.0022643507}
 --- !u!1 &750016689314357545
 GameObject:
   m_ObjectHideFlags: 0
