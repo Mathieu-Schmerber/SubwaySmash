@@ -543,7 +543,7 @@ Animator:
   m_GameObject: {fileID: 7421290231611553307}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0d846dd2c7444d94f88c45127715288a, type: 2}
+  m_Controller: {fileID: 22100000, guid: 43984970059a44044853df4992f4a450, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -571,6 +571,7 @@ GameObject:
   - component: {fileID: 5003607747829876141}
   - component: {fileID: 1476083652914788324}
   - component: {fileID: 4079363019021849118}
+  - component: {fileID: 1686317630237611169}
   m_Layer: 0
   m_Name: Police
   m_TagString: Untagged
@@ -679,7 +680,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stat: {fileID: 11400000, guid: 9a993b0a778c2d9468b17537422c814d, type: 2}
-  _ragdollMapping: {fileID: 296178477057083390, guid: 43ea85776667b29459cd7320ea582767, type: 3}
 --- !u!114 &5003607747829876141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,6 +720,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _killOnPush: 0
+--- !u!114 &1686317630237611169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8581580398827760192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58104b0718f84d05ac3a657e79869fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ragdoll: {fileID: 2782237632149282810, guid: 43ea85776667b29459cd7320ea582767, type: 3}
 --- !u!1 &8858569680909153997
 GameObject:
   m_ObjectHideFlags: 0

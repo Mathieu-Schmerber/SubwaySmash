@@ -7,12 +7,9 @@ namespace Game.Entities.Ai
     {
         public override void Enter()
         {
-            var velocity = StateMachine.Owner.GetComponent<Rigidbody>().linearVelocity;
-            var ragdoll = Object.Instantiate(Payload.Ragdoll, StateMachine.Owner.transform.position, StateMachine.Owner.transform.rotation);
-            var rb = ragdoll.GetComponent<Rigidbody>();
+            var ragdoll = StateMachine.Owner.GetComponent<RagdollSpawner>().SpawnRagdoll();
             
-            Debug.Log($"Impulsed Ragdoll {Payload.DeathDirection * Payload.DeathForce}");
-            rb.AddForce(Payload.DeathDirection * Payload.DeathForce, ForceMode.Impulse);
+            ragdoll.AddForce(Payload.DeathDirection * Payload.DeathForce, ForceMode.Impulse);
             Object.Destroy(StateMachine.Owner.gameObject);
         }
     }

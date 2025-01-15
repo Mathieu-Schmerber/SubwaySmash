@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 5353620719184386296}
   - component: {fileID: 8942120050775143936}
   - component: {fileID: 1768358360174320830}
+  - component: {fileID: 2051376678120214356}
   m_Layer: 0
   m_Name: La daronne a juju
   m_TagString: Untagged
@@ -169,7 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stat: {fileID: 11400000, guid: 7895df35b3408cf4f9e0caada9d6dbce, type: 2}
-  _ragdollMapping: {fileID: 296178477057083390, guid: 43ea85776667b29459cd7320ea582767, type: 3}
 --- !u!114 &8942120050775143936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +197,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed36d2b8e31a4941a8b79704a3af7207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2051376678120214356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698118756682130897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58104b0718f84d05ac3a657e79869fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ragdoll: {fileID: -8726274091058816201, guid: 84a5e05178318e9418e4618f30e40ded, type: 3}
+  _rendererMappings:
+  - inRendererName: wheelchair-power-deluxe
+    outRendererName: Chair
+  - inRendererName: body-mesh
+    outRendererName: body-mesh
+  - inRendererName: head-mesh
+    outRendererName: head-mesh
 --- !u!1001 &2516015200888245497
 PrefabInstance:
   m_ObjectHideFlags: 0
