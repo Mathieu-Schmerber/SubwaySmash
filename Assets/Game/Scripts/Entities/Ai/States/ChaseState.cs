@@ -1,5 +1,7 @@
 using Game.Entities.Ai.Abilities;
 using Game.Entities.Player;
+using Game.Entities.Player.States;
+using Game.Inputs;
 using Game.Systems.StateMachine;
 using UnityEngine;
 
@@ -22,13 +24,11 @@ namespace Game.Entities.Ai.States
             _aiBrain = StateMachine.Owner.GetComponent<AiBrain>();
             _input = StateMachine.Owner.GetComponent<IInputProvider>();
             _controller = StateMachine.Owner.GetComponent<Controller>();
-            
             _slam = StateMachine.Owner.GetComponent<SlamAbility>();
         }
 
         public override void Enter()
         {
-            _slam?.SetCooldown(Payload.StatData.AttackCooldown);
             _controller.SetSpeed(Payload.StatData.MovementSpeed);
             _animator.SetFloat(Speed, 1);
         }
@@ -40,6 +40,12 @@ namespace Game.Entities.Ai.States
 
         public override void Update()
         {
+            if (!_player)
+            {
+                StateMachine.SwitchState(Payload.IdleState);
+                return;
+            }
+            
             _aiBrain.SetTarget(_player.transform);
             _controller.SetDirection(_input.MovementDirection);
             _controller.SetSpeed(Payload.StatData.MovementSpeed);

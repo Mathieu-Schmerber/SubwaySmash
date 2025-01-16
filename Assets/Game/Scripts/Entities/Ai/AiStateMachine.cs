@@ -1,3 +1,4 @@
+using Game.Entities.Ai.Abilities;
 using Game.Entities.Ai.States;
 using Game.Systems.StateMachine;
 using UnityEngine;
@@ -9,11 +10,13 @@ namespace Game.Entities.Ai
         [SerializeField] private AiStatData _stat;
    
         private StateMachine<AiStates> _stateMachine;
+        private SlamAbility _slam;
 
         public bool IsDead => _stateMachine.CurrentState?.GetType() == typeof(DeadState);
 
         private void Awake()
         {
+            _slam = GetComponent<SlamAbility>();
             _stateMachine = new StateMachine<AiStates>();
             _stateMachine.SetOwnership(transform);
             _stateMachine.SetPayload(new AiStates
@@ -30,6 +33,7 @@ namespace Game.Entities.Ai
         private void Start()
         {
             _stateMachine.SwitchState(_stateMachine.Payload.IdleState);
+            _slam?.SetCooldown(_stat.AttackCooldown);
         }
 
         private void Update()

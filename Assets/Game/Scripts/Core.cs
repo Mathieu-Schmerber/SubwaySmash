@@ -1,7 +1,10 @@
+using Game.Entities.Player;
 using LemonInc.Core.Pooling;
 using LemonInc.Core.Pooling.Contracts;
 using LemonInc.Core.Pooling.Providers;
 using LemonInc.Core.Utilities;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
@@ -34,6 +37,27 @@ namespace Game
         private void Awake()
         {
             _poolProvider = GetComponentInChildren<NamedObjectPoolProvider>();
+        }
+
+        private void OnEnable()
+        {
+            PlayerStateMachine.OnPlayerDeath += OnPlayerDeath;
+        }
+
+        private void OnDisable()
+        {
+            PlayerStateMachine.OnPlayerDeath -= OnPlayerDeath;
+        }
+        
+        private void OnPlayerDeath(Transform player)
+        {
+            Invoke(nameof(ResetLevel), 3f);
+        }
+
+        private void ResetLevel()
+        {
+            var targetScene = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(targetScene);
         }
     }
 }

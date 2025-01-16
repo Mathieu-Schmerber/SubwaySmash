@@ -17,10 +17,10 @@ namespace Game.Entities.Ai
             _killable = GetComponent<IKillable>();
         }
 
-        public override void ApplyPush(Vector3 direction, float force)
+        protected override void Push(Vector3 direction, float force)
         {
             _aiStateMachine.Stun(1f);
-            base.ApplyPush(direction, force);
+            base.Push(direction, force);
             
             if (_killOnPush)
                 _killable.Kill(direction, force);

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
+using System.Linq;
 using Game.Entities.Player;
 using Game.Entities.Player.Abilities;
+using Game.Inputs;
 using Game.Systems.Push;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -10,6 +12,7 @@ namespace Game.Entities.Ai.Abilities
 {
     public class SlamAbility : AbilityBase
     {
+        private const string ATTACK_NAME = "PoliceAttack";
         private static readonly int Attack = Animator.StringToHash("Attack");
 
         [SerializeField] private MMF_Player _feedback;
@@ -29,8 +32,10 @@ namespace Game.Entities.Ai.Abilities
 
         protected override IEnumerator OnPerform(Action performed)
         {
+            var clip = GetAnimationClipByStateName(_animator, ATTACK_NAME);
+            
             _animator.SetTrigger(Attack);
-            yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
+            yield return new WaitForSeconds(clip.length);
             performed?.Invoke();
         }
 
@@ -40,6 +45,12 @@ namespace Game.Entities.Ai.Abilities
             {
                 Slam();
             }
+        }
+
+        AnimationClip GetAnimationClipByStateName(Animator animator, string stateName)
+        {
+            var controller = animator.runtimeAnimatorController;
+            return controller.animationClips.FirstOrDefault(x => x.name.Equals(stateName));
         }
 
         private void Slam()
@@ -52,10 +63,17 @@ namespace Game.Entities.Ai.Abilities
 
             foreach (var hitCollider in hitColliders)
             {
+                if (hitCollider.transform == transform)
+                    continue;
+                
                 // Check if the collider has a PushTriggerBase component
                 var pushTrigger = hitCollider.GetComponent<PushTriggerBase>();
                 if (pushTrigger != null)
                     pushTrigger.Trigger(GetComponent<Pushable>());
+
+                var killable = hitCollider.GetComponent<PlayerStateMachine>();
+                if (killable != null)
+                    killable.Kill(Vector3.up, 20);
             }
         }
         

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Databases;
+using Game.Inputs;
 using Game.Systems.Push;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -33,6 +35,12 @@ namespace Game.Entities.Player.Abilities
         {
             SetCooldown(RuntimeDatabase.Data.PlayerData.PushCooldown);
         }
+        
+        AnimationClip GetAnimationClipByStateName(Animator animator, string stateName)
+        {
+            var controller = animator.runtimeAnimatorController;
+            return controller.animationClips.FirstOrDefault(x => x.name.Equals(stateName));
+        }
 
         protected override IEnumerator OnPerform(Action performed)
         {
@@ -41,7 +49,7 @@ namespace Game.Entities.Player.Abilities
             _alreadyPlayedFeedback = false;
             _attackCheck = true;
             
-            var animationLength = _animator.GetCurrentAnimatorStateInfo(0).length;
+            var animationLength = GetAnimationClipByStateName(_animator, "Attack").length;
             var elapsedTime = 0f;
             var interval = 0.1f;
 
@@ -72,7 +80,8 @@ namespace Game.Entities.Player.Abilities
                 if (pushable == null || _alreadyPushed.Contains(pushable)) continue;
 
                 pushable.ApplyPush(aim, force);
-                _alreadyPushed.Add(pushable);
+                if (pushable.enabled)
+                    _alreadyPushed.Add(pushable);
             }
 
             if (_alreadyPushed.Count > 0 && !_alreadyPlayedFeedback)
