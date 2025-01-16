@@ -1,5 +1,7 @@
 using Game.Entities.Ai.Abilities;
 using Game.Entities.Player;
+using Game.Entities.Player.States;
+using Game.Inputs;
 using Game.Systems.StateMachine;
 using UnityEngine;
 
@@ -38,6 +40,12 @@ namespace Game.Entities.Ai.States
 
         public override void Update()
         {
+            if (!_player)
+            {
+                StateMachine.SwitchState(Payload.IdleState);
+                return;
+            }
+            
             _aiBrain.SetTarget(_player.transform);
             _controller.SetDirection(_input.MovementDirection);
             _controller.SetSpeed(Payload.StatData.MovementSpeed);

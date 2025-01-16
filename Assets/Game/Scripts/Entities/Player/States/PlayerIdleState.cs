@@ -1,3 +1,4 @@
+using Game.Inputs;
 using Game.Systems.StateMachine;
 using UnityEngine;
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using Game.Entities.Player;
 using Game.Entities.Player.Abilities;
+using Game.Inputs;
 using Game.Systems.Push;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -62,10 +63,17 @@ namespace Game.Entities.Ai.Abilities
 
             foreach (var hitCollider in hitColliders)
             {
+                if (hitCollider.transform == transform)
+                    continue;
+                
                 // Check if the collider has a PushTriggerBase component
                 var pushTrigger = hitCollider.GetComponent<PushTriggerBase>();
                 if (pushTrigger != null)
                     pushTrigger.Trigger(GetComponent<Pushable>());
+
+                var killable = hitCollider.GetComponent<PlayerStateMachine>();
+                if (killable != null)
+                    killable.Kill(Vector3.up, 20);
             }
         }
         

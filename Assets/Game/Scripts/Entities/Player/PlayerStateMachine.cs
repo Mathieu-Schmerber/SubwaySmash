@@ -2,19 +2,22 @@ using System;
 using Databases;
 using Game.Entities.Player.Abilities;
 using Game.Entities.Player.States;
+using Game.Inputs;
 using Game.Systems.StateMachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Game.Entities.Player
 {
-    public class PlayerStateMachine : MonoBehaviour
+    public class PlayerStateMachine : MonoBehaviour, IKillable
     {
         private PlayerStates _payload;
         private readonly StateMachine<PlayerStates> _stateMachine = new();
         private IInputProvider _input;
         private DashAbility _dash;
         private PushAbility _push;
+        
+        public static event Action<Transform> OnPlayerDeath;
 
         [ShowInInspector]
         public string CurrentStateName => _stateMachine.CurrentState?.GetType().Name ?? "None";
@@ -34,7 +37,8 @@ namespace Game.Entities.Player
                 Idle = PlayerIdleState.Init<PlayerIdleState>(_stateMachine),
                 Run = PlayerRunState.Init<PlayerRunState>(_stateMachine),
                 Dash = PlayerDashState.Init<PlayerDashState>(_stateMachine),
-                Attack = PlayerAttackState.Init<PlayerAttackState>(_stateMachine)
+                Attack = PlayerAttackState.Init<PlayerAttackState>(_stateMachine),
+                Dead = PlayerDeadState.Init<PlayerDeadState>(_stateMachine),
             };
             _stateMachine.SetPayload(_payload);
         }
@@ -71,6 +75,20 @@ namespace Game.Entities.Player
         private void Update()
         {
             _stateMachine.Update();
+        }
+
+        public bool IsDead => _stateMachine.CurrentState == _payload.Dead;
+        public void Kill(Vector3 direction, float force)
+        {
+            if (IsDead)
+                return;
+            
+            var payload = _stateMachine.Payload;
+            payload.DeathForce = force;
+            payload.DeathDirection = direction;
+            _stateMachine.SetPayload(payload);
+            _stateMachine.LockState(_stateMachine.Payload.Dead);
+            OnPlayerDeath?.Invoke(transform);
         }
     }
 }

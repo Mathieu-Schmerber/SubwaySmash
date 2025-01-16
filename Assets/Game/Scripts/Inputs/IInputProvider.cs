@@ -1,7 +1,7 @@
 using LemonInc.Core.Input;
 using UnityEngine;
 
-namespace Game.Entities.Player
+namespace Game.Inputs
 {
     public interface IInputProvider
     {
