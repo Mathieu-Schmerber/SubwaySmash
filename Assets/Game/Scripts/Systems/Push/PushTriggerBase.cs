@@ -7,7 +7,7 @@ namespace Game.Systems.Push
         [SerializeField] private LayerMask _ignore;
         [SerializeField] private float _velocityThreshold;
         
-        private float CalculateImpactForce(Collision collision)
+        private static float CalculateImpactForce(Collision collision)
         {
             var relativeVelocity = collision.relativeVelocity;
             var otherMass = collision.rigidbody ? collision.rigidbody.mass : 1f;
@@ -26,7 +26,6 @@ namespace Game.Systems.Push
             if (myPushable == null && otherPushable == null) return;
             var impactForce = CalculateImpactForce(other);
             
-            Debug.Log($"Impact Force ({name} vs {other.transform.name}): {impactForce}");
             if (impactForce > _velocityThreshold)
                 Trigger(myPushable ?? otherPushable);
         }

@@ -1,0 +1,18 @@
+using UnityEngine;
+
+namespace Game.Entities.Ai.States
+{
+    public struct AiStates
+    {
+        public IdleState IdleState;
+        public ChaseState ChaseState;
+        public StunState StunState;
+        public DeadState DeadState;
+        public AttackState AttackState;
+        
+        public AiStatData StatData;
+        public float StunTime;
+        public Vector3 DeathDirection;
+        public float DeathForce;
+    }
+}

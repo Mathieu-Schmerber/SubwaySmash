@@ -1,6 +1,5 @@
-using System;
 using Game.Entities.Player;
-using LemonInc.Core.Utilities;
+using LemonInc.Core.Utilities.Extensions;
 using UnityEngine;
 
 namespace Game.Entities
@@ -32,9 +31,9 @@ namespace Game.Entities
         private void Update()
         {
 	        // Graphics
-	        if (_input.magnitude > 0)
+	        if (_input.magnitude > 0 && !_aimLocked)
 	        {
-		        _targetRotation = Quaternion.LookRotation(_input);
+		        _targetRotation = Quaternion.LookRotation(_input.WithY(0));
 		        _graphic.rotation = Quaternion.Lerp(_graphic.rotation, _targetRotation,
 			        Mathf.Clamp(_turnSpeed * Time.deltaTime, 0, .99f));
 	        }
@@ -44,9 +43,12 @@ namespace Game.Entities
         }
 
         private void FixedUpdate()
-		{
-			var movement = _input * (_speed * Time.fixedDeltaTime);
-			_rb.MovePosition(_rb.position + movement);
+        {
+	        var velocity = _input * _speed;
+			if (velocity.magnitude == 0)
+				return;
+			
+			_rb.linearVelocity = new Vector3(velocity.x, _rb.linearVelocity.y, velocity.z);
         }
 
 		public void SetSpeed(float speed)
@@ -68,7 +70,7 @@ namespace Game.Entities
 			if (!_aimLocked) return;
 			
 			var dirInput = forceRotation ?? _inputProvider.AimDirection;
-			_targetRotation = Quaternion.LookRotation(dirInput);
+			_targetRotation = Quaternion.LookRotation(dirInput.WithY(0));
 			_graphic.rotation = _targetRotation;
 		}
 
