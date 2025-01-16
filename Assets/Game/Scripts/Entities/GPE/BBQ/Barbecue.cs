@@ -12,6 +12,7 @@ namespace Game.Entities.GPE.BBQ
         public float TimeToKill;
         public float IgniteTime;
         public float SpreadRadius;
+        public float StartSpreadAfterTime;
         public bool CapSpreadChain;
         [ShowIf(nameof(CapSpreadChain))] public int MaxSpreadChain;
     }

@@ -14,6 +14,7 @@ namespace Game.Entities.GPE.BBQ
         private float _killTimer;
         private float _igniteTimer;
         private FireSettings _settings;
+        private float _startSpreadTimer;
 
         private void Awake()
         {
@@ -28,11 +29,13 @@ namespace Game.Entities.GPE.BBQ
                 IgniteTime = fireSettings.IgniteTime,
                 CapSpreadChain = fireSettings.CapSpreadChain,
                 SpreadRadius = fireSettings.SpreadRadius,
-                MaxSpreadChain = fireSettings.MaxSpreadChain - 1
+                MaxSpreadChain = fireSettings.MaxSpreadChain - 1,
+                StartSpreadAfterTime = fireSettings.StartSpreadAfterTime,
             };
             
             _igniteTimer = fireSettings.IgniteTime;
             _killTimer = fireSettings.TimeToKill;
+            _startSpreadTimer = fireSettings.StartSpreadAfterTime;
         }
 
         public static void IgniteSurroundings(Vector3 center, float radius, FireSettings fireSettings)
@@ -62,6 +65,12 @@ namespace Game.Entities.GPE.BBQ
 
         private void Update()
         {
+            if (_startSpreadTimer > 0)
+                _startSpreadTimer -= Time.deltaTime;
+
+            if (_startSpreadTimer > 0)
+                return;
+            
             if (_killTimer > 0)
                 _killTimer -= Time.deltaTime;
             if (_igniteTimer > 0)
