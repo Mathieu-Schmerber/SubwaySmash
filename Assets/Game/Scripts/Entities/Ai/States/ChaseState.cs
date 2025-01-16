@@ -22,13 +22,11 @@ namespace Game.Entities.Ai.States
             _aiBrain = StateMachine.Owner.GetComponent<AiBrain>();
             _input = StateMachine.Owner.GetComponent<IInputProvider>();
             _controller = StateMachine.Owner.GetComponent<Controller>();
-            
             _slam = StateMachine.Owner.GetComponent<SlamAbility>();
         }
 
         public override void Enter()
         {
-            _slam?.SetCooldown(Payload.StatData.AttackCooldown);
             _controller.SetSpeed(Payload.StatData.MovementSpeed);
             _animator.SetFloat(Speed, 1);
         }

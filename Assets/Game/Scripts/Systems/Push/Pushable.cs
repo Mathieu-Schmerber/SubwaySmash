@@ -14,7 +14,13 @@ namespace Game.Systems.Push
             _rigidbody = GetComponent<Rigidbody>();
         }
 
-        public virtual void ApplyPush(Vector3 direction, float force)
+        public void ApplyPush(Vector3 direction, float force)
+        {
+            if (enabled)
+                Push(direction, force);
+        }
+
+        protected virtual void Push(Vector3 direction, float force)
         {
             _rigidbody.AddForce(direction * force, ForceMode.Impulse);
         }
