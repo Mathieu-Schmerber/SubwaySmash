@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 2051376678120214356}
   m_Layer: 0
   m_Name: La daronne a juju
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,13 +210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ragdoll: {fileID: -8726274091058816201, guid: 84a5e05178318e9418e4618f30e40ded, type: 3}
-  _rendererMappings:
-  - inRendererName: wheelchair-power-deluxe
-    outRendererName: Chair
-  - inRendererName: body-mesh
-    outRendererName: body-mesh
-  - inRendererName: head-mesh
-    outRendererName: head-mesh
 --- !u!1001 &2516015200888245497
 PrefabInstance:
   m_ObjectHideFlags: 0
