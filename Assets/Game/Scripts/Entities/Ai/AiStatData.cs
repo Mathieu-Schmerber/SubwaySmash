@@ -7,5 +7,7 @@ namespace Game.Entities.Ai
     {
         public Vector2 IdleTimeRange;
         public float MovementSpeed;
+        public float AttackTriggerDistance;
+        public float AttackCooldown;
     }
 }

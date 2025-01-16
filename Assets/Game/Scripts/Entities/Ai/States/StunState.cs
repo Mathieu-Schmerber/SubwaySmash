@@ -1,7 +1,7 @@
 using Game.Systems.StateMachine;
 using LemonInc.Core.Utilities;
 
-namespace Game.Entities.Ai
+namespace Game.Entities.Ai.States
 {
     public class StunState : State<AiStates>
     {

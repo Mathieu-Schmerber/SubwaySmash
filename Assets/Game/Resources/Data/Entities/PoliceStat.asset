@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: PoliceStat
   m_EditorClassIdentifier: 
   IdleTimeRange: {x: 0, y: 1}
-  MovementSpeed: 4.5
+  MovementSpeed: 4
+  AttackTriggerDistance: 4
+  AttackCooldown: 2

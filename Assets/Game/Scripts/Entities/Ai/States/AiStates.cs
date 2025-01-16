@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Entities.Ai
+namespace Game.Entities.Ai.States
 {
     public struct AiStates
     {
@@ -8,10 +8,10 @@ namespace Game.Entities.Ai
         public ChaseState ChaseState;
         public StunState StunState;
         public DeadState DeadState;
+        public AttackState AttackState;
         
         public AiStatData StatData;
         public float StunTime;
-        public Transform Ragdoll;
         public Vector3 DeathDirection;
         public float DeathForce;
     }

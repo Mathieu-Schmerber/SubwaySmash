@@ -1,3 +1,4 @@
+using Game.Entities.Ai.States;
 using Game.Systems.StateMachine;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ namespace Game.Entities.Ai
                 ChaseState = ChaseState.Init<ChaseState>(_stateMachine),
                 StunState = StunState.Init<StunState>(_stateMachine),
                 DeadState = DeadState.Init<DeadState>(_stateMachine),
+                AttackState = AttackState.Init<AttackState>(_stateMachine),
                 StatData = _stat
             });
         }

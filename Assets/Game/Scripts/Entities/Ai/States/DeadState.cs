@@ -1,7 +1,7 @@
 using Game.Systems.StateMachine;
 using UnityEngine;
 
-namespace Game.Entities.Ai
+namespace Game.Entities.Ai.States
 {
     public class DeadState : State<AiStates>
     {
