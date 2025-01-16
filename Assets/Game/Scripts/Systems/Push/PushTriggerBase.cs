@@ -27,7 +27,7 @@ namespace Game.Systems.Push
             var impactForce = CalculateImpactForce(other);
             
             if (impactForce > _velocityThreshold)
-                Trigger(myPushable ?? otherPushable);
+                Trigger(otherPushable ?? myPushable);
         }
 
         public abstract void Trigger(Pushable actor);

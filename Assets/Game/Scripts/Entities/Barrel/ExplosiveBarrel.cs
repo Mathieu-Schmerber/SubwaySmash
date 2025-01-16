@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Game.Entities.Barrel
 {
-    public class ExplosiveBarrel : PushTriggerBase
+    public class ExplosiveBarrel : PushTriggerBase, IKillable
     {
         [SerializeField] private float _explosionRadius = 5f;
         [SerializeField] private float _explosionForce = 10f;
@@ -26,23 +26,23 @@ namespace Game.Entities.Barrel
 
         public override void Trigger(Pushable actor)
         {
-            if (_hasExploded)
-                return;
-            
-            _hasExploded = true;
-            _feedback.PlayFeedbacks();
             Explode();
         }
 
         private void Explode()
         {
-            GetComponent<Collider>().enabled = false;
-            
+            if (!transform || _hasExploded)
+                return;
+
+            _hasExploded = true;
             var explosionCenter = transform.position + _explosionOffset;
             var hitColliders = Physics.OverlapSphere(explosionCenter, _explosionRadius);
 
             foreach (var col in hitColliders)
             {
+                if (col.transform == transform)
+                    continue;
+                
                 col.GetComponent<IKillable>()?.Kill((col.transform.position - transform.position).normalized, 30);
                 
                 var pushable = col.GetComponent<Pushable>();
@@ -62,6 +62,7 @@ namespace Game.Entities.Barrel
                 rb.AddExplosionForce(_explosionForce, explosionCenter.WithY(col.transform.position.y), _explosionRadius);
             }
 
+            _feedback.PlayFeedbacks();
             Core.Pooling.From(_explosion).Get(null, explosionCenter, Quaternion.identity);
             Destroy(gameObject);
         }
@@ -70,6 +71,12 @@ namespace Game.Entities.Barrel
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position + _explosionOffset, _explosionRadius);        
+        }
+
+        public bool IsDead => _hasExploded;
+        public void Kill(Vector3 direction, float force)
+        {
+            Explode();
         }
     }
 }
