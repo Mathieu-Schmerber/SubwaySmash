@@ -21,6 +21,7 @@ namespace Game.Entities.Player.Abilities
         private Animator _animator;
         private bool _alreadyPlayedFeedback;
         private HashSet<Pushable> _alreadyPushed;
+        private bool _attackCheck;
 
         private void Awake()
         {
@@ -38,6 +39,7 @@ namespace Game.Entities.Player.Abilities
             _animator.SetTrigger(Attack);
             _alreadyPushed = new HashSet<Pushable>();
             _alreadyPlayedFeedback = false;
+            _attackCheck = true;
             
             var animationLength = _animator.GetCurrentAnimatorStateInfo(0).length;
             var elapsedTime = 0f;
@@ -45,7 +47,8 @@ namespace Game.Entities.Player.Abilities
 
             while (elapsedTime < animationLength)
             {
-                Push();
+                if (_attackCheck)
+                    Push();
                 elapsedTime += interval;
                 yield return new WaitForSeconds(interval);
             }
@@ -76,6 +79,14 @@ namespace Game.Entities.Player.Abilities
             {
                 _alreadyPlayedFeedback = true;
                 _feedback.PlayFeedbacks();
+            }
+        }
+
+        public void OnAnimationEventReceived(string eventName)
+        {
+            if (eventName == "StopAttack")
+            {
+                _attackCheck = false;
             }
         }
 
