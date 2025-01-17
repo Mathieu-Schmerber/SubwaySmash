@@ -51,21 +51,15 @@ namespace Game.Entities.Ai
         {
             if (source == null || target == null) return;
 
-            // Copy the local transform values from source to target
             target.localPosition = source.localPosition;
             target.localRotation = source.localRotation;
-            target.localScale = source.localScale;
 
-            // Iterate through all children of the source
-            foreach (Transform sourceChild in source)
+            for (int i = 0; i < source.childCount; i++)
             {
-                // Find a child in the target with the same name as the source child
-                var targetChild = FindChildByName(target, sourceChild.name);
+                var sourceChild = source.GetChild(i);
+                var targetChild = FindDeepChild(target, sourceChild.name);
                 if (targetChild != null)
-                {
-                    // Recursively copy transform values
                     TransferTransforms(sourceChild, targetChild);
-                }
             }
         }
 
@@ -102,6 +96,24 @@ namespace Game.Entities.Ai
                     ragdollRenderer.materials = originalRenderer.materials;
                 }
             }
+        }
+        
+        public static Transform FindDeepChild(Transform parent, string name)
+        {
+            // Check if the current parent is the one we're looking for
+            if (parent.name == name)
+                return parent;
+
+            // Search through all children
+            foreach (Transform child in parent)
+            {
+                Transform result = FindDeepChild(child, name);
+                if (result != null)
+                    return result;
+            }
+
+            // Return null if no match found
+            return null;
         }
         
         private Transform FindChildByName(Transform parent, string name)

@@ -28,6 +28,7 @@ namespace Game.Entities.GPE.BBQ
 
         private MMF_Player _activateFeedback;
         private bool _isSpreading = false;
+        private Ignitable _ignite;
 
         public override void Trigger(Pushable actor)
         {
@@ -38,12 +39,15 @@ namespace Game.Entities.GPE.BBQ
 
         private void Awake()
         {
+            _ignite = GetComponent<Ignitable>();
             _activateFeedback = GetComponent<MMF_Player>();
         }
 
         private void StartSpreadingFlames()
         {
             _isSpreading = true;
+            
+            _ignite.StartIgnite(1);
             _activateFeedback.PlayFeedbacks();
         }
 
