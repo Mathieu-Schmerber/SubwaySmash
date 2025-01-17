@@ -14,8 +14,11 @@ namespace Game.Entities.GPE.BBQ
             _ps = transform.GetComponentsInChildren<ParticleSystem>().ToList();
             _ps.Add(GetComponent<ParticleSystem>());
         }
-        
-        protected override void OnInitialize(object data) { }
+
+        protected override void OnInitialize(object data)
+        {
+            _ps.ForEach(x => x.Play(true));
+        }
 
         protected override void OnRelease() { }
 
