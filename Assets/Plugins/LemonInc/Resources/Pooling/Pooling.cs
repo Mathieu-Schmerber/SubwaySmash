@@ -4,6 +4,6 @@ namespace LemonInc.Core.Pooling
 {
 	public enum Pool
 	{
-		ExplosionFX,FX_OnFire
+		ExplosionFX,FX_OnFire,FX_Electrified
 	}
 }
