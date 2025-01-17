@@ -1,3 +1,6 @@
+using System;
+using Game.Entities.GPE.BBQ;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Game.Entities.Ai
@@ -13,8 +16,57 @@ namespace Game.Entities.Ai
 
             // Transfer SkinnedMeshRenderer and MeshFilter values
             TransferMeshProperties(transform, ragdoll.transform);
+            
+            TransferTransforms(transform, ragdoll.transform);
+
+            var rb = GetComponent<Rigidbody>();
+            ragdoll.MainRigidbody.linearVelocity = rb.linearVelocity;
+            
+            var myIgnite = GetComponent<Ignitable>();
+            if (myIgnite)
+            {
+                var ignite = ragdoll.GetComponents<Ignitable>();
+                var onfire = GetComponent<OnFire>();
+                if (onfire)
+                {
+                    foreach (var i in ignite)
+                    {
+                        i.StartIgnite(myIgnite.BurnTime, myIgnite.BurnProgress);
+                    }
+                    
+                    // Move OnFire component
+                    var newOnFire = ragdoll.AddComponent<OnFire>();
+                    newOnFire.Copy(onfire);
+
+                    // Optionally remove the original OnFire component
+                    Destroy(onfire);
+                }
+                
+            }
 
             return ragdoll.MainRigidbody;
+        }
+
+        private void TransferTransforms(Transform source, Transform target)
+        {
+            if (source == null || target == null) return;
+
+            // Copy the local transform values from source to target
+            target.localPosition = source.localPosition;
+            target.localRotation = source.localRotation;
+            target.localScale = source.localScale;
+
+            // Iterate through all children of the source
+            foreach (Transform sourceChild in source)
+            {
+                // Find a child in the target with the same name as the source child
+                var targetChild = FindChildByName(target, sourceChild.name);
+                if (targetChild != null)
+                {
+                    // Recursively copy transform values
+                    TransferTransforms(sourceChild, targetChild);
+                }
+            }
         }
 
         private void TransferMeshProperties(Transform original, Transform ragdoll)
@@ -51,12 +103,12 @@ namespace Game.Entities.Ai
                 }
             }
         }
-
+        
         private Transform FindChildByName(Transform parent, string name)
         {
             foreach (Transform child in parent)
             {
-                if (child.name == name)
+                if (string.Equals(child.name, name, StringComparison.CurrentCultureIgnoreCase))
                 {
                     return child;
                 }

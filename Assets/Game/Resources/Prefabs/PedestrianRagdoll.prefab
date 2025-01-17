@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 4056660368207026815}
   - component: {fileID: 553572474303236270}
   - component: {fileID: 2782237632149282810}
+  - component: {fileID: 3308734853058247401}
   m_Layer: 0
   m_Name: PedestrianRagdoll
   m_TagString: Untagged
@@ -392,6 +393,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainRigidBody: {fileID: 4456610681992207103}
+--- !u!114 &3308734853058247401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255263938749580456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d3fb1df5e44773af6496c819f8c7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _carbonatedProgress: 0
 --- !u!1 &1667502392434987304
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +596,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6538903991835684241, guid: 8a68e9b96605da54fbf45ffee60cfe4a, type: 3}
+  - {fileID: -6538903991835684241, guid: cbc5ccf5476ff3f4f86ad4dce3e268d4, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

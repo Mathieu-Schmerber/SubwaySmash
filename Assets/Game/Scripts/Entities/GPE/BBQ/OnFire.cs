@@ -1,7 +1,4 @@
-using System;
-using Game.Systems.Push;
 using LemonInc.Core.Pooling;
-using LemonInc.Core.Pooling.Contracts;
 using UnityEngine;
 
 namespace Game.Entities.GPE.BBQ
@@ -15,12 +12,14 @@ namespace Game.Entities.GPE.BBQ
         private float _igniteTimer;
         private FireSettings _settings;
         private float _startSpreadTimer;
+        private Ignitable _ignitable;
 
         private void Awake()
         {
             _killable = GetComponent<IKillable>();
+            _ignitable = GetComponent<Ignitable>();
         }
-
+        
         private void Configure(FireSettings fireSettings)
         {
             _settings = new FireSettings
@@ -38,13 +37,22 @@ namespace Game.Entities.GPE.BBQ
             _startSpreadTimer = fireSettings.StartSpreadAfterTime;
         }
 
+        public void Copy(OnFire onfire)
+        {
+            _settings = onfire._settings;
+            _igniteTimer = onfire._igniteTimer;
+            _killTimer = onfire._killTimer;
+            _startSpreadTimer = onfire._startSpreadTimer;
+            //_particle = onfire._particle;
+        }
+
         public static void IgniteSurroundings(Vector3 center, float radius, FireSettings fireSettings)
         {
             var hits = Physics.OverlapSphere(center, radius);
 
             foreach (var hit in hits)
             {
-                var affected = hit.GetComponent<Pushable>() || hit.GetComponent<IKillable>() != null;
+                var affected = hit.GetComponent<Ignitable>();
                 if (!affected || hit.GetComponent<OnFire>() || hit.GetComponent<Barbecue>())
                     continue;
 
@@ -55,12 +63,14 @@ namespace Game.Entities.GPE.BBQ
 
         private void Start()
         {
-            _particle = Core.Pooling.From(Pool.FX_OnFire).Get(null, fx =>
+            _particle ??= Core.Pooling.From(Pool.FX_OnFire).Get(null, fx =>
             {
                 fx.Instance.transform.SetParent(transform);
                 fx.Instance.transform.localPosition = Vector3.zero;
                 fx.Instance.transform.localRotation = Quaternion.identity;
             }) as PoolableParticleSystem;
+            
+            _ignitable.StartIgnite(_settings.IgniteTime);
         }
 
         private void Update()

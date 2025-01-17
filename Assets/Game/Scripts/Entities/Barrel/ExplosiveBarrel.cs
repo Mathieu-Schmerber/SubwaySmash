@@ -64,7 +64,6 @@ namespace Game.Entities.Barrel
 
             _feedback.PlayFeedbacks();
             Core.Pooling.From(_explosion).Get(null, explosionCenter, Quaternion.identity);
-            Destroy(gameObject);
         }
 
         private void OnDrawGizmosSelected()
