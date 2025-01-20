@@ -48,9 +48,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4701060226211541619, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
       propertyPath: m_Name
       value: fence-door-rotate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416163511543646822, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

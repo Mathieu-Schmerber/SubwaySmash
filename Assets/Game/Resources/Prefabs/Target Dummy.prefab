@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5014245275216556660}
   - component: {fileID: 8900691651870772192}
   - component: {fileID: 3531953500374787512}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Target Dummy
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wheelchair-power-deluxe
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 906d278aeb8f0404193c55a0f38527ef, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -213,6 +217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: aid-sunglasses
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e632c0a97a123c946afedecf39a8bddb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -271,9 +279,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7670638196022979519, guid: 9e0144ee86bf1274eb6cd4e4613ca4fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -7134394785105016132, guid: 9e0144ee86bf1274eb6cd4e4613ca4fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5151492872390713093, guid: 9e0144ee86bf1274eb6cd4e4613ca4fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5069531478518834764, guid: 9e0144ee86bf1274eb6cd4e4613ca4fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9e0144ee86bf1274eb6cd4e4613ca4fe, type: 3}
       propertyPath: m_Name
       value: character-female-a
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e0144ee86bf1274eb6cd4e4613ca4fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250163066507786643, guid: 9e0144ee86bf1274eb6cd4e4613ca4fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361710834771507933, guid: 9e0144ee86bf1274eb6cd4e4613ca4fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788240856288092216, guid: 9e0144ee86bf1274eb6cd4e4613ca4fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303906797054990637, guid: 9e0144ee86bf1274eb6cd4e4613ca4fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908311948669537042, guid: 9e0144ee86bf1274eb6cd4e4613ca4fe, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

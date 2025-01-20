@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Game.Systems.Push;
 using LemonInc.Core.Pooling;
@@ -26,6 +27,11 @@ namespace Game.Entities.GPE.VendingMachine
 
         private void OnTriggerEnter(Collider other)
         {
+            Zaap(other);
+        }
+
+        private void Zaap(Collider other)
+        {
             if (!_triggered) return;
             var killable = other.GetComponent<IKillable>();
             if (killable != null && _killed.Add(killable))
@@ -33,6 +39,11 @@ namespace Game.Entities.GPE.VendingMachine
                 Core.Pooling.From(Pool.FX_Electrified).Get(null, other.transform.position, Quaternion.identity);
                 killable.Kill(Vector3.up, 0);
             }
+        }
+        
+        private void OnTriggerStay(Collider other)
+        { 
+            Zaap(other);
         }
     }
 }
