@@ -1,12 +1,14 @@
 using Game.Systems.Push;
 using UnityEngine;
 using MoreMountains.Feedbacks;
+using UnityEngine.Serialization;
 
 namespace Game.Entities.GPE
 {
     public class ShoppingCart : PushTriggerBase
     {
         private MMF_Player _feedback;
+        [SerializeField] private float _killStrength;
         private void Awake()
         {
             _feedback = GetComponent<MMF_Player>();
@@ -18,7 +20,7 @@ namespace Game.Entities.GPE
             var killable = actor.GetComponent<IKillable>();
             if (killable == null) return;
             var dir = (actor.transform.position - transform.position).normalized;
-            killable.Kill(Vector3.up,50);
+            killable.Kill(Vector3.up,_killStrength);
             _feedback.PlayFeedbacks();
         }
     }
