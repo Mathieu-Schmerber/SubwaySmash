@@ -31,6 +31,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3301129124193493460}
+  - {fileID: 1191503416134234843}
+  - {fileID: 415356118489553859}
   m_Father: {fileID: 782531918271903436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3161828528018996100
@@ -45,6 +47,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44258e4f14d4484bbc7612ec993f9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3180208861351259881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 415356118489553859}
+  - component: {fileID: 6322688133832432675}
+  m_Layer: 0
+  m_Name: Pool - 'FX_Electrified'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &415356118489553859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3180208861351259881}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6384342606586213168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6322688133832432675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3180208861351259881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ecb5244d56fb447a0b31cfa3ebc3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 7365733329626670263, guid: 79618a09be5358043970aabc3a8f67d9, type: 3}
+  _initialCopies: 10
+  PopulateOnAwake: 1
 --- !u!1 &5025770495312083950
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +139,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de0355db6874b9ca6bf42e0a56fc49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6136034401708780319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191503416134234843}
+  - component: {fileID: 2450064703693722321}
+  m_Layer: 0
+  m_Name: Pool - 'FX_OnFire'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1191503416134234843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6136034401708780319}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6384342606586213168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2450064703693722321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6136034401708780319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ecb5244d56fb447a0b31cfa3ebc3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 3284085441332548981, guid: 7e89ef1308c6bb24e85e1072c9815b18, type: 3}
+  _initialCopies: 10
+  PopulateOnAwake: 1
 --- !u!1 &6387872728927424432
 GameObject:
   m_ObjectHideFlags: 0

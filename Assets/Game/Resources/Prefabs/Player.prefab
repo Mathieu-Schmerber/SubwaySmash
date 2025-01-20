@@ -5634,6 +5634,7 @@ GameObject:
   - component: {fileID: 3069981332371420000}
   - component: {fileID: 8798479092349692153}
   - component: {fileID: 6630693922689218249}
+  - component: {fileID: 3524945449099494992}
   m_Layer: 0
   m_Name: Player
   m_TagString: NPC
@@ -5787,6 +5788,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ragdoll: {fileID: 2782237632149282810, guid: 43ea85776667b29459cd7320ea582767, type: 3}
+--- !u!114 &3524945449099494992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6037357776347567063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d3fb1df5e44773af6496c819f8c7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _carbonatedProgress: 0
 --- !u!1 &6833194185762831081
 GameObject:
   m_ObjectHideFlags: 0
@@ -5879,7 +5893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2050b4988819fe54abc15bd3c3cdab8f, type: 3}
       propertyPath: m_Name
-      value: character-employee
+      value: model
       objectReference: {fileID: 0}
     - target: {fileID: 1492312403021943278, guid: 2050b4988819fe54abc15bd3c3cdab8f, type: 3}
       propertyPath: m_LocalRotation.y

@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 647169101324164726}
   - component: {fileID: 8585021656717922126}
   - component: {fileID: 5492586022457956541}
+  - component: {fileID: 6325237865982680970}
   m_Layer: 0
   m_Name: BBQ
   m_TagString: Untagged
@@ -766,6 +767,19 @@ MonoBehaviour:
         MaterialIndexes: 
         UseMaterialPropertyBlocks: 0
         SpriteRendererTextureProperty: _MainTex
+--- !u!114 &6325237865982680970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437752460981726007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d3fb1df5e44773af6496c819f8c7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _carbonatedProgress: 0
 --- !u!1 &2915950052338110017
 GameObject:
   m_ObjectHideFlags: 0

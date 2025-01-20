@@ -73,27 +73,6 @@ namespace Game.Entities.GPE.BBQ
             }
         }
 
-        private void OnValidate()
-        {
-            if (_renderers == null || _renderers.Count == 0)
-            {
-                _renderers = GetComponentsInChildren<Renderer>().ToList();
-                _renderers.RemoveAll(x => x is ParticleSystemRenderer);
-            }
-
-            foreach (var renderer in _renderers)
-            {
-                // Apply progress to each material
-                foreach (var material in renderer.sharedMaterials)
-                {
-                    if (material == null)
-                        continue;
-                    if (material.HasProperty(Progress))
-                        material.SetFloat(Progress, _carbonatedProgress);
-                }
-            }
-        }
-
         private void SetupMaterials()
         {
             // Find the shaders
