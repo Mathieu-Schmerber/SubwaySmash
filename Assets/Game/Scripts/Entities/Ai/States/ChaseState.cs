@@ -29,6 +29,7 @@ namespace Game.Entities.Ai.States
 
         public override void Enter()
         {
+            //_controller.SetSpeed(0);
             _controller.SetSpeed(Payload.StatData.MovementSpeed);
             _animator.SetFloat(Speed, 1);
         }
@@ -50,7 +51,7 @@ namespace Game.Entities.Ai.States
             _controller.SetDirection(_input.MovementDirection);
             _controller.SetSpeed(Payload.StatData.MovementSpeed);
 
-            if (_slam && _slam.IsReady() &&
+            if (_slam && _slam.IsReady() && _aiBrain.IsNavClear(_player.transform.position) &&
                 Vector3.Distance(_player.transform.position, StateMachine.Owner.position) <= Payload.StatData.AttackTriggerDistance)
             {
                 StateMachine.SwitchState(Payload.AttackState);

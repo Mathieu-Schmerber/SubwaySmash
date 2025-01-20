@@ -1,6 +1,6 @@
-using Game.Entities.Player;
 using Game.Inputs;
 using LemonInc.Core.Input;
+using LemonInc.Core.Utilities.Extensions;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,25 +8,18 @@ namespace Game.Entities.Ai
 {
     public class AiBrain : MonoBehaviour, IInputProvider
     {
+        [SerializeField] private int _avoidancePrecision = 3;
+        [SerializeField] private float _avoidanceAngle = 20;
+        [SerializeField] private float _avoidanceRadius = .2f;
+        [SerializeField] private LayerMask _layerMask;
+        
         private NavMeshAgent _agent;
         private Transform _target;
         private NavMeshPath _path;
 
-        public Vector3 MovementDirection
-        {
-            get
-            {
-                if (_target == null)
-                    return Vector3.zero;
-
-                _agent.CalculatePath(_target.position, _path);
-                
-                if (_path.corners.Length <= 1) return Vector3.zero;
-                var direction = (_path.corners[1] - transform.position).normalized;
-                return direction;
-            }
-        }
-
+        private Vector3 _movementDirection;
+        public Vector3 MovementDirection => _movementDirection;
+        
         public Vector3 AimDirection => MovementDirection.normalized;
         public InputState Dash { get; }
         public InputState Push { get; }
@@ -37,6 +30,81 @@ namespace Game.Entities.Ai
             _path = new NavMeshPath();
         }
 
+        private void FixedUpdate()
+        {
+            if (_target == null)
+            {
+                _movementDirection = Vector3.zero;
+                return;
+            }
+
+            _agent.CalculatePath(_target.position, _path);
+            
+            var targetPos = _path.corners.Length <= 1 ? _target.position : _path.corners[1];
+            var direction = (_path.corners[1] - transform.position).normalized;
+            var adjustedDirection = AvoidObstacles(direction);
+
+            _movementDirection = adjustedDirection;
+        }
+        
+        private Vector3 AvoidObstacles(Vector3 direction)
+        {
+            var bestDirection = direction;
+            var bestScore = float.MinValue;
+            var space = _avoidanceAngle / _avoidancePrecision;
+
+            for (var i = -_avoidancePrecision; i <= _avoidancePrecision; i++)
+            {
+                var rotatedDirection = direction.Rotate(Vector3.up * space * i);
+                var alignmentScore = Vector3.Dot(rotatedDirection, direction);
+
+                if (Physics.Raycast(transform.position, rotatedDirection, out var hit, _avoidanceRadius, _layerMask))
+                {
+                    var obstaclePenalty = hit.distance / _avoidanceRadius;
+                    var score = alignmentScore - (1 - obstaclePenalty);
+
+                    if (score > bestScore)
+                    {
+                        bestScore = score;
+                        bestDirection = rotatedDirection;
+                    }
+                }
+                else
+                {
+                    var score = alignmentScore + 1;
+                    if (score > bestScore)
+                    {
+                        bestScore = score;
+                        bestDirection = rotatedDirection;
+                    }
+                }
+            }
+
+            return bestDirection;
+        }
+
+        public bool IsNavClear(Vector3 destination)
+        {
+            return !NavMesh.Raycast(transform.position, destination, out _, NavMesh.AllAreas);
+        }
+        
         public void SetTarget(Transform target) => _target = target;
+
+        private void OnDrawGizmosSelected()
+        {
+            var aim = Application.isPlaying ? AimDirection : transform.forward;
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, _avoidanceRadius);
+            Gizmos.color = Color.blue;
+
+            var space = _avoidanceAngle / _avoidancePrecision;
+            for (var i = 0; i < _avoidancePrecision; i++)
+            {
+                var dir = aim.Rotate(Vector3.up * space * (i / 2f));
+                Gizmos.DrawRay(transform.position + Vector3.up, dir * _avoidanceRadius);
+                dir = aim.Rotate(Vector3.up * space * (-i / 2f));
+                Gizmos.DrawRay(transform.position + Vector3.up, dir * _avoidanceRadius);
+            }
+        }
     }
 }

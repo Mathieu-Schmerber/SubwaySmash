@@ -6,7 +6,9 @@ using Game.Entities.Player.Abilities;
 using Game.Inputs;
 using Game.Systems.Push;
 using MoreMountains.Feedbacks;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Entities.Ai.Abilities
 {
@@ -17,7 +19,9 @@ namespace Game.Entities.Ai.Abilities
 
         [SerializeField] private MMF_Player _feedback;
         [SerializeField] private Vector3 _offset;
-        [SerializeField] private float _radius;
+        [SerializeField] private float _attackRadius;
+        [SerializeField] private float _killForce = 20;
+        [SerializeField] private float _pushForce = 40;
         
         private Animator _animator;
         private Controller _controller;
@@ -58,13 +62,15 @@ namespace Game.Entities.Ai.Abilities
             _controller.SetSpeed(0);
             _feedback.PlayFeedbacks();
 
-            var origin = transform.position + _input.AimDirection * _radius + _offset;
-            var hitColliders = Physics.OverlapSphere(origin, _radius);
+            var origin = transform.position + _input.AimDirection * _attackRadius + _offset;
+            var hitColliders = Physics.OverlapSphere(origin, _attackRadius);
 
             foreach (var hitCollider in hitColliders)
             {
                 if (hitCollider.transform == transform)
                     continue;
+
+                bool isRegularRb = true;
                 
                 // Check if the collider has a PushTriggerBase component
                 var pushTrigger = hitCollider.GetComponent<PushTriggerBase>();
@@ -73,7 +79,11 @@ namespace Game.Entities.Ai.Abilities
 
                 var killable = hitCollider.GetComponent<PlayerStateMachine>();
                 if (killable != null)
-                    killable.Kill(Vector3.up, 20);
+                    killable.Kill((hitCollider.transform.position - origin).normalized, _killForce);
+                
+                var rb = hitCollider.GetComponent<Rigidbody>();
+                if (!killable && rb)
+                    rb.AddForce((hitCollider.transform.position - origin).normalized * _pushForce, ForceMode.Impulse);
             }
         }
         
@@ -81,8 +91,8 @@ namespace Game.Entities.Ai.Abilities
         {
             var dir = Application.isPlaying ? _input.AimDirection : transform.forward;
             Gizmos.color = Color.red;
-            var origin = transform.position + dir * _radius + _offset;
-            Gizmos.DrawWireSphere(origin, _radius);
+            var origin = transform.position + dir * _attackRadius + _offset;
+            Gizmos.DrawWireSphere(origin, _attackRadius);
         }
     }
 }
