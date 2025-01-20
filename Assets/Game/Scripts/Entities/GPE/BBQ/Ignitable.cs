@@ -31,7 +31,7 @@ namespace Game.Entities.GPE.BBQ
             _baseColorShader = Shader.Find("Shader Graphs/CarbonatedSimple");
             _carbonatedProgress = 0;
             _renderers = GetComponentsInChildren<Renderer>().ToList();
-            _renderers.RemoveAll(x => x is ParticleSystemRenderer);
+            _renderers.RemoveAll(x => x is ParticleSystemRenderer or SpriteRenderer || x.tag.Equals("FX"));
 
             SetupMaterials();
         }
