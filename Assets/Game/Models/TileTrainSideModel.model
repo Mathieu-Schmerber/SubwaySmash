@@ -1,0 +1,13 @@
+# Made using Asset Forge (2.4.1)
+
+:materials
+
+[name:steel;color:RGBA(0.311, 0.309, 0.340, 1.000);scale:(1.0, 1.0);shader:Default;mapping:0;valueA:0.35;valueB:0.25;]
+[name:metalOrange;color:RGBA(1.000, 0.702, 0.000, 1.000);scale:(1.0, 1.0);texture:Patterns/stripes.png;shader:Default;mapping:0;valueA:0.25;valueB:0.25;]
+[name:_defaultMat;color:RGBA(0.939, 0.953, 1.000, 1.000);scale:(1.0, 1.0);shader:Default;mapping:0;valueA:0.35;valueB:0.25;]
+
+:models
+
+[name:;collection:Primitives;type:block;position:(-0.2000, 0.0000, 1.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.6000, 0.1000, 1.0000);group:;locked:False;hidden:False;materials:steel;]
+[name:;collection:Primitives;type:block;position:(0.3000, 0.0000, 1.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4000, 0.1200, 1.0000);group:;locked:False;hidden:False;materials:metalOrange;]
+[name:;collection:Primitives;type:block;position:(0.4000, -0.9100, 1.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.1000, 0.9100, 1.0000);group:;locked:False;hidden:False;materials:steel;]
