@@ -33,7 +33,7 @@ namespace Game.Entities.Player.Abilities
             _animator.SetTrigger(Dash);
             
             _controller.SetSpeed(speed);
-            _controller.SetDirection(_input.MovementDirection);
+            _controller.SetDirection(_input.MovementDirection, true);
             _controller.LockAim(true, _input.AimDirection);
             IsDashing = true;
             

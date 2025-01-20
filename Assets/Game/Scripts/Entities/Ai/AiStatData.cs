@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Entities.Ai
 {
@@ -6,7 +7,8 @@ namespace Game.Entities.Ai
     public class AiStatData : ScriptableObject
     {
         public Vector2 IdleTimeRange;
-        public float MovementSpeed;
+        public float WalkSpeed;
+        [FormerlySerializedAs("MovementSpeed")] public float RunSpeed;
         public float AttackTriggerDistance;
         public float AttackCooldown;
     }

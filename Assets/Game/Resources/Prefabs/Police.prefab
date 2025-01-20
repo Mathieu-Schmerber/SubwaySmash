@@ -15301,8 +15301,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8581580398827760192}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 3
+  m_Mass: 2
+  m_Drag: 4
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -15313,7 +15313,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 0
+  m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -15390,12 +15390,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed36d2b8e31a4941a8b79704a3af7207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _avoidancePrecision: 3
-  _avoidanceAngle: 90
-  _avoidanceRadius: 2
+  _avoidancePrecision: 2
+  _avoidanceAngle: 45
+  _avoidanceRadius: 2.5
   _layerMask:
     serializedVersion: 2
     m_Bits: 385
+  _waypointPath: {fileID: 0}
 --- !u!114 &1476083652914788324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15409,6 +15410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _accelerationLerp: 4
+  _lerpTurns: 1
+  _turnLerp: 4
   _turnSpeed: 10
   _graphic: {fileID: 5174195868190981183}
 --- !u!114 &4079363019021849118
@@ -15454,6 +15457,7 @@ MonoBehaviour:
   _attackRadius: 0.7
   _killForce: 10
   _pushForce: 20
+  _recoverTime: 1.2
 --- !u!114 &7253453390505402728
 MonoBehaviour:
   m_ObjectHideFlags: 0

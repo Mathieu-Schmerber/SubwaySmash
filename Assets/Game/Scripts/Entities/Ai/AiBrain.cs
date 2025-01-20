@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Game.Inputs;
 using LemonInc.Core.Input;
 using LemonInc.Core.Utilities.Extensions;
@@ -8,14 +10,19 @@ namespace Game.Entities.Ai
 {
     public class AiBrain : MonoBehaviour, IInputProvider
     {
+        [Header("Ai Avoidance")]
         [SerializeField] private int _avoidancePrecision = 3;
         [SerializeField] private float _avoidanceAngle = 20;
         [SerializeField] private float _avoidanceRadius = .2f;
         [SerializeField] private LayerMask _layerMask;
         
+        [Header("Patrol")]
+        [SerializeField] private WaypointPath _waypointPath;
+        
         private NavMeshAgent _agent;
         private Transform _target;
         private NavMeshPath _path;
+        private int _wayPointIndex = 0;
 
         private Vector3 _movementDirection;
         public Vector3 MovementDirection => _movementDirection;
@@ -24,6 +31,8 @@ namespace Game.Entities.Ai
         public InputState Dash { get; }
         public InputState Push { get; }
 
+        public Transform Target => _target;
+        
         private void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
@@ -38,17 +47,25 @@ namespace Game.Entities.Ai
                 return;
             }
 
+            if (_waypointPath.Contains(_target)) 
+                _target = _waypointPath.GetCurrentOrNewPoint(transform, _target);
+            
             _agent.CalculatePath(_target.position, _path);
             
             var targetPos = _path.corners.Length <= 1 ? _target.position : _path.corners[1];
-            var direction = (_path.corners[1] - transform.position).normalized;
-            var adjustedDirection = AvoidObstacles(direction);
+            var direction = (targetPos - transform.position).normalized;
+            var adjustedDirection = CalculateAvoidanceDirection(direction, Vector3.Distance(transform.position, targetPos));
 
             _movementDirection = adjustedDirection;
         }
-        
-        private Vector3 AvoidObstacles(Vector3 direction)
+
+        private Vector3 CalculateAvoidanceDirection(Vector3 direction, float distanceToTarget)
         {
+            if (!Physics.Raycast(transform.position, direction, out var notClear, distanceToTarget, _layerMask))
+                return direction;
+            
+            Debug.Log($"Path not clear ? {notClear.transform.gameObject.name}: {notClear.transform.gameObject.layer}");
+
             var bestDirection = direction;
             var bestScore = float.MinValue;
             var space = _avoidanceAngle / _avoidancePrecision;
@@ -87,8 +104,22 @@ namespace Game.Entities.Ai
         {
             return !NavMesh.Raycast(transform.position, destination, out _, NavMesh.AllAreas);
         }
+
+        public void SetTarget(Transform target)
+        {
+            _target = target;
+        }
+
+        public bool HasWaypoints() => _waypointPath;
         
-        public void SetTarget(Transform target) => _target = target;
+        public void ResumeFollowWaypoints()
+        {
+            if (!HasWaypoints())
+                return;
+            
+            _wayPointIndex = _waypointPath.GetClosestIndexToPosition(transform.position);
+            _target = _waypointPath.GetAt(_wayPointIndex);
+        }
 
         private void OnDrawGizmosSelected()
         {

@@ -22,6 +22,7 @@ namespace Game.Entities.Ai.Abilities
         [SerializeField] private float _attackRadius;
         [SerializeField] private float _killForce = 20;
         [SerializeField] private float _pushForce = 40;
+        [SerializeField] private float _recoverTime;
         
         private Animator _animator;
         private Controller _controller;
@@ -39,7 +40,7 @@ namespace Game.Entities.Ai.Abilities
             var clip = GetAnimationClipByStateName(_animator, ATTACK_NAME);
             
             _animator.SetTrigger(Attack);
-            yield return new WaitForSeconds(clip.length);
+            yield return new WaitForSeconds(_recoverTime);
             performed?.Invoke();
         }
 

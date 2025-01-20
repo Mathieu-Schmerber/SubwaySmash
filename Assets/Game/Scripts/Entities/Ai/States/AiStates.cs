@@ -4,7 +4,7 @@ namespace Game.Entities.Ai.States
 {
     public struct AiStates
     {
-        public IdleState IdleState;
+        public PatrolState PatrolState;
         public ChaseState ChaseState;
         public StunState StunState;
         public DeadState DeadState;
