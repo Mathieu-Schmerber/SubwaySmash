@@ -9,12 +9,9 @@ namespace Game.Entities.GPE.Train
         {
             Debug.LogWarning(actor);
             var killable = actor.GetComponent<IKillable>();
-            if (killable != null)
-            {
-                
-                var dir = (actor.transform.position - transform.position).normalized;
-                killable.Kill(Vector3.up,500);
-            }
+            if (killable == null) return;
+            var dir = (actor.transform.position - transform.position).normalized;
+            killable.Kill(Vector3.up,500);
         }
     }
 }
