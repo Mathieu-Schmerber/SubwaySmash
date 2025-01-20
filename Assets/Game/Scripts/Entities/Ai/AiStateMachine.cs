@@ -2,13 +2,15 @@ using Game.Entities.Ai.Abilities;
 using Game.Entities.Ai.States;
 using Game.Systems.StateMachine;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Entities.Ai
 {
     public class AiStateMachine : MonoBehaviour, IKillable
     {
         [SerializeField] private AiStatData _stat;
-   
+        [SerializeField] private bool _isAggressive;
+        
         private StateMachine<AiStates> _stateMachine;
         private SlamAbility _slam;
         private Controller _controller;
@@ -24,11 +26,12 @@ namespace Game.Entities.Ai
             _stateMachine.SetPayload(new AiStates
             {
                 PatrolState = PatrolState.Init<PatrolState>(_stateMachine),
-                ChaseState = ChaseState.Init<ChaseState>(_stateMachine),
+                ChaseState = _isAggressive ? ChaseState.Init<ChaseState>(_stateMachine) : null,
                 StunState = StunState.Init<StunState>(_stateMachine),
                 DeadState = DeadState.Init<DeadState>(_stateMachine),
                 AttackState = AttackState.Init<AttackState>(_stateMachine),
-                StatData = _stat
+                StatData = _stat,
+                IsAggressive = _isAggressive
             });
         }
 

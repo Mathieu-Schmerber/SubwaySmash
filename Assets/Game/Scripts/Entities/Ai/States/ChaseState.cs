@@ -29,6 +29,12 @@ namespace Game.Entities.Ai.States
 
         public override void Enter()
         {
+            if (!Payload.IsAggressive)
+            {
+                StateMachine.SwitchState(Payload.PatrolState);
+                return;
+            }
+            
             _controller.SetSpeed(Payload.StatData.RunSpeed);
             _animator.SetFloat(Speed, 1);
             if (_player)

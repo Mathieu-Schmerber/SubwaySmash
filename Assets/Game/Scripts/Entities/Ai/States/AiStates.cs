@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Game.Entities.Ai.States
@@ -9,6 +10,8 @@ namespace Game.Entities.Ai.States
         public StunState StunState;
         public DeadState DeadState;
         public AttackState AttackState;
+
+        public bool IsAggressive;
         
         public AiStatData StatData;
         public float StunTime;

@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 3724652620133735415}
   - component: {fileID: 4925481056436534651}
   - component: {fileID: 1058618154986184642}
+  - component: {fileID: 4517084298455539240}
   m_Layer: 8
   m_Name: Impact
   m_TagString: Untagged
@@ -5149,13 +5150,26 @@ MonoBehaviour:
         BoundParticleSystem: {fileID: 3724652620133735415}
         RandomParticleSystems: []
         MoveToPosition: 0
-        ActivateOnPlay: 0
+        ActivateOnPlay: 1
         StopSystemOnInit: 1
         StopSystemOnReset: 1
         StopSystemOnStopFeedback: 1
         DeclaredDuration: 0
         ForceSimulationSpeed: 0
         ForcedSimulationSpeed: {x: 0.1, y: 1}
+--- !u!114 &4517084298455539240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397744794655929184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8291487e3ae64e35a934e0974cdb909c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactRadius: 0.7
 --- !u!1 &402484571033013618
 GameObject:
   m_ObjectHideFlags: 0
@@ -15378,6 +15392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stat: {fileID: 11400000, guid: 9a993b0a778c2d9468b17537422c814d, type: 2}
+  _isAggressive: 1
 --- !u!114 &5003607747829876141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15454,8 +15469,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _feedback: {fileID: 1058618154986184642}
   _offset: {x: -0.1, y: 0, z: 0}
-  _attackRadius: 0.7
-  _killForce: 10
   _pushForce: 20
   _recoverTime: 1.2
 --- !u!114 &7253453390505402728

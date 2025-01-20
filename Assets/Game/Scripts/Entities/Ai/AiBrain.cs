@@ -64,8 +64,6 @@ namespace Game.Entities.Ai
             if (!Physics.Raycast(transform.position, direction, out var notClear, distanceToTarget, _layerMask))
                 return direction;
             
-            Debug.Log($"Path not clear ? {notClear.transform.gameObject.name}: {notClear.transform.gameObject.layer}");
-
             var bestDirection = direction;
             var bestScore = float.MinValue;
             var space = _avoidanceAngle / _avoidancePrecision;
