@@ -50,9 +50,9 @@ namespace Game.Entities.Player
         
         private Vector3 CalculateAimPosition(Vector2 mousePosition)
         {
-            var floorPlane = new Plane(Vector3.up, transform.position.y);
+            var floorPlane = new Plane(Vector3.up, transform.position.y - Vector3.up.y);
             var ray = Camera.main!.ScreenPointToRay(mousePosition);
-
+            
             return floorPlane.Raycast(ray, out var enter) ? ray.GetPoint(enter) : Vector3.zero;
         }
 
