@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 6641700438145009022}
   - component: {fileID: 6721322881556253653}
   - component: {fileID: 808146142248334287}
+  - component: {fileID: 1218732407966224049}
   m_Layer: 0
   m_Name: GFX
   m_TagString: Untagged
@@ -378,6 +379,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7efced018c4333ba66d479c463d685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1218732407966224049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419651618817386278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d3fb1df5e44773af6496c819f8c7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _carbonatedProgress: 0
+  _onFireFX: {fileID: 4417329614617360384, guid: 7e89ef1308c6bb24e85e1072c9815b18, type: 3}
 --- !u!1 &1934823361542599768
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carbonatedProgress: 0
+  _onFireFX: {fileID: 4417329614617360384, guid: 7e89ef1308c6bb24e85e1072c9815b18, type: 3}
 --- !u!1 &2089890293822810992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,7 +1300,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6768222514492074634}
   - component: {fileID: -8726274091058816201}
-  - component: {fileID: 6606505112001655267}
   m_Layer: 0
   m_Name: WheelchairRagdoll
   m_TagString: Untagged
@@ -1322,19 +1337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainRigidBody: {fileID: 8398637574236749888}
---- !u!114 &6606505112001655267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7908867644782950207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d3fb1df5e44773af6496c819f8c7ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _carbonatedProgress: 0
 --- !u!1 &8483539065661569190
 GameObject:
   m_ObjectHideFlags: 0

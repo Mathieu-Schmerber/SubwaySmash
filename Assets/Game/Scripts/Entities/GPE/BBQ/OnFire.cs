@@ -5,19 +5,18 @@ namespace Game.Entities.GPE.BBQ
 {
     public class OnFire : MonoBehaviour
     {
-        private PoolableParticleSystem _particle;
         private IKillable _killable;
 
         private float _killTimer;
         private float _igniteTimer;
         private FireSettings _settings;
         private float _startSpreadTimer;
-        private Ignitable _ignitable;
+        private Ignitable[] _ignitables;
 
         private void Awake()
         {
             _killable = GetComponent<IKillable>();
-            _ignitable = GetComponent<Ignitable>();
+            _ignitables = GetComponents<Ignitable>();
         }
         
         private void Configure(FireSettings fireSettings)
@@ -43,7 +42,6 @@ namespace Game.Entities.GPE.BBQ
             _igniteTimer = onfire._igniteTimer;
             _killTimer = onfire._killTimer;
             _startSpreadTimer = onfire._startSpreadTimer;
-            //_particle = onfire._particle;
         }
 
         public static void IgniteSurroundings(Vector3 center, float radius, FireSettings fireSettings)
@@ -63,14 +61,10 @@ namespace Game.Entities.GPE.BBQ
 
         private void Start()
         {
-            _particle ??= Core.Pooling.From(Pool.FX_OnFire).Get(null, fx =>
+            foreach (var ignitable in _ignitables)
             {
-                fx.Instance.transform.SetParent(transform);
-                fx.Instance.transform.localPosition = Vector3.zero;
-                fx.Instance.transform.localRotation = Quaternion.identity;
-            }) as PoolableParticleSystem;
-            
-            _ignitable.StartIgnite(_settings.IgniteTime);
+                ignitable.StartIgnite(_settings.IgniteTime);
+            }
         }
 
         private void Update()
@@ -91,16 +85,6 @@ namespace Game.Entities.GPE.BBQ
             {
                 _killable.Kill(Vector3.zero, 0);
                 _killTimer = -1; // Ensure this action doesn't repeat
-            }
-
-            // Handle stopping the particle system
-            if (_igniteTimer <= 0)
-            {
-                if (_particle != null)
-                {
-                    _particle.StopThenRelease();
-                }
-                _igniteTimer = -1; // Ensure this action doesn't repeat
             }
 
             // Spread fire once ignite time is reached

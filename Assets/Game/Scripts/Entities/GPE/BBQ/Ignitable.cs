@@ -15,7 +15,9 @@ namespace Game.Entities.GPE.BBQ
         private Shader _baseColorShader;
         
         [SerializeField, Range(0, 1)] private float _carbonatedProgress;
+        [SerializeField] private ParticleSystem _onFireFX;
 
+        private ParticleSystem _fx;
         private float _burnTime;
         private bool _isBurning;
         private List<Renderer> _renderers;
@@ -37,6 +39,7 @@ namespace Game.Entities.GPE.BBQ
         public void StartIgnite(float burnTime, float _initialProgress = 0)
         {
             if (_isBurning) return;
+            _fx = Instantiate(_onFireFX, transform.position, transform.rotation, transform);
             _burnTime = burnTime;
             _isBurning = true;
             _carbonatedProgress = _initialProgress;
@@ -57,6 +60,7 @@ namespace Game.Entities.GPE.BBQ
             if (_carbonatedProgress >= 1)
             {
                 _isBurning = false;
+                _fx.Stop(true, ParticleSystemStopBehavior.StopEmitting);
             }
         }
         
