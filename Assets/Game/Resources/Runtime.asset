@@ -17,17 +17,27 @@ MonoBehaviour:
   SectionDefinitions:
     _keyData:
     - 26216547-ddd6-4c6a-af34-2b1880e410d6
+    - c7db8433-8bb1-469f-becf-68c01ea2bf8b
     _valueData:
     - _id: 26216547-ddd6-4c6a-af34-2b1880e410d6
       _name: Data
       _sections: []
       _assets:
       - ae9f60c8-bb58-4ed4-8926-0646c0279b0f
+      - 02224c32-d29a-4569-a8c0-44169cdecda5
+    - _id: c7db8433-8bb1-469f-becf-68c01ea2bf8b
+      _name: New Section 1
+      _sections: []
+      _assets: []
   AssetDefinitions:
     _keyData:
     - ae9f60c8-bb58-4ed4-8926-0646c0279b0f
+    - 02224c32-d29a-4569-a8c0-44169cdecda5
     _valueData:
     - _id: ae9f60c8-bb58-4ed4-8926-0646c0279b0f
       _name: PlayerData
       _data: {fileID: 11400000, guid: c95d3342d9ee10a43a9bb9452186c28b, type: 2}
+    - _id: 02224c32-d29a-4569-a8c0-44169cdecda5
+      _name: Score
+      _data: {fileID: 11400000, guid: 8c7ceacafc5ba8a4b80aacd3999fa179, type: 2}
   ScriptPath: Assets/Game/Scripts/Systems/Database/RuntimeDatabase.cs

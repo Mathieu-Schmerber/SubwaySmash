@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 namespace Game.Entities.Ai
 {
-    public class AiStateMachine : MonoBehaviour, IKillable
+    public class AiStateMachine : KillableBase
     {
         [SerializeField] private AiStatData _stat;
         [SerializeField] private bool _isAggressive;
@@ -14,8 +14,6 @@ namespace Game.Entities.Ai
         private StateMachine<AiStates> _stateMachine;
         private SlamAbility _slam;
         private Controller _controller;
-
-        public bool IsDead => _stateMachine.CurrentState?.GetType() == typeof(DeadState);
 
         private void Awake()
         {
@@ -26,7 +24,7 @@ namespace Game.Entities.Ai
             _stateMachine.SetPayload(new AiStates
             {
                 PatrolState = PatrolState.Init<PatrolState>(_stateMachine),
-                ChaseState = _isAggressive ? ChaseState.Init<ChaseState>(_stateMachine) : null,
+                ChaseState = ChaseState.Init<ChaseState>(_stateMachine),
                 StunState = StunState.Init<StunState>(_stateMachine),
                 DeadState = DeadState.Init<DeadState>(_stateMachine),
                 AttackState = AttackState.Init<AttackState>(_stateMachine),
@@ -58,11 +56,8 @@ namespace Game.Entities.Ai
             _stateMachine.SwitchState(_stateMachine.Payload.StunState);
         }
         
-        public void Kill(Vector3 direction, float force)
+        protected override void OnKill(Vector3 direction, float force)
         {
-            if (IsDead)
-                return;
-            
             var payload = _stateMachine.Payload;
             payload.DeathForce = force;
             payload.DeathDirection = direction;

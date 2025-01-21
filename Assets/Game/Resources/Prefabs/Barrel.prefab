@@ -129,11 +129,12 @@ GameObject:
   - component: {fileID: 705349823374565898}
   - component: {fileID: 4633193807232154872}
   - component: {fileID: 697156797579730724}
+  - component: {fileID: 906432915538938937}
   - component: {fileID: 1056929232739786055}
   - component: {fileID: 1735605796259634953}
   - component: {fileID: 8495376293676518436}
   - component: {fileID: 1798730628158742050}
-  - component: {fileID: 906432915538938937}
+  - component: {fileID: 4534905137476405874}
   m_Layer: 7
   m_Name: Barrel
   m_TagString: Untagged
@@ -207,6 +208,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &906432915538938937
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445785523242228427}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.11, y: 0.86, z: 0.11}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.18, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!114 &1056929232739786055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,19 +724,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _carbonatedProgress: 0
   _onFireFX: {fileID: 4417329614617360384, guid: 7e89ef1308c6bb24e85e1072c9815b18, type: 3}
---- !u!208 &906432915538938937
-NavMeshObstacle:
+--- !u!114 &4534905137476405874
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3445785523242228427}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.11, y: 0.86, z: 0.11}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.18, z: 0}
-  m_TimeToStationary: 0.5
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1c29767f614f55aec77b1faac7438e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _identifier: Barrel

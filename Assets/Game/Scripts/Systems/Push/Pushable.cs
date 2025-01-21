@@ -1,5 +1,4 @@
 using System;
-using Pixelplacement;
 using UnityEngine;
 
 namespace Game.Systems.Push
@@ -9,6 +8,8 @@ namespace Game.Systems.Push
     {
         private Rigidbody _rigidbody;
         
+        public event Action OnPushed;
+        
         protected virtual void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -17,7 +18,10 @@ namespace Game.Systems.Push
         public void ApplyPush(Vector3 direction, float force)
         {
             if (enabled)
+            {
                 Push(direction, force);
+                OnPushed?.Invoke();
+            }
         }
 
         protected virtual void Push(Vector3 direction, float force)

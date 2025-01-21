@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Game.Entities.Player
 {
-    public class PlayerStateMachine : MonoBehaviour, IKillable
+    public class PlayerStateMachine : KillableBase
     {
         private PlayerStates _payload;
         private readonly StateMachine<PlayerStates> _stateMachine = new();
@@ -81,12 +81,8 @@ namespace Game.Entities.Player
             _stateMachine.Update();
         }
 
-        public bool IsDead => _stateMachine.CurrentState == _payload.Dead;
-        public void Kill(Vector3 direction, float force)
+        protected override void OnKill(Vector3 direction, float force)
         {
-            if (IsDead)
-                return;
-            
             var payload = _stateMachine.Payload;
             payload.DeathForce = force;
             payload.DeathDirection = direction;
