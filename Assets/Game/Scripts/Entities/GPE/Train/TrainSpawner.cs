@@ -28,7 +28,9 @@ namespace Game.Entities.GPE.Train
         {
             if (_isTriggered)
             {
-                _rb.linearVelocity = transform.forward * (_trainSpeed * Time.fixedDeltaTime * 10);
+                //_rb.linearVelocity = transform.forward * (_trainSpeed * Time.fixedDeltaTime);
+                _rb.MovePosition(_rb.transform.position + (transform.forward * _trainSpeed * Time.fixedDeltaTime));
+                Debug.Log(_trainSpeed);
             }
         }
 
