@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7685295062253184770}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: leg-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6885387619092935067}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: leg-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,8 @@ GameObject:
   - component: {fileID: 3724652620133735415}
   - component: {fileID: 4925481056436534651}
   - component: {fileID: 1058618154986184642}
-  m_Layer: 7
+  - component: {fileID: 4517084298455539240}
+  m_Layer: 8
   m_Name: Impact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5149,13 +5150,26 @@ MonoBehaviour:
         BoundParticleSystem: {fileID: 3724652620133735415}
         RandomParticleSystems: []
         MoveToPosition: 0
-        ActivateOnPlay: 0
+        ActivateOnPlay: 1
         StopSystemOnInit: 1
         StopSystemOnReset: 1
         StopSystemOnStopFeedback: 1
         DeclaredDuration: 0
         ForceSimulationSpeed: 0
         ForcedSimulationSpeed: {x: 0.1, y: 1}
+--- !u!114 &4517084298455539240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397744794655929184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8291487e3ae64e35a934e0974cdb909c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactRadius: 0.7
 --- !u!1 &402484571033013618
 GameObject:
   m_ObjectHideFlags: 0
@@ -5166,7 +5180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3743400223738792493}
   - component: {fileID: 2801805748771856072}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: body-mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5262,7 +5276,7 @@ GameObject:
   - component: {fileID: 283647496444307846}
   - component: {fileID: 9135839832033614986}
   - component: {fileID: 1663128812191282282}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: FX_Explosion_Rubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10023,7 +10037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5174195868190981183}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10056,7 +10070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 503310239383326210}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10089,7 +10103,7 @@ GameObject:
   - component: {fileID: 2168742573998723224}
   - component: {fileID: 425461120485047247}
   - component: {fileID: 5863280741968606566}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: aid-cane-low-vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10142,7 +10156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8a52349222d467e46aa05cea7379e5c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10173,7 +10187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9033398528611180301}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: arm-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10205,7 +10219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8142376924199461766}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10240,7 +10254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9057379043704848608}
   - component: {fileID: 3832880193849008790}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: head-mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10334,7 +10348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5480008713931902960}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: arm-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10367,7 +10381,7 @@ GameObject:
   - component: {fileID: 7783465579457939194}
   - component: {fileID: 6820799913833681363}
   - component: {fileID: 7150864264091141730}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: FX_Explosion_Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15192,7 +15206,7 @@ GameObject:
   - component: {fileID: 7696495458613954677}
   - component: {fileID: 657583281042453267}
   - component: {fileID: 8823610153983737525}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15270,7 +15284,7 @@ GameObject:
   - component: {fileID: 1686317630237611169}
   - component: {fileID: 1871895230686826395}
   - component: {fileID: 7253453390505402728}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Police
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -15301,8 +15315,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8581580398827760192}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 3
+  m_Mass: 2
+  m_Drag: 4
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -15313,7 +15327,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 0
+  m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -15354,12 +15368,12 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.2
   m_Speed: 3.5
-  m_Acceleration: 4
+  m_Acceleration: 3.5
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 0
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0
@@ -15378,6 +15392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stat: {fileID: 11400000, guid: 9a993b0a778c2d9468b17537422c814d, type: 2}
+  _isAggressive: 1
 --- !u!114 &5003607747829876141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15390,6 +15405,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed36d2b8e31a4941a8b79704a3af7207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _avoidancePrecision: 2
+  _avoidanceAngle: 45
+  _avoidanceRadius: 2.5
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 385
+  _waypointPath: {fileID: 0}
 --- !u!114 &1476083652914788324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15403,6 +15425,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _accelerationLerp: 4
+  _lerpTurns: 1
+  _turnLerp: 4
   _turnSpeed: 10
   _graphic: {fileID: 5174195868190981183}
 --- !u!114 &4079363019021849118
@@ -15445,7 +15469,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _feedback: {fileID: 1058618154986184642}
   _offset: {x: -0.1, y: 0, z: 0}
-  _radius: 0.7
+  _pushForce: 20
+  _recoverTime: 1.2
 --- !u!114 &7253453390505402728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15469,7 +15494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1454208665101723538}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}

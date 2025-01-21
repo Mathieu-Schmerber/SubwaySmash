@@ -5,6 +5,7 @@ using Game.Entities.Player.States;
 using Game.Inputs;
 using Game.Systems.StateMachine;
 using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Game.Entities.Player
@@ -16,7 +17,8 @@ namespace Game.Entities.Player
         private IInputProvider _input;
         private DashAbility _dash;
         private PushAbility _push;
-        
+        private Controller _controller;
+
         public static event Action<Transform> OnPlayerDeath;
 
         [ShowInInspector]
@@ -24,6 +26,7 @@ namespace Game.Entities.Player
         
         private void Awake()
         {
+            _controller = GetComponent<Controller>();
             _input = GetComponent<IInputProvider>();
             _dash = GetComponent<DashAbility>();
             _dash.SetCooldown(RuntimeDatabase.Data.PlayerData.DashCooldown);
@@ -70,6 +73,7 @@ namespace Game.Entities.Player
         private void Start()
         {
             _stateMachine.SwitchState(_payload.Idle);
+            _controller.SetMaxSpeed(RuntimeDatabase.Data.PlayerData.MovementSpeed);
         }
 
         private void Update()

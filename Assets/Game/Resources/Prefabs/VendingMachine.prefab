@@ -10049,7 +10049,7 @@ MonoBehaviour:
         PropertyName: _Tint
         FlickerDuration: 0.2
         FlickerPeriod: 0.1
-        FlickerColor: {r: 1024, g: 1024, b: 1024, a: 1}
+        FlickerColor: {r: 1.4980394, g: 1.4980394, b: 1.4980394, a: 1}
         MaterialIndexes: 00000000
         UseMaterialPropertyBlocks: 0
         SpriteRendererTextureProperty: _MainTex
@@ -29241,7 +29241,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5887698124600460578}
   - component: {fileID: -3694307486954814862}
-  - component: {fileID: 198037925519317774}
   m_Layer: 7
   m_Name: VendingMachine
   m_TagString: Untagged
@@ -29281,22 +29280,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layer: {fileID: 11400000, guid: 8beabc265e6cc4c43975104634f99e4b, type: 2}
   allowRandomRotation: 0
---- !u!208 &198037925519317774
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8346450053258805138}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.3, y: 1, z: 0.3}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &9093933740084269885
 GameObject:
   m_ObjectHideFlags: 0
