@@ -1860,6 +1860,22 @@ PrefabInstance:
       propertyPath: _waypointPath
       value: 
       objectReference: {fileID: 974658507}
+    - target: {fileID: 1768358360174320830, guid: aad5339b6854314409d178aa30237639, type: 3}
+      propertyPath: _avoidanceAngle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768358360174320830, guid: aad5339b6854314409d178aa30237639, type: 3}
+      propertyPath: _avoidanceRadius
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768358360174320830, guid: aad5339b6854314409d178aa30237639, type: 3}
+      propertyPath: _layerMask.m_Bits
+      value: 385
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768358360174320830, guid: aad5339b6854314409d178aa30237639, type: 3}
+      propertyPath: _avoidancePrecision
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2685146424367181438, guid: aad5339b6854314409d178aa30237639, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.662

@@ -537,6 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stat: {fileID: 11400000, guid: 7895df35b3408cf4f9e0caada9d6dbce, type: 2}
+  _isAggressive: 0
 --- !u!114 &8942120050775143936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,6 +551,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _accelerationLerp: 0.5
+  _lerpTurns: 0
+  _turnLerp: 0
   _turnSpeed: 6
   _graphic: {fileID: 292926692895895254}
 --- !u!114 &1768358360174320830
@@ -564,6 +567,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed36d2b8e31a4941a8b79704a3af7207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _avoidancePrecision: 2
+  _avoidanceAngle: 45
+  _avoidanceRadius: 2.5
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 385
+  _waypointPath: {fileID: 0}
 --- !u!114 &2051376678120214356
 MonoBehaviour:
   m_ObjectHideFlags: 0

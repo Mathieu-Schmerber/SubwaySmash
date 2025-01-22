@@ -1,8 +1,8 @@
 using Game.Entities.Ai.Abilities;
 using Game.Entities.Ai.States;
 using Game.Systems.StateMachine;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Game.Entities.Ai
 {
@@ -11,15 +11,17 @@ namespace Game.Entities.Ai
         [SerializeField] private AiStatData _stat;
         [SerializeField] private bool _isAggressive;
         
-        private StateMachine<AiStates> _stateMachine;
+        private readonly StateMachine<AiStates> _stateMachine = new();
         private SlamAbility _slam;
         private Controller _controller;
+        
+        [ShowInInspector]
+        public string CurrentStateName => _stateMachine.CurrentState?.GetType().Name ?? "None";
 
         private void Awake()
         {
             _controller = GetComponent<Controller>();
             _slam = GetComponent<SlamAbility>();
-            _stateMachine = new StateMachine<AiStates>();
             _stateMachine.SetOwnership(transform);
             _stateMachine.SetPayload(new AiStates
             {

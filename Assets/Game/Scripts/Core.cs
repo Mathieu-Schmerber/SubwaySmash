@@ -13,6 +13,7 @@ namespace Game
     /// References the game systems.
     /// </summary>
     /// <seealso cref="LemonInc.Core.Utilities.ManagerSingleton&lt;Game.Core&gt;" />
+    [DefaultExecutionOrder(1)]
     public class Core : ManagerSingleton<Core>
     {
         [SerializeField] private Camera _camera;
@@ -43,6 +44,7 @@ namespace Game
         
         private void Awake()
         {
+            _camera = FindFirstObjectByType<Camera>();
             _scoreSystem = GetComponentInChildren<ScoreSystem>() ?? throw new MissingComponentException("ScoreSystem");
             _poolProvider = GetComponentInChildren<NamedObjectPoolProvider>();
         }

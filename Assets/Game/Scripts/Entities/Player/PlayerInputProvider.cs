@@ -50,8 +50,8 @@ namespace Game.Entities.Player
         
         private Vector3 CalculateAimPosition(Vector2 mousePosition)
         {
-            var floorPlane = new Plane(Vector3.up, transform.position.y - Vector3.up.y);
-            var ray = Camera.main!.ScreenPointToRay(mousePosition);
+            var floorPlane = new Plane(Vector3.up, transform.position);
+            var ray = Core.Camera.ScreenPointToRay(mousePosition);
             
             return floorPlane.Raycast(ray, out var enter) ? ray.GetPoint(enter) : Vector3.zero;
         }
@@ -59,6 +59,7 @@ namespace Game.Entities.Player
         private Vector3 CalculateAimDirection(Vector2 mousePosition)
         {
             var worldMousePosition = CalculateAimPosition(mousePosition);
+            Debug.DrawRay(worldMousePosition, Vector3.up, Color.yellow);
             return (worldMousePosition - transform.position).normalized;
         }
     }
