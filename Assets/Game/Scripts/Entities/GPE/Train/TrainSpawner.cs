@@ -1,6 +1,7 @@
+using System;
+using Game.Entities.Ai;
 using LemonInc.Core.Utilities;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Game.Entities.GPE.Train
 {
@@ -12,26 +13,34 @@ namespace Game.Entities.GPE.Train
         [SerializeField] private Vector3 _startPos;
         [SerializeField] private Transform _train;
         private readonly Timer _timer = new();
+        
+        private BoxCollider _collider;
 
-        // Update is called once per frame
+        private void Awake()
+        {
+            _collider = GetComponent<BoxCollider>();
+        }
+
         private void Start()
         {
             _startPos = _train.position;
         }
+        
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.CompareTag("NPC")) return;
+            var killable = other.GetComponent<IKillable>();
+            if (killable == null || !other.GetComponent<RagdollSpawner>()) 
+                return;
+            
+            killable.Kill((transform.position - other.transform.position).normalized, 3);
             _isTriggered = true;
             _timer.Start(3f, false, ResetPosition);
         }
+        
         private void FixedUpdate()
         {
             if (_isTriggered)
-            {
-                //_rb.linearVelocity = transform.forward * (_trainSpeed * Time.fixedDeltaTime);
                 _rb.MovePosition(_rb.transform.position + (transform.forward * _trainSpeed * Time.fixedDeltaTime));
-                Debug.Log(_trainSpeed);
-            }
         }
 
         private void ResetPosition()
