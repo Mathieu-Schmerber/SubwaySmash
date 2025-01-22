@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -52,9 +56,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -2341321688622627795, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2341321688622627795, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.219114e-16
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
       propertyPath: m_Name
-      value: fence-door-rotate
+      value: DoubleFenceDoor
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
       propertyPath: m_Layer
@@ -324,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419c7d983c4047b5ab2542e2db285c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer: {fileID: 11400000, guid: 633b63b07f56b9e43b6cc4bca255d544, type: 2}
+  layer: {fileID: 11400000, guid: 4d790146632ee4c4394432609624968c, type: 2}
   allowRandomRotation: 0
 --- !u!54 &5382241545383940581
 Rigidbody:

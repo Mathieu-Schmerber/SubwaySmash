@@ -1,0 +1,32 @@
+# Made using Asset Forge (2.4.1)
+
+:materials
+
+[name:_defaultMat;color:RGBA(0.711, 0.718, 0.738, 1.000);scale:(1.0, 1.0);shader:Default;mapping:0;valueA:0.35;valueB:0.25;]
+
+:models
+
+[name:;collection:Primitives;type:cylinderVertex;position:(0.2000, 0.0000, 0.0000);rotation:(0.0000, 20.0000, 0.0000);scale:(0.3000, 0.1000, 0.3000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:cylinderVertex;position:(0.2000, 0.4000, 0.0000);rotation:(0.0000, 20.0000, 0.0000);scale:(0.2000, 0.1000, 0.2000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:cylinderVertex;position:(-1.2000, 0.4000, 0.0000);rotation:(0.0000, 20.0000, 0.0000);scale:(0.2000, 0.1000, 0.2000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:cylinderVertex;position:(-1.2000, 0.0000, 0.0000);rotation:(0.0000, 20.0000, 0.0000);scale:(0.3000, 0.1000, 0.3000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(-1.2000, 0.0000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.1000, 0.7000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(0.4000, 0.4000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.3000, 0.1000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(-1.4000, 0.4000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.3000, 0.1000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(-1.0600, 0.3000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.1000, 0.3000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(-0.3400, 0.3000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.1000, 0.3000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(0.2000, 0.0000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.1000, 0.7000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(-0.1400, 0.6000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4000, 0.1000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(0.0600, 0.3000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.1000, 0.3000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:cylinderVertex_quarter;position:(0.1100, 0.2000, 0.0500);rotation:(270.0000, 0.0000, 0.0000);scale:(0.1000, 0.1000, 0.2000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(-0.6600, 0.3000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.1000, 0.3000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(-0.1400, 0.2000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4000, 0.1000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(-0.8600, 0.2000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4000, 0.1000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:cylinderVertex_quarter;position:(-0.6100, 0.2000, 0.0500);rotation:(270.0000, 0.0000, 0.0000);scale:(0.1000, 0.1000, 0.2000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:cylinderVertex_quarter;position:(0.1100, 0.7000, -0.0500);rotation:(90.0000, 0.0000, 0.0000);scale:(0.1000, 0.1000, 0.2000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:block;position:(-0.8600, 0.6000, 0.0000);rotation:(0.0000, 0.0000, 0.0000);scale:(0.4000, 0.1000, 0.1000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:cylinderVertex_quarter;position:(-0.6100, 0.7000, -0.0500);rotation:(90.0000, 0.0000, 0.0000);scale:(0.1000, 0.1000, 0.2000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:cylinderVertex_quarter;position:(-0.3900, 0.7000, 0.0500);rotation:(90.0000, 180.0000, 0.0000);scale:(0.1000, 0.1000, 0.2000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:cylinderVertex_quarter;position:(-1.1100, 0.7000, 0.0500);rotation:(90.0000, 180.0000, 0.0000);scale:(0.1000, 0.1000, 0.2000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:cylinderVertex_quarter;position:(-1.1100, 0.2000, -0.0500);rotation:(270.0000, 180.0000, 0.0000);scale:(0.1000, 0.1000, 0.2000);group:;locked:False;hidden:False;materials:_defaultMat;]
+[name:;collection:Primitives;type:cylinderVertex_quarter;position:(-0.3900, 0.2000, -0.0500);rotation:(270.0000, 180.0000, 0.0000);scale:(0.1000, 0.1000, 0.2000);group:;locked:False;hidden:False;materials:_defaultMat;]
