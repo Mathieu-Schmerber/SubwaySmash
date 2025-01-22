@@ -46,9 +46,9 @@ MonoBehaviour:
       OnTrigger: 1
       TriggerScore:
         Points: 100
-      OnDeath: 0
+      OnDeath: 1
       KillScore:
-        Points: 0
+        Points: 100
     - OnPush: 0
       PushScore:
         Points: 0

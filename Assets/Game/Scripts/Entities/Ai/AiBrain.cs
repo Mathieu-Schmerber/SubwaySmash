@@ -47,7 +47,7 @@ namespace Game.Entities.Ai
                 return;
             }
 
-            if (_waypointPath.Contains(_target)) 
+            if (HasWaypoints() && _waypointPath.Contains(_target)) 
                 _target = _waypointPath.GetCurrentOrNewPoint(transform, _target);
             
             _agent.CalculatePath(_target.position, _path);

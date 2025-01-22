@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using LemonInc.Core.Utilities.Extensions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -76,7 +77,7 @@ namespace Game
             if (!Contains(wayPoint))
                 return wayPoint;
 
-            if (Vector3.Distance(tr.position, wayPoint.position) <= _wayPointRadius)
+            if (Vector3.Distance(tr.position, wayPoint.position.WithY(tr.position.y)) <= _wayPointRadius)
             {
                 var index = _wayPoints.IndexOf(wayPoint);
                 index++;
