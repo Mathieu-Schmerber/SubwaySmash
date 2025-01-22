@@ -1947,7 +1947,7 @@ PrefabInstance:
       objectReference: {fileID: 974658507}
     - target: {fileID: 1768358360174320830, guid: aad5339b6854314409d178aa30237639, type: 3}
       propertyPath: _avoidanceAngle
-      value: 45
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1768358360174320830, guid: aad5339b6854314409d178aa30237639, type: 3}
       propertyPath: _avoidanceRadius
@@ -1959,7 +1959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1768358360174320830, guid: aad5339b6854314409d178aa30237639, type: 3}
       propertyPath: _avoidancePrecision
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2685146424367181438, guid: aad5339b6854314409d178aa30237639, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2001,9 +2001,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5353620719184386296, guid: aad5339b6854314409d178aa30237639, type: 3}
+      propertyPath: _isAggressive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6698118756682130897, guid: aad5339b6854314409d178aa30237639, type: 3}
       propertyPath: m_Name
       value: La daronne a juju
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942120050775143936, guid: aad5339b6854314409d178aa30237639, type: 3}
+      propertyPath: _turnLerp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942120050775143936, guid: aad5339b6854314409d178aa30237639, type: 3}
+      propertyPath: _lerpTurns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942120050775143936, guid: aad5339b6854314409d178aa30237639, type: 3}
+      propertyPath: _turnSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942120050775143936, guid: aad5339b6854314409d178aa30237639, type: 3}
+      propertyPath: _accelerationLerp
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5823,6 +5843,10 @@ PrefabInstance:
     - target: {fileID: 8581580398827760192, guid: 9b6e4ce68177a004d8dac63803fdad54, type: 3}
       propertyPath: m_Name
       value: Police
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581580398827760192, guid: 9b6e4ce68177a004d8dac63803fdad54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8912641169895023338, guid: 9b6e4ce68177a004d8dac63803fdad54, type: 3}
       propertyPath: m_LocalPosition.x
