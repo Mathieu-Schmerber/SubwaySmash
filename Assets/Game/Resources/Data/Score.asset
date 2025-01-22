@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ComboCooldown: 1
   BaseComboProgress: 100
-  ComboProgressModifier: 1.5
+  ComboProgressModifier: 1.2
   Entries:
     _keyData:
     - Barrel
+    - BBQ
+    - Vending
+    - Police
     _valueData:
     - OnPush: 0
       PushScore:
@@ -25,6 +28,33 @@ MonoBehaviour:
       OnTrigger: 0
       TriggerScore:
         Points: 0
-      OnKill: 1
+      OnDeath: 1
       KillScore:
+        Points: 50
+    - OnPush: 0
+      PushScore:
+        Points: 0
+      OnTrigger: 1
+      TriggerScore:
         Points: 100
+      OnDeath: 0
+      KillScore:
+        Points: 0
+    - OnPush: 0
+      PushScore:
+        Points: 0
+      OnTrigger: 1
+      TriggerScore:
+        Points: 100
+      OnDeath: 0
+      KillScore:
+        Points: 0
+    - OnPush: 0
+      PushScore:
+        Points: 0
+      OnTrigger: 0
+      TriggerScore:
+        Points: 0
+      OnDeath: 1
+      KillScore:
+        Points: 500

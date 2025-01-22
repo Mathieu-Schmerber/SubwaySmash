@@ -1,5 +1,3 @@
-using System;
-using System.Globalization;
 using Game.Systems.Ui;
 using MoreMountains.Feedbacks;
 using Pixelplacement;
@@ -11,6 +9,7 @@ namespace Game.Systems.Score.Ui
     public class ScoreUi : MonoBehaviour
     {
         [SerializeField] private ProgressBar _comboBar;
+        [SerializeField] private ProgressBar _cooldownBar;
         [SerializeField] private TextMeshProUGUI _scoreText;
         [SerializeField] private TextMeshProUGUI _comboText;
         private MMF_Player _scoreFeedback;
@@ -43,8 +42,6 @@ namespace Game.Systems.Score.Ui
 
             var progress = value / max;
             _comboBar.SetProgress(progress);
-            Tween.Value(progress, 0f, _comboBar.SetProgress, Core.ScoreSystem.ScoreData.ComboCooldown, 0,
-                Tween.EaseLinear);
         }
 
         private void OnScoreChange(float value)
@@ -61,6 +58,8 @@ namespace Game.Systems.Score.Ui
             var display = _comboModifierFeedback.GetFeedbackOfType<MMF_TMPText>();
             display.NewText = $"x{value}";
             _comboModifierFeedback.PlayFeedbacks();
+            Tween.Value(1f, 0f, _cooldownBar.SetProgress, Core.ScoreSystem.ScoreData.ComboCooldown, 0,
+                Tween.EaseLinear);
         }
 
         private void OnComboFinish() => Hide();

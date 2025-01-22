@@ -1,3 +1,5 @@
+using System;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace Game.Systems.Score
@@ -5,6 +7,8 @@ namespace Game.Systems.Score
     public class ScoreSystem : MonoBehaviour
     {
         [SerializeField] private ScoreData _scoreData;
+        [SerializeField] private MMF_Player _flyingTextFeedback;
+        
         public ScoreData ScoreData => _scoreData;
 
         private float _comboTimer;
@@ -15,6 +19,7 @@ namespace Game.Systems.Score
 
         private float _currentScore;
         private float _cumulativeComboScore;
+        private MMF_FloatingText _floatingText;
 
         public float CurrentScore
         {
@@ -55,12 +60,17 @@ namespace Game.Systems.Score
             }
         }
 
-        public event System.Action OnComboFinish;
-        public event System.Action<int> OnComboLevelUpdated;
-        public event System.Action<float> OnScoreUpdated;
+        public event Action OnComboFinish;
+        public event Action<int> OnComboLevelUpdated;
+        public event Action<float> OnScoreUpdated;
         public event OnProgress OnProgressUpdated;
 
         public delegate void OnProgress(float value, float min, float max);
+
+        private void Awake()
+        {
+            _floatingText = _flyingTextFeedback.GetFeedbackOfType<MMF_FloatingText>();
+        }
 
         private void Start()
         {
@@ -123,15 +133,14 @@ namespace Game.Systems.Score
             _comboTimer = _comboCooldown;
         }
 
-        public void AddProgress(float points)
+        public void AddProgress(float points, Vector3 position)
         {
+            _floatingText.Value = $"+{points}";
+            _flyingTextFeedback.PlayFeedbacks(position);
             CurrentComboProgress += points;
 
             if (CurrentComboProgress >= GetComboTarget(_currentComboLevel + 1))
-            {
-                // Handle combo progression
                 IncreaseCombo();
-            }
         }
 
         public float GetComboTarget(int comboLevel)
@@ -140,28 +149,28 @@ namespace Game.Systems.Score
             return _scoreData.BaseComboProgress * Mathf.Pow(_scoreData.ComboProgressModifier, comboLevel - 1);
         }
 
-        public void OnKill(string identifier)
+        public void OnDeath(string identifier, Vector3 position)
         {
-            if (!ScoreData.TryGet(identifier, out var entry) || !entry.OnKill)
+            if (!ScoreData.TryGet(identifier, out var entry) || !entry.OnDeath)
                 return;
 
-            AddProgress(entry.KillScore.Points);
+            AddProgress(entry.KillScore.Points, position);
         }
 
-        public void OnTrigger(string identifier)
+        public void OnTrigger(string identifier, Vector3 position)
         {
             if (!ScoreData.TryGet(identifier, out var entry) || !entry.OnTrigger)
                 return;
 
-            AddProgress(entry.TriggerScore.Points);
+            AddProgress(entry.TriggerScore.Points, position);
         }
 
-        public void OnPush(string identifier)
+        public void OnPush(string identifier, Vector3 position)
         {
             if (!ScoreData.TryGet(identifier, out var entry) || !entry.OnPush)
                 return;
 
-            AddProgress(entry.PushScore.Points);
+            AddProgress(entry.PushScore.Points, position);
         }
     }
 }

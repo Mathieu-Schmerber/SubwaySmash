@@ -31,7 +31,7 @@ namespace Game.Systems.Score
             if (_triggerable)
                 _triggerable.OnTrigger += OnTrigger;
             if (_killable != null)
-                _killable.OnDeath += OnKilled;
+                _killable.OnDeath += OnDeath;
         }
 
         private void OnDisable()
@@ -41,22 +41,22 @@ namespace Game.Systems.Score
             if (_triggerable)
                 _triggerable.OnTrigger -= OnTrigger;
             if (_killable != null)
-                _killable.OnDeath -= OnKilled;
+                _killable.OnDeath -= OnDeath;
         }
         
-        private void OnKilled()
+        private void OnDeath()
         {
-            Core.ScoreSystem.OnKill(_identifier);
+            Core.ScoreSystem.OnDeath(_identifier, transform.position);
         }
 
         private void OnTrigger()
         {
-            Core.ScoreSystem.OnTrigger(_identifier);
+            Core.ScoreSystem.OnTrigger(_identifier, transform.position);
         }
 
         private void OnPush()
         {
-            Core.ScoreSystem.OnPush(_identifier);
+            Core.ScoreSystem.OnPush(_identifier, transform.position);
         }
 
 #if UNITY_EDITOR

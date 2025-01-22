@@ -15284,6 +15284,7 @@ GameObject:
   - component: {fileID: 1686317630237611169}
   - component: {fileID: 1871895230686826395}
   - component: {fileID: 7253453390505402728}
+  - component: {fileID: 7167999795045969634}
   m_Layer: 8
   m_Name: Police
   m_TagString: NPC
@@ -15485,6 +15486,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _carbonatedProgress: 0
   _onFireFX: {fileID: 4417329614617360384, guid: 7e89ef1308c6bb24e85e1072c9815b18, type: 3}
+--- !u!114 &7167999795045969634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8581580398827760192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1c29767f614f55aec77b1faac7438e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _identifier: Police
 --- !u!1 &8858569680909153997
 GameObject:
   m_ObjectHideFlags: 0

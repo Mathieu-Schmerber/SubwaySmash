@@ -15,6 +15,8 @@ namespace Game
     /// <seealso cref="LemonInc.Core.Utilities.ManagerSingleton&lt;Game.Core&gt;" />
     public class Core : ManagerSingleton<Core>
     {
+        [SerializeField] private Camera _camera;
+        
         private IPoolProvider<string> _poolProvider;
         private ScoreSystem _scoreSystem;
 
@@ -37,7 +39,8 @@ namespace Game
         }
 
         public static ScoreSystem ScoreSystem => Instance._scoreSystem ??= Instance.GetComponentInChildren<ScoreSystem>() ?? throw new MissingComponentException("ScoreSystem");
-
+        public static Camera Camera => Instance._camera;
+        
         private void Awake()
         {
             _scoreSystem = GetComponentInChildren<ScoreSystem>() ?? throw new MissingComponentException("ScoreSystem");

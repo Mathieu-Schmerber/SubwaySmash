@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using LemonInc.Core.Utilities;
 using Sirenix.OdinInspector;
@@ -14,8 +13,8 @@ namespace Game.Systems.Score
         [HorizontalGroup("Push")] [ShowIf(nameof(OnPush))] public ScoreModifier PushScore;
         [HorizontalGroup("Trigger"), LabelWidth(100)] public bool OnTrigger;
         [HorizontalGroup("Trigger")] [ShowIf(nameof(OnTrigger))] public ScoreModifier TriggerScore;
-        [HorizontalGroup("Kill"), LabelWidth(100)] public bool OnKill;
-        [HorizontalGroup("Kill")] [ShowIf(nameof(OnKill))] public ScoreModifier KillScore;
+        [HorizontalGroup("Kill"), LabelWidth(100), LabelText("On Death (self)")] public bool OnDeath;
+        [HorizontalGroup("Kill")] [ShowIf(nameof(OnDeath))] public ScoreModifier KillScore;
     }
     
     [CreateAssetMenu(menuName = "Data/Score")]
