@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.Systems.Push
@@ -6,6 +7,8 @@ namespace Game.Systems.Push
     {
         [SerializeField] private LayerMask _ignore;
         [SerializeField] private float _velocityThreshold;
+
+        public event Action OnTrigger; 
         
         private static float CalculateImpactForce(Collision collision)
         {
@@ -25,9 +28,12 @@ namespace Game.Systems.Push
             var otherPushable = other.transform.GetComponent<Pushable>();
             if (myPushable == null && otherPushable == null) return;
             var impactForce = CalculateImpactForce(other);
-            
+
             if (impactForce > _velocityThreshold)
+            {
+                OnTrigger?.Invoke();
                 Trigger(otherPushable ?? myPushable);
+            }
         }
 
         public abstract void Trigger(Pushable actor);

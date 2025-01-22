@@ -22,6 +22,7 @@ public DatabaseData RuntimeDatabase => _data ??= Resources.Load<DatabaseData>("R
 public static class Data
 {
 public static Game.Entities.Player.PlayerStatData PlayerData = (Game.Entities.Player.PlayerStatData)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["ae9f60c8-bb58-4ed4-8926-0646c0279b0f"].Data;
+public static Game.Systems.Score.ScoreData Score = (Game.Systems.Score.ScoreData)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["02224c32-d29a-4569-a8c0-44169cdecda5"].Data;
 
 /// <summary>
 /// Gets all assets from this section.
@@ -30,7 +31,22 @@ public static Game.Entities.Player.PlayerStatData PlayerData = (Game.Entities.Pl
 public static IEnumerable<T> All<T>()
    where T : UnityEngine.Object
 {
-   var all = new UnityEngine.Object[1] { PlayerData };
+   var all = new UnityEngine.Object[2] { PlayerData, Score };
+   return all.OfType<T>();
+}
+}
+
+public static class NewSection1Ref
+{
+
+/// <summary>
+/// Gets all assets from this section.
+/// </summary>
+/// <returns>An <see cref="IEnumerable{T}"/> of all assets.</returns>
+public static IEnumerable<T> All<T>()
+   where T : UnityEngine.Object
+{
+   var all = new UnityEngine.Object[0] {  };
    return all.OfType<T>();
 }
 }

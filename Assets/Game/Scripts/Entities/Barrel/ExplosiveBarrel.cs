@@ -1,3 +1,4 @@
+using System;
 using Game.Systems.Push;
 using LemonInc.Core.Pooling;
 using LemonInc.Core.Utilities.Extensions;
@@ -34,6 +35,7 @@ namespace Game.Entities.Barrel
             if (!transform || _hasExploded)
                 return;
 
+            OnDeath?.Invoke();
             _hasExploded = true;
             var explosionCenter = transform.position + _explosionOffset;
             var hitColliders = Physics.OverlapSphere(explosionCenter, _explosionRadius);
@@ -74,6 +76,8 @@ namespace Game.Entities.Barrel
         }
 
         public bool IsDead => _hasExploded;
+        public event Action OnDeath;
+
         public void Kill(Vector3 direction, float force)
         {
             Explode();

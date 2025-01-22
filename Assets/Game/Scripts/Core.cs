@@ -1,4 +1,5 @@
 using Game.Entities.Player;
+using Game.Systems.Score;
 using LemonInc.Core.Pooling;
 using LemonInc.Core.Pooling.Contracts;
 using LemonInc.Core.Pooling.Providers;
@@ -15,6 +16,7 @@ namespace Game
     public class Core : ManagerSingleton<Core>
     {
         private IPoolProvider<string> _poolProvider;
+        private ScoreSystem _scoreSystem;
 
         /// <summary>
         /// Pooling access.
@@ -34,8 +36,11 @@ namespace Game
             public static IPool From(string pool) => Core.Instance._poolProvider.Get(pool);
         }
 
+        public static ScoreSystem ScoreSystem => Instance._scoreSystem ??= Instance.GetComponentInChildren<ScoreSystem>() ?? throw new MissingComponentException("ScoreSystem");
+
         private void Awake()
         {
+            _scoreSystem = GetComponentInChildren<ScoreSystem>() ?? throw new MissingComponentException("ScoreSystem");
             _poolProvider = GetComponentInChildren<NamedObjectPoolProvider>();
         }
 
