@@ -22,7 +22,6 @@ namespace Game.Entities.Ai.States
             if (_brain.HasWaypoints())
             {
                 _animator.SetFloat(Speed, .5f);
-                Debug.Log("Set walk speed");
                 _controller.SetSpeed(Payload.StatData.WalkSpeed);
                 _brain.ResumeFollowWaypoints();
             }

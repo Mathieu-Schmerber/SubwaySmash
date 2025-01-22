@@ -35,7 +35,6 @@ namespace Game.Entities.Ai.States
                 return;
             }
             
-            Debug.Log("Set run speed");
             _controller.SetSpeed(Payload.StatData.RunSpeed);
             _animator.SetFloat(Speed, 1);
             if (_player)

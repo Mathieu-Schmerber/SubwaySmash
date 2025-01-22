@@ -29,19 +29,23 @@ namespace Game.Systems.Score.Ui
 
         private void OnEnable()
         {
-            Core.ScoreSystem.OnComboFinish += OnComboFinish;
             Core.ScoreSystem.OnComboLevelUpdated += OnComboLevelChange;
             Core.ScoreSystem.OnScoreUpdated += OnScoreChange;
             Core.ScoreSystem.OnProgressUpdated += OnProgressChange;
+            Core.ScoreSystem.OnComboTimerStarted += Show;
+            Core.ScoreSystem.OnComboTimerOver += Hide;
         }
 
         private void OnProgressChange(float value, float min, float max)
         {
-            if (value > 0)
-                Show();
-
             var progress = value / max;
-            _comboBar.SetProgress(progress);
+            if (progress == 0)
+                _comboBar.SetProgress(0);
+            else
+            {
+                Tween.Value(_comboBar.Progress, progress, _comboBar.SetProgress, 0.1f, 0,
+                    Tween.EaseLinear);
+            }
         }
 
         private void OnScoreChange(float value)
@@ -61,16 +65,14 @@ namespace Game.Systems.Score.Ui
             Tween.Value(1f, 0f, _cooldownBar.SetProgress, Core.ScoreSystem.ScoreData.ComboCooldown, 0,
                 Tween.EaseLinear);
         }
-
-        private void OnComboFinish() => Hide();
-
+        
         private void Hide()
         {
             if (_hidden)
                 return;
             
             _hidden = true;
-            _comboBarFeedback.PlayFeedbacksInReverse();
+            _comboBarFeedback.PlayFeedbacks();
         }
 
         private void Show()
@@ -80,14 +82,17 @@ namespace Game.Systems.Score.Ui
             
             _hidden = false;
             _comboBarFeedback.PlayFeedbacks();
+            Tween.Value(1f, 0f, _cooldownBar.SetProgress, Core.ScoreSystem.ScoreData.ComboCooldown, 0,
+                Tween.EaseLinear);
         }
 
         private void OnDisable()
         {
-            Core.ScoreSystem.OnComboFinish -= OnComboFinish;
             Core.ScoreSystem.OnComboLevelUpdated -= OnComboLevelChange;
             Core.ScoreSystem.OnScoreUpdated -= OnScoreChange;
             Core.ScoreSystem.OnProgressUpdated -= OnProgressChange;
+            Core.ScoreSystem.OnComboTimerStarted += Show;
+            Core.ScoreSystem.OnComboTimerOver += Hide;        
         }
     }
 }

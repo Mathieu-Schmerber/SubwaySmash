@@ -6,6 +6,8 @@ namespace Game.Systems.Ui
     {
         [SerializeField] private RectTransform _fill;
         [SerializeField, Range(0, 1)] private float _progress;
+
+        public float Progress => _progress;
         
         public void SetProgress(float progress)
         {
