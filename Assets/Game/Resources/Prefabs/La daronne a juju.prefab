@@ -407,7 +407,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2685146424367181438}
-  - component: {fileID: 3830233306307892862}
   - component: {fileID: 3770420783960883795}
   - component: {fileID: 8166562185860965560}
   - component: {fileID: 95154470298332063}
@@ -439,28 +438,6 @@ Transform:
   - {fileID: 292926692895895254}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!195 &3830233306307892862
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6698118756682130897}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.2
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!54 &3770420783960883795
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -469,8 +446,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6698118756682130897}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0.5
+  m_Mass: 2
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -551,9 +528,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _accelerationLerp: 0.5
-  _lerpTurns: 0
-  _turnLerp: 0
-  _turnSpeed: 6
+  _lerpTurns: 1
+  _turnLerp: 2
+  _turnSpeed: 10
   _graphic: {fileID: 292926692895895254}
 --- !u!114 &1768358360174320830
 MonoBehaviour:
@@ -567,8 +544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed36d2b8e31a4941a8b79704a3af7207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _avoidancePrecision: 2
-  _avoidanceAngle: 45
+  _avoidancePrecision: 3
+  _avoidanceAngle: 90
   _avoidanceRadius: 2.5
   _layerMask:
     serializedVersion: 2

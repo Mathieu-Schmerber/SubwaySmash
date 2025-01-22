@@ -32,7 +32,7 @@ namespace Game.Entities.GPE.Train
             if (killable == null || !other.GetComponent<RagdollSpawner>()) 
                 return;
             
-            killable.Kill((transform.position - other.transform.position).normalized, 3);
+            killable.Kill(transform.right, 3);
             _isTriggered = true;
             _timer.Start(3f, false, ResetPosition);
         }
