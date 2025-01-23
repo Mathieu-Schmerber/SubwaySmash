@@ -1,4 +1,5 @@
 using Game.Entities.Player;
+using Game.Systems.Alert;
 using Game.Systems.Score;
 using LemonInc.Core.Pooling;
 using LemonInc.Core.Pooling.Contracts;
@@ -20,6 +21,7 @@ namespace Game
         
         private IPoolProvider<string> _poolProvider;
         private ScoreSystem _scoreSystem;
+        private AlertSystem _alertSystem;
 
         /// <summary>
         /// Pooling access.
@@ -36,18 +38,21 @@ namespace Game
             /// Returns a pool.
             /// </summary>
             /// <param name="pool">The pool.</param>
-            public static IPool From(string pool) => Core.Instance._poolProvider.Get(pool);
+            public static IPool From(string pool) => Instance._poolProvider.Get(pool);
         }
 
-        public static ScoreSystem ScoreSystem => Instance._scoreSystem ??= Instance.GetComponentInChildren<ScoreSystem>() ?? throw new MissingComponentException("ScoreSystem");
+        public static ScoreSystem ScoreSystem => Instance._scoreSystem ??= Instance.Fetch<ScoreSystem>();
+        public static AlertSystem AlertSystem => Instance._alertSystem ??= Instance.Fetch<AlertSystem>();
         public static Camera Camera => Instance._camera;
         
         private void Awake()
         {
             _camera = FindFirstObjectByType<Camera>();
-            _scoreSystem = GetComponentInChildren<ScoreSystem>() ?? throw new MissingComponentException("ScoreSystem");
-            _poolProvider = GetComponentInChildren<NamedObjectPoolProvider>();
+            _scoreSystem = Fetch<ScoreSystem>();
+            _poolProvider = Fetch<NamedObjectPoolProvider>();
         }
+
+        private T Fetch<T>() => GetComponentInChildren<T>() ?? throw new MissingComponentException(typeof(T).Name);
 
         private void OnEnable()
         {

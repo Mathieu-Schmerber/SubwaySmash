@@ -10,6 +10,7 @@ namespace Game.Entities.Ai.States
         public StunState StunState;
         public DeadState DeadState;
         public AttackState AttackState;
+        public EscapeState EscapeState;
 
         public bool IsAggressive;
         

@@ -1,3 +1,4 @@
+using Game.Systems.Alert;
 using Game.Systems.StateMachine;
 using UnityEngine;
 
@@ -19,6 +20,10 @@ namespace Game.Entities.Ai.States
 
         public override void Enter()
         {
+            Core.AlertSystem.OnAlertRaised += OnAlertLevel;
+            if (EvaluateAlertLevel())
+                return;
+            
             if (_brain.HasWaypoints())
             {
                 _animator.SetFloat(Speed, .5f);
@@ -31,10 +36,26 @@ namespace Game.Entities.Ai.States
                 _controller.SetSpeed(0);
             }
         }
-
+        
         public override void Update()
         {
             _controller.SetDirection(_brain.MovementDirection);
+        }
+        
+        private bool EvaluateAlertLevel()
+        {
+            if (Core.AlertSystem.AlertLevel == AlertLevel.LOW)
+                return false;
+            
+            StateMachine.SwitchState(Payload.IsAggressive ? Payload.ChaseState : Payload.EscapeState);
+            return true;
+        }
+
+        private void OnAlertLevel(AlertLevel level) => EvaluateAlertLevel();
+        
+        public override void Exit()
+        {
+            Core.AlertSystem.OnAlertRaised -= OnAlertLevel;
         }
     }
 }
