@@ -30,6 +30,7 @@ namespace Game.Entities.Ai
                 StunState = StunState.Init<StunState>(_stateMachine),
                 DeadState = DeadState.Init<DeadState>(_stateMachine),
                 AttackState = AttackState.Init<AttackState>(_stateMachine),
+                EscapeState = EscapeState.Init<EscapeState>(_stateMachine),
                 StatData = _stat,
                 IsAggressive = _isAggressive
             });
