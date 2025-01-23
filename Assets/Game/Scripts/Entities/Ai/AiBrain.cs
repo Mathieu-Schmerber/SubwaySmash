@@ -19,7 +19,6 @@ namespace Game.Entities.Ai
         [Header("Patrol")]
         [SerializeField] private WaypointPath _waypointPath;
         
-        private NavMeshAgent _agent;
         private Transform _target;
         private NavMeshPath _path;
         private int _wayPointIndex = 0;
@@ -35,7 +34,6 @@ namespace Game.Entities.Ai
         
         private void Awake()
         {
-            _agent = GetComponent<NavMeshAgent>();
             _path = new NavMeshPath();
         }
 
@@ -50,7 +48,7 @@ namespace Game.Entities.Ai
             if (HasWaypoints() && _waypointPath.Contains(_target)) 
                 _target = _waypointPath.GetCurrentOrNewPoint(transform, _target);
             
-            _agent.CalculatePath(_target.position, _path);
+            NavMesh.CalculatePath(transform.position, _target.position, NavMesh.AllAreas, _path);
             
             var targetPos = _path.corners.Length <= 1 ? _target.position : _path.corners[1];
             var direction = (targetPos - transform.position).normalized;

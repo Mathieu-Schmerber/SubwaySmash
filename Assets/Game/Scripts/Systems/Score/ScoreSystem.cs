@@ -11,7 +11,6 @@ namespace Game.Systems.Score
         
         public ScoreData ScoreData => _scoreData;
 
-        private float _comboTimer;
         private float _comboCooldown;
 
         private float _currentComboProgress;
@@ -20,6 +19,9 @@ namespace Game.Systems.Score
         private float _currentScore;
         private float _cumulativeComboScore;
         private MMF_FloatingText _floatingText;
+
+        private bool _isComboTimerActive;
+        private float _comboEndTime;
 
         public float CurrentScore
         {
@@ -60,10 +62,11 @@ namespace Game.Systems.Score
             }
         }
 
-        public event Action OnComboFinish;
         public event Action<int> OnComboLevelUpdated;
         public event Action<float> OnScoreUpdated;
         public event OnProgress OnProgressUpdated;
+        public event Action OnComboTimerStarted;
+        public event Action OnComboTimerOver;
 
         public delegate void OnProgress(float value, float min, float max);
 
@@ -80,14 +83,11 @@ namespace Game.Systems.Score
 
         private void Update()
         {
-            if (_comboTimer > 0)
+            if (_isComboTimerActive && Time.time >= _comboEndTime)
             {
-                _comboTimer -= Time.deltaTime;
-
-                if (_comboTimer <= 0)
-                {
-                    HandleComboTimeout();
-                }
+                HandleComboTimeout();
+                _isComboTimerActive = false;
+                OnComboTimerOver?.Invoke();
             }
         }
 
@@ -115,14 +115,16 @@ namespace Game.Systems.Score
                 CurrentComboLevel++;
             }
 
-            _comboTimer = _comboCooldown;
+            StartComboTimer();
         }
 
         private void FinalizeComboScore()
         {
-            CurrentScore += _cumulativeComboScore * CurrentComboLevel;
+            if (CurrentComboLevel == 1)
+                CurrentScore += CurrentComboProgress;
+            else
+                CurrentScore += _cumulativeComboScore * CurrentComboLevel;
             _cumulativeComboScore = 0f;
-            OnComboFinish?.Invoke();
         }
 
         private void ResetCombo()
@@ -130,7 +132,14 @@ namespace Game.Systems.Score
             CurrentComboProgress = 0f;
             CurrentComboLevel = 1;
             _cumulativeComboScore = 0f;
-            _comboTimer = _comboCooldown;
+            _isComboTimerActive = false;
+        }
+
+        private void StartComboTimer()
+        {
+            _comboEndTime = Time.time + _comboCooldown;
+            _isComboTimerActive = true;
+            OnComboTimerStarted?.Invoke();
         }
 
         public void AddProgress(float points, Vector3 position)
@@ -138,6 +147,11 @@ namespace Game.Systems.Score
             _floatingText.Value = $"+{points}";
             _flyingTextFeedback.PlayFeedbacks(position);
             CurrentComboProgress += points;
+
+            if (!_isComboTimerActive)
+            {
+                StartComboTimer();
+            }
 
             if (CurrentComboProgress >= GetComboTarget(_currentComboLevel + 1))
                 IncreaseCombo();
