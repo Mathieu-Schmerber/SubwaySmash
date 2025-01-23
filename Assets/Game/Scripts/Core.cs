@@ -24,6 +24,7 @@ namespace Game
         private ScoreSystem _scoreSystem;
         private AlertSystem _alertSystem;
         private Exit[] _levelExists;
+        [SerializeField] private bool _assertSystems = true;
 
         /// <summary>
         /// Pooling access.
@@ -56,7 +57,13 @@ namespace Game
             _levelExists = FindObjectsByType<Exit>(FindObjectsSortMode.None);
         }
 
-        private T Fetch<T>() => GetComponentInChildren<T>() ?? throw new MissingComponentException(typeof(T).Name);
+        private T Fetch<T>()
+        {
+            var result = GetComponentInChildren<T>();
+            if (result == null && _assertSystems)
+                throw new MissingComponentException(typeof(T).Name);
+            return result;
+        }
 
         private void OnEnable()
         {
