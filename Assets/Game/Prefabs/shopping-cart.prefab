@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2957808105753830925}
   - component: {fileID: 1907505128466489941}
   - component: {fileID: 2110381048482337739}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FX_Fireworks_Yellow_Large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4885,6 +4885,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 904330a4e91baaf49bc1bdcd1e9993fd, type: 3}
       propertyPath: m_Name
       value: shopping-cart
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 904330a4e91baaf49bc1bdcd1e9993fd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
