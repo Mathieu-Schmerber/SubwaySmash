@@ -17,7 +17,7 @@ namespace Game
     [DefaultExecutionOrder(1)]
     public class Core : ManagerSingleton<Core>
     {
-        [SerializeField] private Camera _camera;
+        private Camera _camera;
         
         private IPoolProvider<string> _poolProvider;
         private ScoreSystem _scoreSystem;
