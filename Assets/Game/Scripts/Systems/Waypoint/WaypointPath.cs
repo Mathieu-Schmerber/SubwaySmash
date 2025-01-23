@@ -3,7 +3,7 @@ using LemonInc.Core.Utilities.Extensions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Game
+namespace Game.Systems.Waypoint
 {
     [ExecuteAlways]
     public class WaypointPath : MonoBehaviour

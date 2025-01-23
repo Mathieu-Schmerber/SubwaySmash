@@ -1,4 +1,6 @@
+using System.Linq;
 using Game.Systems.StateMachine;
+using Game.Systems.Waypoint;
 using UnityEngine;
 
 namespace Game.Entities.Ai.States
@@ -21,7 +23,32 @@ namespace Game.Entities.Ai.States
         {
             _controller.SetSpeed(Payload.StatData.RunSpeed);
             _animator.SetFloat(Speed, 1);
-            // TODO: Set brain target to nearest exit
+
+            var exit = GetNearestExit();
+            _brain.SetTarget(exit.transform);
+        }
+
+        private Exit GetNearestExit()
+        {
+            var distance = float.MaxValue;
+            Exit target = null;
+            
+            foreach (var exit in Core.LevelExists)
+            {
+                var distanceToExit = Vector3.Distance(exit.transform.position, StateMachine.Owner.transform.position);
+                if (distanceToExit < distance)
+                {
+                    distance = distanceToExit;
+                    target = exit;
+                }
+            }
+
+            return target;
+        }
+        
+        public override void Update()
+        {
+            _controller.SetDirection(_brain.MovementDirection);
         }
 
         public override void Exit()

@@ -20,7 +20,6 @@ namespace Game.Entities.Ai.States
 
         public override void Enter()
         {
-            Core.AlertSystem.OnAlertRaised += OnAlertLevel;
             if (EvaluateAlertLevel())
                 return;
             
@@ -40,6 +39,8 @@ namespace Game.Entities.Ai.States
         public override void Update()
         {
             _controller.SetDirection(_brain.MovementDirection);
+            if (EvaluateAlertLevel())
+                return;
         }
         
         private bool EvaluateAlertLevel()
@@ -49,13 +50,6 @@ namespace Game.Entities.Ai.States
             
             StateMachine.SwitchState(Payload.IsAggressive ? Payload.ChaseState : Payload.EscapeState);
             return true;
-        }
-
-        private void OnAlertLevel(AlertLevel level) => EvaluateAlertLevel();
-        
-        public override void Exit()
-        {
-            Core.AlertSystem.OnAlertRaised -= OnAlertLevel;
         }
     }
 }

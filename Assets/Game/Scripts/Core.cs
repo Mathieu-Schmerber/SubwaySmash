@@ -1,6 +1,7 @@
 using Game.Entities.Player;
 using Game.Systems.Alert;
 using Game.Systems.Score;
+using Game.Systems.Waypoint;
 using LemonInc.Core.Pooling;
 using LemonInc.Core.Pooling.Contracts;
 using LemonInc.Core.Pooling.Providers;
@@ -22,6 +23,7 @@ namespace Game
         private IPoolProvider<string> _poolProvider;
         private ScoreSystem _scoreSystem;
         private AlertSystem _alertSystem;
+        private Exit[] _levelExists;
 
         /// <summary>
         /// Pooling access.
@@ -44,12 +46,14 @@ namespace Game
         public static ScoreSystem ScoreSystem => Instance._scoreSystem ??= Instance.Fetch<ScoreSystem>();
         public static AlertSystem AlertSystem => Instance._alertSystem ??= Instance.Fetch<AlertSystem>();
         public static Camera Camera => Instance._camera;
+        public static Exit[] LevelExists => Instance._levelExists;
         
         private void Awake()
         {
             _camera = FindFirstObjectByType<Camera>();
             _scoreSystem = Fetch<ScoreSystem>();
             _poolProvider = Fetch<NamedObjectPoolProvider>();
+            _levelExists = FindObjectsByType<Exit>(FindObjectsSortMode.None);
         }
 
         private T Fetch<T>() => GetComponentInChildren<T>() ?? throw new MissingComponentException(typeof(T).Name);
