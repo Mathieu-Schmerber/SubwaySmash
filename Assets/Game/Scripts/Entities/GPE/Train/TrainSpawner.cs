@@ -28,11 +28,12 @@ namespace Game.Entities.GPE.Train
         
         private void OnTriggerEnter(Collider other)
         {
+            
             var killable = other.GetComponent<IKillable>();
-            if (killable == null || !other.GetComponent<RagdollSpawner>()) 
+            if (killable == null) 
                 return;
             
-            killable.Kill(transform.right, 3);
+            other.attachedRigidbody.useGravity = true;
             _isTriggered = true;
             _timer.Start(3f, false, ResetPosition);
         }
