@@ -9,20 +9,24 @@ namespace Game.MainMenu
         [SerializeField] private float _idleTime = 2;
         private float _idleTimer;
 
-        private MMF_Player _feedback;
+        [SerializeField] private MMF_Player _open;
+        [SerializeField] private MMF_Player _close;
+        
         private PlayerInputProvider _input;
         private bool _isDialogVisible = true;
 
         private void Awake()
         {
-            _feedback = GetComponent<MMF_Player>();
             _input = GetComponentInParent<PlayerInputProvider>();
         }
 
         private void ToggleDialog(bool show)
         {
             _isDialogVisible = show;
-            _feedback.PlayFeedbacks();
+            if (show)
+                _open.PlayFeedbacks();
+            else
+                _close.PlayFeedbacks();
         }
         
         private void Update()
