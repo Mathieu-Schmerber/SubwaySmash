@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 5492586022457956541}
   - component: {fileID: 6325237865982680970}
   - component: {fileID: 3029513991565615611}
+  - component: {fileID: 6509214834351981178}
   m_Layer: 7
   m_Name: BBQ
   m_TagString: Untagged
@@ -795,6 +796,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _identifier: BBQ
+--- !u!114 &6509214834351981178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437752460981726007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419c7d983c4047b5ab2542e2db285c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer: {fileID: 11400000, guid: 8beabc265e6cc4c43975104634f99e4b, type: 2}
+  allowRandomRotation: 0
 --- !u!1 &2915950052338110017
 GameObject:
   m_ObjectHideFlags: 0
