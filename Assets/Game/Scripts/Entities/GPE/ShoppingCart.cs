@@ -15,7 +15,7 @@ namespace Game.Entities.GPE
         }
         
         
-        public override void Trigger(Pushable actor)
+        public override void Trigger(Transform actor)
         {
             var killable = actor.GetComponent<IKillable>();
             if (killable == null) return;

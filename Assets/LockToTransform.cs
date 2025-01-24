@@ -13,6 +13,7 @@ public class LockToTransform : MonoBehaviour
     }
 
     [SerializeField] private Transform _follow;
+    [SerializeField] private Vector3 _offset;
     [SerializeField] private Locked _position;
     [SerializeField] private Locked _rotation;
 
@@ -23,7 +24,7 @@ public class LockToTransform : MonoBehaviour
         if (!_position.X) newPosition.x = _follow.position.x;
         if (!_position.Y) newPosition.y = _follow.position.y;
         if (!_position.Z) newPosition.z = _follow.position.z;
-        transform.position = newPosition;
+        transform.position = newPosition + _offset;
 
         // Lock rotation
         Vector3 newRotation = transform.eulerAngles;

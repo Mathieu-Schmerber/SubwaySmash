@@ -21,21 +21,18 @@ namespace Game.Systems.Push
         
         private void OnCollisionEnter(Collision other)
         {
+            Debug.Log($"{name} collide {other.gameObject.name}");
             if (((1 << other.gameObject.layer) & _ignore) != 0)
                 return;
             
-            var myPushable = GetComponent<Pushable>();
-            var otherPushable = other.transform.GetComponent<Pushable>();
-            if (myPushable == null && otherPushable == null) return;
             var impactForce = CalculateImpactForce(other);
-
             if (impactForce > _velocityThreshold)
             {
                 OnTrigger?.Invoke();
-                Trigger(otherPushable ?? myPushable);
+                Trigger(other.transform);
             }
         }
 
-        public abstract void Trigger(Pushable actor);
+        public abstract void Trigger(Transform actor);
     }
 }

@@ -25,7 +25,7 @@ namespace Game.Entities.Barrel
             _pushable = GetComponent<Pushable>();
         }
 
-        public override void Trigger(Pushable actor)
+        public override void Trigger(Transform actor)
         {
             Explode();
         }
@@ -56,7 +56,7 @@ namespace Game.Entities.Barrel
 
                 var pushTrigger = col.GetComponent<PushTriggerBase>();
                 if (pushTrigger != null && pushTrigger != this)
-                    pushTrigger.Trigger(_pushable);
+                    pushTrigger.Trigger(transform);
                 
                 var rb = col.GetComponent<Rigidbody>();
                 if (rb == null) continue;

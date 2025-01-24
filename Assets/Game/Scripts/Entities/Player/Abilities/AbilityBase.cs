@@ -18,7 +18,7 @@ namespace Game.Entities.Player.Abilities
         
         public void SetLocked(bool locked) => _locked = locked;
 
-        public bool IsReady() => !_locked && _timer.IsOver();
+        public bool IsReady() => enabled && !_locked && _timer.IsOver();
         
         public void Perform(Action performed)
         {
