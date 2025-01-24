@@ -1,17 +1,15 @@
-using Game.Systems.Push;
 using UnityEngine;
 
 namespace Game.Entities.GPE.Train
 {
-    public class Train : PushTriggerBase
+    public class Train : MonoBehaviour
     {
-        public override void Trigger(Transform actor)
+        private void OnTriggerEnter(Collider other)
         {
-            Debug.Log(actor.name);
-            var killable = actor.GetComponent<IKillable>();
+            var killable = other.GetComponent<IKillable>();
             if (killable == null) return;
-            var dir = (actor.transform.position - transform.position).normalized;
-            killable.Kill(Vector3.up,0);
+            var dir = (transform.forward + Vector3.up * 0.5f).normalized;
+            killable.Kill(dir,50);
         }
     }
 }

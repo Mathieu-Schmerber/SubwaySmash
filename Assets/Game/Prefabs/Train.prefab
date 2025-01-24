@@ -307,7 +307,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &460291754280853028
 BoxCollider:
@@ -324,7 +324,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -342,10 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbc8054d15422ca4a83026be7758273e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ignore:
-    serializedVersion: 2
-    m_Bits: 0
-  _velocityThreshold: 6
 --- !u!4 &1982321688838207136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b4fe10097c927ff4d8f81fe183591405, type: 3}
