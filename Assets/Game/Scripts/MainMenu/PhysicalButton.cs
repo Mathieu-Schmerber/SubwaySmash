@@ -1,7 +1,7 @@
-using System;
 using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.MainMenu
 {
@@ -9,8 +9,12 @@ namespace Game.MainMenu
     {
         [SerializeField] private string _text;
         [SerializeField] private MMF_Player _selectFeedback;
+        [SerializeField] private MMF_Player _deselectFeedback;
+        [SerializeField] private MMF_Player _clickFeedback;
+        [SerializeField] private UnityEvent _onClick;
      
-        private bool _isSelected = false;
+        public bool Interactable { get; set; }
+        public bool IsSelected { get; set; }
 
         private void OnValidate()
         {
@@ -21,20 +25,31 @@ namespace Game.MainMenu
 
         private void OnTriggerStay(Collider other)
         {
-            if (_isSelected)
+            if (IsSelected || !Interactable)
                 return;
             
-            _isSelected = true;
+            IsSelected = true;
             _selectFeedback.PlayFeedbacks();
         }
         
         private void OnTriggerExit(Collider other)
         {
-            if (!_isSelected)
+            if (!IsSelected || !Interactable)
                 return;
             
-            _isSelected = false;
-            _selectFeedback.PlayFeedbacks();
+            IsSelected = false;
+            _deselectFeedback.PlayFeedbacks();
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && IsSelected && Interactable)
+            {
+                _clickFeedback.PlayFeedbacks();
+                _deselectFeedback.PlayFeedbacks();
+                Interactable = false;
+                _onClick?.Invoke();
+            }
         }
     }
 }
