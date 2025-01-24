@@ -30,7 +30,7 @@ namespace Game.Entities.GPE.BBQ
         private bool _isSpreading = false;
         private Ignitable _ignite;
 
-        public override void Trigger(Pushable actor)
+        public override void Trigger(Transform actor)
         {
             if (_isSpreading)
                 return;

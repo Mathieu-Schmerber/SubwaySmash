@@ -31,8 +31,10 @@ namespace Game.Entities.GPE.Train
             var killable = other.GetComponent<IKillable>();
             if (killable == null || !other.GetComponent<RagdollSpawner>()) 
                 return;
-            
-            killable.Kill(transform.right, 3);
+
+            other.attachedRigidbody.useGravity = true;
+            other.attachedRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+            other.attachedRigidbody.linearDamping = 0f;
             _isTriggered = true;
             _timer.Start(3f, false, ResetPosition);
         }

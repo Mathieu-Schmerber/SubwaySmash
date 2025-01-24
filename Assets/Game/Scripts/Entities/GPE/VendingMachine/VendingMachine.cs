@@ -18,7 +18,7 @@ namespace Game.Entities.GPE.VendingMachine
             _feedback = GetComponent<MMF_Player>();
         }
 
-        public override void Trigger(Pushable actor)
+        public override void Trigger(Transform actor)
         {
             if (_triggered) return;
             _triggered = true;

@@ -19,7 +19,7 @@ namespace Game.Entities.Ai.Abilities
                 
                 var pushTrigger = hitCollider.GetComponent<PushTriggerBase>();
                 if (pushTrigger != null)
-                    pushTrigger.Trigger(GetComponent<Pushable>());
+                    pushTrigger.Trigger(transform);
 
                 var killable = hitCollider.GetComponent<PlayerStateMachine>();
                 if (killable != null)
