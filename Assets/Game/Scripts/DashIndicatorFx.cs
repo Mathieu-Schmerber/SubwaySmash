@@ -1,5 +1,4 @@
 using Databases;
-using Game.Entities.Player;
 using Game.Inputs;
 using LemonInc.Core.Utilities.Extensions;
 using UnityEngine;

@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 181502724083469440, guid: f6dcb0ff83d1b6047a0eedca72cae60e, type: 3}
+      propertyPath: managedReferences[4376823189532574026].ColorOverTime.key0.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 181502724083469440, guid: f6dcb0ff83d1b6047a0eedca72cae60e, type: 3}
+      propertyPath: managedReferences[4376823189532574026].ColorOverTime.key0.b
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 181502724083469440, guid: f6dcb0ff83d1b6047a0eedca72cae60e, type: 3}
+      propertyPath: managedReferences[4376823189532574026].ColorOverTime.key0.g
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 181502724083469440, guid: f6dcb0ff83d1b6047a0eedca72cae60e, type: 3}
+      propertyPath: managedReferences[4376823189532574026].ColorOverTime.key0.r
+      value: 0.35686275
+      objectReference: {fileID: 0}
     - target: {fileID: 2126387789471862340, guid: f6dcb0ff83d1b6047a0eedca72cae60e, type: 3}
       propertyPath: _text
       value: 
@@ -94,11 +110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3513317221166655315, guid: f6dcb0ff83d1b6047a0eedca72cae60e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.865
+      value: 1.8649902
       objectReference: {fileID: 0}
     - target: {fileID: 3513317221166655315, guid: f6dcb0ff83d1b6047a0eedca72cae60e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.7250004
+      value: -0.7250061
       objectReference: {fileID: 0}
     - target: {fileID: 3513317221166655315, guid: f6dcb0ff83d1b6047a0eedca72cae60e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -114,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4365772145023125207, guid: f6dcb0ff83d1b6047a0eedca72cae60e, type: 3}
       propertyPath: m_Name
-      value: Back Variant
+      value: IconButton
       objectReference: {fileID: 0}
     - target: {fileID: 5052721417708153657, guid: f6dcb0ff83d1b6047a0eedca72cae60e, type: 3}
       propertyPath: m_LocalRotation.w

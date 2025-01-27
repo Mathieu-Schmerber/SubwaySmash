@@ -1,4 +1,3 @@
-using System;
 using Game.Inputs;
 using LemonInc.Core.Input;
 using LemonInc.Core.Utilities.Extensions;

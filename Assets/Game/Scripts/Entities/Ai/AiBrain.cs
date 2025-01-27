@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using Game.Inputs;
 using Game.Systems.Waypoint;
 using LemonInc.Core.Input;

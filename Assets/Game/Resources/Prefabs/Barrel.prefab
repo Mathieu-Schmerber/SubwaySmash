@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 1798730628158742050}
   - component: {fileID: 4534905137476405874}
   - component: {fileID: -5118951877197143418}
+  - component: {fileID: -7134603183888194452}
   m_Layer: 7
   m_Name: Barrel
   m_TagString: Untagged
@@ -735,3 +736,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layer: {fileID: 11400000, guid: 8beabc265e6cc4c43975104634f99e4b, type: 2}
   allowRandomRotation: 0
+--- !u!114 &-7134603183888194452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445785523242228427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6530382c3ce444f68e9f57e5865e905e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowStates:
+  - Color: {r: 1, g: 1, b: 1, a: 1}
+    EmissionIntensity: 0
+    Time: 2
+  - Color: {r: 1, g: 1, b: 1, a: 1}
+    EmissionIntensity: 0.3
+    Time: 0
+  lerpDuration: 0.3
+  defaultEmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  defaultEmissionIntensity: 0

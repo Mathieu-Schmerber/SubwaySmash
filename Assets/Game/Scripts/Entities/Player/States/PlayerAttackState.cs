@@ -2,8 +2,6 @@ using Databases;
 using Game.Entities.Player.Abilities;
 using Game.Inputs;
 using Game.Systems.StateMachine;
-using LemonInc.Core.Utilities.Extensions;
-using UnityEngine;
 
 namespace Game.Entities.Player.States
 {

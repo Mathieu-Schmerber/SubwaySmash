@@ -1,7 +1,5 @@
-using System;
 using Game.Entities.Ai;
 using MoreMountains.Feedbacks;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Game.Systems.Waypoint

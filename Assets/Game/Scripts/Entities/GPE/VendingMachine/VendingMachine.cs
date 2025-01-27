@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Game.Systems.Push;
 using LemonInc.Core.Pooling;
@@ -12,10 +11,12 @@ namespace Game.Entities.GPE.VendingMachine
         private MMF_Player _feedback;
         private bool _triggered;
         private HashSet<IKillable> _killed = new();
-        
+        private Glow _glow;
+
         private void Awake()
         {
             _feedback = GetComponent<MMF_Player>();
+            _glow = GetComponent<Glow>();
         }
 
         public override void Trigger(Transform actor)
@@ -23,6 +24,8 @@ namespace Game.Entities.GPE.VendingMachine
             if (_triggered) return;
             _triggered = true;
             _feedback.PlayFeedbacks();
+            _glow.SetDefault();
+            Destroy(_glow);
         }
 
         private void OnTriggerEnter(Collider other)
