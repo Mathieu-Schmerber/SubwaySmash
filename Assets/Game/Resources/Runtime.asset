@@ -25,6 +25,7 @@ MonoBehaviour:
       _assets:
       - ae9f60c8-bb58-4ed4-8926-0646c0279b0f
       - 02224c32-d29a-4569-a8c0-44169cdecda5
+      - 45c381f1-0a29-4d68-9067-fb5a01f3b4e1
     - _id: c7db8433-8bb1-469f-becf-68c01ea2bf8b
       _name: New Section 1
       _sections: []
@@ -33,6 +34,7 @@ MonoBehaviour:
     _keyData:
     - ae9f60c8-bb58-4ed4-8926-0646c0279b0f
     - 02224c32-d29a-4569-a8c0-44169cdecda5
+    - 45c381f1-0a29-4d68-9067-fb5a01f3b4e1
     _valueData:
     - _id: ae9f60c8-bb58-4ed4-8926-0646c0279b0f
       _name: PlayerData
@@ -40,4 +42,7 @@ MonoBehaviour:
     - _id: 02224c32-d29a-4569-a8c0-44169cdecda5
       _name: Score
       _data: {fileID: 11400000, guid: 8c7ceacafc5ba8a4b80aacd3999fa179, type: 2}
+    - _id: 45c381f1-0a29-4d68-9067-fb5a01f3b4e1
+      _name: FireFX
+      _data: {fileID: 3284085441332548981, guid: 7e89ef1308c6bb24e85e1072c9815b18, type: 3}
   ScriptPath: Assets/Game/Scripts/Systems/Database/RuntimeDatabase.cs
