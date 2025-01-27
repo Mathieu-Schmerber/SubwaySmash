@@ -454,10 +454,10 @@ MonoBehaviour:
   _fireSettings:
     TimeToKill: 2
     IgniteTime: 5
-    SpreadRadius: 0.5
+    SpreadRadius: 1
     StartSpreadAfterTime: 0.5
     CapSpreadChain: 1
-    MaxSpreadChain: 4
+    MaxSpreadChain: 3
 --- !u!114 &8585021656717922126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,6 +833,7 @@ MonoBehaviour:
   lerpDuration: 0.3
   defaultEmissionColor: {r: 0, g: 0, b: 0, a: 1}
   defaultEmissionIntensity: 0
+  timeOffsetRange: 0.5
 --- !u!1 &2915950052338110017
 GameObject:
   m_ObjectHideFlags: 0
