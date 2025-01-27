@@ -5,11 +5,11 @@ namespace Game.Systems.Push
 {
     public abstract class PushTriggerBase : MonoBehaviour
     {
-        [SerializeField] private LayerMask _ignore;
+        [SerializeField] private LayerMask _canTriggerWith;
         [SerializeField] private float _velocityThreshold;
 
-        public event Action OnTrigger; 
-        
+        public event Action OnTrigger;
+
         private static float CalculateImpactForce(Collision collision)
         {
             var relativeVelocity = collision.relativeVelocity;
@@ -18,14 +18,15 @@ namespace Game.Systems.Push
 
             return impactForce;
         }
-        
+
         private void OnCollisionEnter(Collision other)
         {
-            Debug.Log($"{name} collide {other.gameObject.name}");
-            if (((1 << other.gameObject.layer) & _ignore) != 0)
+            // Check if the layer is part of the inclusion layer mask
+            if (((1 << other.gameObject.layer) & _canTriggerWith) == 0)
                 return;
-            
+
             var impactForce = CalculateImpactForce(other);
+            Debug.Log($"[PushTrigger] {name} vs {other.transform.name} -> Force: {impactForce}, Threshold: {_velocityThreshold}");
             if (impactForce > _velocityThreshold)
             {
                 OnTrigger?.Invoke();

@@ -49,7 +49,7 @@ namespace Game.Systems.Score
             Core.ScoreSystem.OnDeath(_identifier, transform.position);
         }
 
-        private void OnTrigger()
+        public void OnTrigger()
         {
             Core.ScoreSystem.OnTrigger(_identifier, transform.position);
         }

@@ -5624,7 +5624,7 @@ GameObject:
   - component: {fileID: 3524945449099494992}
   m_Layer: 9
   m_Name: Player
-  m_TagString: NPC
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5792,7 +5792,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _carbonatedProgress: 0
   _onFireFX: {fileID: 4417329614617360384, guid: 7e89ef1308c6bb24e85e1072c9815b18, type: 3}
-  _feedback: {fileID: 1921289034259616716}
 --- !u!1 &6833194185762831081
 GameObject:
   m_ObjectHideFlags: 0
