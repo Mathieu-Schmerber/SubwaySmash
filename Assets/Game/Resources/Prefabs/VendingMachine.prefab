@@ -9545,6 +9545,7 @@ GameObject:
   - component: {fileID: 4168758475572605727}
   - component: {fileID: 5969769264073448259}
   - component: {fileID: 5956543115152530086}
+  - component: {fileID: 4426065390466582974}
   m_Layer: 7
   m_Name: Logic
   m_TagString: Untagged
@@ -10160,6 +10161,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.75
   m_Center: {x: -0.0034569502, y: -0.01, z: 0.012499988}
+--- !u!114 &4426065390466582974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3055888978114524005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1c29767f614f55aec77b1faac7438e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _identifier: Vending
 --- !u!1 &4399821860354541535
 GameObject:
   m_ObjectHideFlags: 0
@@ -14890,6 +14904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _follow: {fileID: 5634943617479391724}
+  _offset: {x: 0, y: 0, z: 0}
   _position:
     X: 0
     Y: 0
@@ -19634,6 +19649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _follow: {fileID: 5634943617479391724}
+  _offset: {x: 0, y: 0, z: 0}
   _position:
     X: 0
     Y: 1
@@ -29241,7 +29257,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5887698124600460578}
   - component: {fileID: -3694307486954814862}
-  - component: {fileID: 3026746769013605386}
   m_Layer: 7
   m_Name: VendingMachine
   m_TagString: Untagged
@@ -29281,19 +29296,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layer: {fileID: 11400000, guid: 8beabc265e6cc4c43975104634f99e4b, type: 2}
   allowRandomRotation: 0
---- !u!114 &3026746769013605386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8346450053258805138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1c29767f614f55aec77b1faac7438e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _identifier: Vending
 --- !u!1 &9093933740084269885
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ MonoBehaviour:
     - BBQ
     - Vending
     - Police
+    - ShoppingCart
     _valueData:
     - OnPush: 0
       PushScore:
@@ -46,7 +47,7 @@ MonoBehaviour:
       OnTrigger: 1
       TriggerScore:
         Points: 100
-      OnDeath: 1
+      OnDeath: 0
       KillScore:
         Points: 100
     - OnPush: 0
@@ -58,3 +59,12 @@ MonoBehaviour:
       OnDeath: 1
       KillScore:
         Points: 200
+    - OnPush: 0
+      PushScore:
+        Points: 0
+      OnTrigger: 1
+      TriggerScore:
+        Points: 50
+      OnDeath: 0
+      KillScore:
+        Points: 0

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 292926692895895254}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4566499996371441344}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: arm-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 1355526959943066807}
   - component: {fileID: 3831221738999369853}
   - component: {fileID: 2955282785813837694}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5804786813024233463}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: leg-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6709363837988859660}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4877897153170330098}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: character-female-c
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5243613259277824224}
   - component: {fileID: 2409455826002690569}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: head-mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4761432408145420820}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 1768358360174320830}
   - component: {fileID: 2051376678120214356}
   - component: {fileID: 7778505741504857116}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: La daronne a juju
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -501,6 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _killOnPush: 0
+  _raiseAlertOnPush: 1
 --- !u!114 &5353620719184386296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,7 +588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3293073496363288295}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: leg-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1748352739906913368}
   - component: {fileID: 2122784842803873874}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: body-mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -713,7 +714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8766766705619360358}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +748,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9108505345248284094}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: arm-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
