@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Databases;
 using UnityEngine;
 
 namespace Game.Entities.GPE.BBQ
@@ -13,7 +14,7 @@ namespace Game.Entities.GPE.BBQ
         private Shader _baseColorShader;
         
         [SerializeField, Range(0, 1)] private float _carbonatedProgress;
-        [SerializeField] private ParticleSystem _onFireFX;
+        private GameObject _onFireFX;
 
         private ParticleSystem _fx;
         private float _burnTime;
@@ -25,6 +26,7 @@ namespace Game.Entities.GPE.BBQ
 
         private void Awake()
         {
+            _onFireFX = RuntimeDatabase.Data.FireFx;
             _textureShader = Shader.Find("Shader Graphs/Carbonated");
             _baseColorShader = Shader.Find("Shader Graphs/CarbonatedSimple");
             _carbonatedProgress = 0;
@@ -36,7 +38,8 @@ namespace Game.Entities.GPE.BBQ
         {
             if (_isBurning) return;
             SetupMaterials();
-            _fx = Instantiate(_onFireFX, transform.position, transform.rotation, transform);
+            var instance = Instantiate(_onFireFX, transform.position, transform.rotation, transform);
+            _fx = instance.GetComponent<ParticleSystem>();
             _burnTime = burnTime;
             _isBurning = true;
             _carbonatedProgress = _initialProgress;

@@ -7,6 +7,7 @@ using LemonInc.Tools.Databases.Models;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
+using UnityEngine;
 
 namespace Databases
 {
@@ -22,6 +23,7 @@ public static class Data
 {
 public static Game.Entities.Player.PlayerStatData PlayerData = (Game.Entities.Player.PlayerStatData)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["ae9f60c8-bb58-4ed4-8926-0646c0279b0f"].Data;
 public static Game.Systems.Score.ScoreData Score = (Game.Systems.Score.ScoreData)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["02224c32-d29a-4569-a8c0-44169cdecda5"].Data;
+public static UnityEngine.GameObject FireFx = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["45c381f1-0a29-4d68-9067-fb5a01f3b4e1"].Data;
 
 /// <summary>
 /// Gets all assets from this section.
@@ -30,7 +32,7 @@ public static Game.Systems.Score.ScoreData Score = (Game.Systems.Score.ScoreData
 public static IEnumerable<T> All<T>()
    where T : UnityEngine.Object
 {
-   var all = new UnityEngine.Object[2] { PlayerData, Score };
+   var all = new UnityEngine.Object[3] { PlayerData, Score, FireFx };
    return all.OfType<T>();
 }
 }
