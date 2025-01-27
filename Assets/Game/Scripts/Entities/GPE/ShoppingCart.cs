@@ -1,7 +1,6 @@
 using Game.Systems.Push;
 using UnityEngine;
 using MoreMountains.Feedbacks;
-using UnityEngine.Serialization;
 
 namespace Game.Entities.GPE
 {

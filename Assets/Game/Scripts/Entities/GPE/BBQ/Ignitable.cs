@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Game.Entities.GPE.BBQ
@@ -32,13 +30,12 @@ namespace Game.Entities.GPE.BBQ
             _carbonatedProgress = 0;
             _renderers = GetComponentsInChildren<Renderer>().ToList();
             _renderers.RemoveAll(x => x is ParticleSystemRenderer or SpriteRenderer || x.tag.Equals("FX"));
-
-            SetupMaterials();
         }
 
         public void StartIgnite(float burnTime, float _initialProgress = 0)
         {
             if (_isBurning) return;
+            SetupMaterials();
             _fx = Instantiate(_onFireFX, transform.position, transform.rotation, transform);
             _burnTime = burnTime;
             _isBurning = true;

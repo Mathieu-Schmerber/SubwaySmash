@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using Game.Entities.Player.Abilities;
-using Game.Inputs;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 

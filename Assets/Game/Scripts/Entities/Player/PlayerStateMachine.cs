@@ -5,7 +5,6 @@ using Game.Entities.Player.States;
 using Game.Inputs;
 using Game.Systems.StateMachine;
 using Sirenix.OdinInspector;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Game.Entities.Player

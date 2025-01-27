@@ -1,6 +1,4 @@
 using Game.Entities.Ai.Abilities;
-using Game.Entities.Player;
-using Game.Inputs;
 using Game.Systems.Push;
 using Game.Systems.StateMachine;
 

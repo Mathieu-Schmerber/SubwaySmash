@@ -10190,11 +10190,13 @@ MonoBehaviour:
   glowStates:
   - Color: {r: 1, g: 1, b: 1, a: 1}
     EmissionIntensity: 0
-    Time: 0.7
+    Time: 2
   - Color: {r: 1, g: 1, b: 1, a: 1}
-    EmissionIntensity: 0.4
+    EmissionIntensity: 0.3
     Time: 0
-  lerpDuration: 0.5
+  lerpDuration: 0.3
+  defaultEmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  defaultEmissionIntensity: 0
 --- !u!1 &4399821860354541535
 GameObject:
   m_ObjectHideFlags: 0

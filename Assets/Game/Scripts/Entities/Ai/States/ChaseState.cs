@@ -1,6 +1,5 @@
 using Game.Entities.Ai.Abilities;
 using Game.Entities.Player;
-using Game.Entities.Player.States;
 using Game.Inputs;
 using Game.Systems.StateMachine;
 using UnityEngine;

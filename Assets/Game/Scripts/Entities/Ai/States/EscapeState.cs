@@ -1,4 +1,3 @@
-using System.Linq;
 using Game.Systems.StateMachine;
 using Game.Systems.Waypoint;
 using UnityEngine;
@@ -25,7 +24,8 @@ namespace Game.Entities.Ai.States
             _animator.SetFloat(Speed, 1);
 
             var exit = GetNearestExit();
-            _brain.SetTarget(exit.transform);
+            if (exit) 
+                _brain.SetTarget(exit.transform);
         }
 
         private Exit GetNearestExit()

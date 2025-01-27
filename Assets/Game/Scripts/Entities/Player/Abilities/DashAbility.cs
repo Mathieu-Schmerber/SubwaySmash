@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using Databases;
 using Game.Inputs;
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Game.Entities.Player.Abilities
