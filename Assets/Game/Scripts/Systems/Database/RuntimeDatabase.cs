@@ -23,7 +23,7 @@ public static class Data
 {
 public static Game.Entities.Player.PlayerStatData PlayerData = (Game.Entities.Player.PlayerStatData)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["ae9f60c8-bb58-4ed4-8926-0646c0279b0f"].Data;
 public static Game.Systems.Score.ScoreData Score = (Game.Systems.Score.ScoreData)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["02224c32-d29a-4569-a8c0-44169cdecda5"].Data;
-public static UnityEngine.GameObject FireFx = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["45c381f1-0a29-4d68-9067-fb5a01f3b4e1"].Data;
+public static UnityEngine.GameObject OnFireFx = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["45c381f1-0a29-4d68-9067-fb5a01f3b4e1"].Data;
 
 /// <summary>
 /// Gets all assets from this section.
@@ -32,13 +32,25 @@ public static UnityEngine.GameObject FireFx = (UnityEngine.GameObject)RuntimeDat
 public static IEnumerable<T> All<T>()
    where T : UnityEngine.Object
 {
-   var all = new UnityEngine.Object[3] { PlayerData, Score, FireFx };
+   var all = new UnityEngine.Object[3] { PlayerData, Score, OnFireFx };
    return all.OfType<T>();
 }
 }
 
-public static class NewSection1Ref
+public static class NpcSkins
 {
+public static UnityEngine.GameObject A = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["6fcf2265-6df1-491b-85b3-8b2798e29cec"].Data;
+public static UnityEngine.GameObject B = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["4c90ef8a-0aa5-4d60-93d0-b77950fb9de2"].Data;
+public static UnityEngine.GameObject C = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["0f77380e-cde4-44de-a29f-f094069ade38"].Data;
+public static UnityEngine.GameObject D = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["7732ed6c-4777-4830-a189-ce27552e4b0a"].Data;
+public static UnityEngine.GameObject E = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["1ebea4e0-5c77-4775-85c7-7c7dd94f6484"].Data;
+public static UnityEngine.GameObject F = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["c8b12209-5d15-413a-a2a5-d775a7a1ff37"].Data;
+public static UnityEngine.GameObject G = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["dee7f0be-8fa2-4cd3-9a2c-341de2e194ba"].Data;
+public static UnityEngine.GameObject H = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["f0ca194a-ff9d-48e7-b8e1-15bbc2d0d471"].Data;
+public static UnityEngine.GameObject I = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["92379240-8717-4a3c-99d0-620f194f0e20"].Data;
+public static UnityEngine.GameObject J = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["288424b8-d30d-4128-a0cf-9bf8964d1908"].Data;
+public static UnityEngine.GameObject K = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["beeb31d0-15a9-40aa-ae6a-1645e8f43fa2"].Data;
+public static UnityEngine.GameObject L = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["ee12d71e-f575-4a30-9b22-facc2def39db"].Data;
 
 /// <summary>
 /// Gets all assets from this section.
@@ -47,7 +59,26 @@ public static class NewSection1Ref
 public static IEnumerable<T> All<T>()
    where T : UnityEngine.Object
 {
-   var all = new UnityEngine.Object[0] {  };
+   var all = new UnityEngine.Object[12] { A, B, C, D, E, F, G, H, I, J, K, L };
+   return all.OfType<T>();
+}
+}
+
+public static class WheelChairs
+{
+public static UnityEngine.GameObject Deluxe = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["74f63e79-524e-46d0-8156-ab03e6f697eb"].Data;
+public static UnityEngine.GameObject Bbb = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["74cbbfb9-9f51-4a43-b0f5-2224725330d7"].Data;
+public static UnityEngine.GameObject Power = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["cb435812-97cf-4aed-9181-20d646360787"].Data;
+public static UnityEngine.GameObject Basic = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["c088d11e-bc02-4133-8945-5fa26a78a7d6"].Data;
+
+/// <summary>
+/// Gets all assets from this section.
+/// </summary>
+/// <returns>An <see cref="IEnumerable{T}"/> of all assets.</returns>
+public static IEnumerable<T> All<T>()
+   where T : UnityEngine.Object
+{
+   var all = new UnityEngine.Object[4] { Deluxe, Bbb, Power, Basic };
    return all.OfType<T>();
 }
 }

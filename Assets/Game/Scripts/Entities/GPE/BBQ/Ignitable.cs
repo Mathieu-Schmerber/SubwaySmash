@@ -26,7 +26,7 @@ namespace Game.Entities.GPE.BBQ
 
         private void Awake()
         {
-            _onFireFX = RuntimeDatabase.Data.FireFx;
+            _onFireFX = RuntimeDatabase.Data.OnFireFx;
             _textureShader = Shader.Find("Shader Graphs/Carbonated");
             _baseColorShader = Shader.Find("Shader Graphs/CarbonatedSimple");
             _carbonatedProgress = 0;

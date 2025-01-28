@@ -18,6 +18,7 @@ MonoBehaviour:
     _keyData:
     - 26216547-ddd6-4c6a-af34-2b1880e410d6
     - c7db8433-8bb1-469f-becf-68c01ea2bf8b
+    - 605cacd7-e7d2-42b4-a88f-a20715995256
     _valueData:
     - _id: 26216547-ddd6-4c6a-af34-2b1880e410d6
       _name: Data
@@ -27,14 +28,50 @@ MonoBehaviour:
       - 02224c32-d29a-4569-a8c0-44169cdecda5
       - 45c381f1-0a29-4d68-9067-fb5a01f3b4e1
     - _id: c7db8433-8bb1-469f-becf-68c01ea2bf8b
-      _name: New Section 1
+      _name: NpcSkins
       _sections: []
-      _assets: []
+      _assets:
+      - 6fcf2265-6df1-491b-85b3-8b2798e29cec
+      - 4c90ef8a-0aa5-4d60-93d0-b77950fb9de2
+      - 0f77380e-cde4-44de-a29f-f094069ade38
+      - 7732ed6c-4777-4830-a189-ce27552e4b0a
+      - 1ebea4e0-5c77-4775-85c7-7c7dd94f6484
+      - c8b12209-5d15-413a-a2a5-d775a7a1ff37
+      - dee7f0be-8fa2-4cd3-9a2c-341de2e194ba
+      - f0ca194a-ff9d-48e7-b8e1-15bbc2d0d471
+      - 92379240-8717-4a3c-99d0-620f194f0e20
+      - 288424b8-d30d-4128-a0cf-9bf8964d1908
+      - beeb31d0-15a9-40aa-ae6a-1645e8f43fa2
+      - ee12d71e-f575-4a30-9b22-facc2def39db
+    - _id: 605cacd7-e7d2-42b4-a88f-a20715995256
+      _name: WheelChairs
+      _sections: []
+      _assets:
+      - 74f63e79-524e-46d0-8156-ab03e6f697eb
+      - 74cbbfb9-9f51-4a43-b0f5-2224725330d7
+      - cb435812-97cf-4aed-9181-20d646360787
+      - c088d11e-bc02-4133-8945-5fa26a78a7d6
   AssetDefinitions:
     _keyData:
     - ae9f60c8-bb58-4ed4-8926-0646c0279b0f
     - 02224c32-d29a-4569-a8c0-44169cdecda5
     - 45c381f1-0a29-4d68-9067-fb5a01f3b4e1
+    - 6fcf2265-6df1-491b-85b3-8b2798e29cec
+    - 4c90ef8a-0aa5-4d60-93d0-b77950fb9de2
+    - 0f77380e-cde4-44de-a29f-f094069ade38
+    - 7732ed6c-4777-4830-a189-ce27552e4b0a
+    - 1ebea4e0-5c77-4775-85c7-7c7dd94f6484
+    - c8b12209-5d15-413a-a2a5-d775a7a1ff37
+    - dee7f0be-8fa2-4cd3-9a2c-341de2e194ba
+    - f0ca194a-ff9d-48e7-b8e1-15bbc2d0d471
+    - 92379240-8717-4a3c-99d0-620f194f0e20
+    - 288424b8-d30d-4128-a0cf-9bf8964d1908
+    - beeb31d0-15a9-40aa-ae6a-1645e8f43fa2
+    - ee12d71e-f575-4a30-9b22-facc2def39db
+    - 74f63e79-524e-46d0-8156-ab03e6f697eb
+    - 74cbbfb9-9f51-4a43-b0f5-2224725330d7
+    - cb435812-97cf-4aed-9181-20d646360787
+    - c088d11e-bc02-4133-8945-5fa26a78a7d6
     _valueData:
     - _id: ae9f60c8-bb58-4ed4-8926-0646c0279b0f
       _name: PlayerData
@@ -43,6 +80,54 @@ MonoBehaviour:
       _name: Score
       _data: {fileID: 11400000, guid: 8c7ceacafc5ba8a4b80aacd3999fa179, type: 2}
     - _id: 45c381f1-0a29-4d68-9067-fb5a01f3b4e1
-      _name: FireFX
+      _name: OnFireFX
       _data: {fileID: 3284085441332548981, guid: 7e89ef1308c6bb24e85e1072c9815b18, type: 3}
+    - _id: 6fcf2265-6df1-491b-85b3-8b2798e29cec
+      _name: A
+      _data: {fileID: 919132149155446097, guid: ad559c87a46c9d7478f4f748ea6c74b2, type: 3}
+    - _id: 4c90ef8a-0aa5-4d60-93d0-b77950fb9de2
+      _name: B
+      _data: {fileID: 919132149155446097, guid: dc1be0956355dd84e9011ba8408d6249, type: 3}
+    - _id: 0f77380e-cde4-44de-a29f-f094069ade38
+      _name: c
+      _data: {fileID: 919132149155446097, guid: 919ac828936a88d4bbbff9a5ce8fbbfd, type: 3}
+    - _id: 7732ed6c-4777-4830-a189-ce27552e4b0a
+      _name: d
+      _data: {fileID: 919132149155446097, guid: fc20965cdd50bc3478e39f690e63578e, type: 3}
+    - _id: 1ebea4e0-5c77-4775-85c7-7c7dd94f6484
+      _name: e
+      _data: {fileID: 919132149155446097, guid: 417cab5b168f4e84fb92042b68a56539, type: 3}
+    - _id: c8b12209-5d15-413a-a2a5-d775a7a1ff37
+      _name: f
+      _data: {fileID: 919132149155446097, guid: 4cc9b9a097af9d948b7cd3a3de438a4c, type: 3}
+    - _id: dee7f0be-8fa2-4cd3-9a2c-341de2e194ba
+      _name: g
+      _data: {fileID: 919132149155446097, guid: 8e5318c3fd26466409ed2dd0d319a48e, type: 3}
+    - _id: f0ca194a-ff9d-48e7-b8e1-15bbc2d0d471
+      _name: h
+      _data: {fileID: 919132149155446097, guid: d14ac16ca8b7e27468e35693652457ac, type: 3}
+    - _id: 92379240-8717-4a3c-99d0-620f194f0e20
+      _name: i
+      _data: {fileID: 919132149155446097, guid: e6bd090bc87d341448fce4441bba897e, type: 3}
+    - _id: 288424b8-d30d-4128-a0cf-9bf8964d1908
+      _name: j
+      _data: {fileID: 919132149155446097, guid: 9349de1d08d3d72429e4658edca00b54, type: 3}
+    - _id: beeb31d0-15a9-40aa-ae6a-1645e8f43fa2
+      _name: k
+      _data: {fileID: 919132149155446097, guid: 568c78bc35cc74a42b38ecf02e50ddcd, type: 3}
+    - _id: ee12d71e-f575-4a30-9b22-facc2def39db
+      _name: l
+      _data: {fileID: 919132149155446097, guid: 543a59657374f71408aa828aec36e49d, type: 3}
+    - _id: 74f63e79-524e-46d0-8156-ab03e6f697eb
+      _name: Deluxe
+      _data: {fileID: 919132149155446097, guid: 22e781e1690d6d242bcfd2f61a70918f, type: 3}
+    - _id: 74cbbfb9-9f51-4a43-b0f5-2224725330d7
+      _name: BBB
+      _data: {fileID: 919132149155446097, guid: 97abe18ae7a7b924ca62faf2359a5fcf, type: 3}
+    - _id: cb435812-97cf-4aed-9181-20d646360787
+      _name: Power
+      _data: {fileID: 919132149155446097, guid: 58555019efb1b1a4f8163bc88e076251, type: 3}
+    - _id: c088d11e-bc02-4133-8945-5fa26a78a7d6
+      _name: Basic
+      _data: {fileID: 919132149155446097, guid: e409dfe1802e7924e9b8ff0a489729ef, type: 3}
   ScriptPath: Assets/Game/Scripts/Systems/Database/RuntimeDatabase.cs
