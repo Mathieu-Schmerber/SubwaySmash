@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using Game.Entities.Player;
+using Game.MainMenu;
 using Game.Systems.Alert;
 using Game.Systems.Score;
 using Game.Systems.Waypoint;
@@ -6,8 +9,10 @@ using LemonInc.Core.Pooling;
 using LemonInc.Core.Pooling.Contracts;
 using LemonInc.Core.Pooling.Providers;
 using LemonInc.Core.Utilities;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace Game
 {
@@ -24,7 +29,12 @@ namespace Game
         private ScoreSystem _scoreSystem;
         private AlertSystem _alertSystem;
         private Exit[] _levelExists;
+        private MenuInputProvider _menuInput;
+
         [SerializeField] private bool _assertSystems = true;
+        [SerializeField] private MMF_Player _closeSceneFeedback;
+        [SerializeField] private MMF_Player _openSceneFeedback;
+        private AsyncOperation _sceneLoadOperation;
 
         /// <summary>
         /// Pooling access.
@@ -47,6 +57,7 @@ namespace Game
         public static ScoreSystem ScoreSystem => Instance._scoreSystem ??= Instance.Fetch<ScoreSystem>();
         public static AlertSystem AlertSystem => Instance._alertSystem ??= Instance.Fetch<AlertSystem>();
         public static Camera Camera => Instance._camera;
+        public static MenuInputProvider MenuInput => Instance._menuInput ??= Instance.Fetch<MenuInputProvider>();
         public static Exit[] LevelExists => Instance._levelExists;
         
         private void Awake()
@@ -55,6 +66,7 @@ namespace Game
             _scoreSystem = Fetch<ScoreSystem>();
             _poolProvider = Fetch<NamedObjectPoolProvider>();
             _levelExists = FindObjectsByType<Exit>(FindObjectsSortMode.None);
+            _menuInput = Fetch<MenuInputProvider>();
         }
 
         private T Fetch<T>()
@@ -68,22 +80,51 @@ namespace Game
         private void OnEnable()
         {
             PlayerStateMachine.OnPlayerDeath += OnPlayerDeath;
+            _menuInput.RestartStage.OnPressed += RestartLevel;
         }
 
         private void OnDisable()
         {
             PlayerStateMachine.OnPlayerDeath -= OnPlayerDeath;
+            _menuInput.RestartStage.OnPressed -= RestartLevel;
         }
-        
+
+        private void Start()
+        {
+            _openSceneFeedback.PlayFeedbacks();
+        }
+
         private void OnPlayerDeath(Transform player)
         {
             Invoke(nameof(ResetLevel), 3f);
         }
 
+        private void RestartLevel() => ResetLevel();
+        
         private void ResetLevel()
         {
+            if (_openSceneFeedback.IsPlaying || _closeSceneFeedback.IsPlaying)
+                return;
+            
             var targetScene = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(targetScene);
+            _sceneLoadOperation = SceneManager.LoadSceneAsync(targetScene);
+    
+            // Don't allow the scene to activate immediately
+            _sceneLoadOperation.allowSceneActivation = false;
+
+            StartCoroutine(WaitForFeedbackAndSwitchScene());
+        }
+
+        private IEnumerator WaitForFeedbackAndSwitchScene()
+        {
+            yield return _closeSceneFeedback.PlayFeedbacksCoroutine(Vector3.zero);
+
+            while (!_sceneLoadOperation.isDone)
+            {
+                if (_sceneLoadOperation.progress >= 0.9f)
+                    _sceneLoadOperation.allowSceneActivation = true;
+                yield return null;
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using Game.Entities.GPE.BBQ;
+using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace Game.Entities.Ai
 {
     public class RagdollSpawner : MonoBehaviour
     {
-        [SerializeField] private RagdollSettings _ragdoll;
+        [SerializeField, AssetsOnly, AssetSelector] private RagdollSettings _ragdoll;
 
         public Rigidbody SpawnRagdoll()
         {

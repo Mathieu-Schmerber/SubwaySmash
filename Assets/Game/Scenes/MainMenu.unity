@@ -17323,6 +17323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 782531917940334466}
   - component: {fileID: 864468650782125628}
+  - component: {fileID: 5025770495510467233}
   m_Layer: 0
   m_Name: CustomCore
   m_TagString: Untagged
@@ -17330,6 +17331,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5025770495510467233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025770495510467232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9967820b69e3496293c0e1f217b30047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &5250678811279036759
 MeshFilter:
   m_ObjectHideFlags: 0
