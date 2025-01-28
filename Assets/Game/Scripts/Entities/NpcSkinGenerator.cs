@@ -1,81 +1,48 @@
 using System;
-using Game.Entities.GPE.BBQ;
+using LemonInc.Core.Utilities.Extensions;
 using Sirenix.OdinInspector;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Game.Entities.Ai
+namespace Game.Entities
 {
-    public class RagdollSpawner : MonoBehaviour
+    public class NpcSkinGenerator : MonoBehaviour
     {
-        [SerializeField, AssetsOnly, AssetSelector] private RagdollSettings _ragdoll;
+        [SerializeField] private Transform _root;
+        [SerializeField] private bool _disabledNpc;
+        [SerializeField, ShowIf(nameof(_disabledNpc))] private Transform _chair;
 
-        public Rigidbody SpawnRagdoll()
+        [Button]
+        public void GenerateNpcSkin()
         {
-            // Instantiate the ragdoll
-            var ragdoll = Instantiate(_ragdoll, transform.position, transform.rotation);
+            var skin = Resources.LoadAll<Transform>("Skins/Skins").Random();
+            TransferMeshProperties(skin, _root);
 
-            // Transfer SkinnedMeshRenderer and MeshFilter values
-            TransferMeshProperties(transform, ragdoll.transform);
-            
-            TransferTransforms(transform, ragdoll.transform);
-
-            var rb = GetComponent<Rigidbody>();
-            ragdoll.MainRigidbody.linearVelocity = rb.linearVelocity;
-            
-            var myIgnite = GetComponent<Ignitable>();
-            if (myIgnite)
+            if (_disabledNpc && _chair)
             {
-                var ignite = ragdoll.GetComponents<Ignitable>();
-                var onfire = GetComponent<OnFire>();
-                if (onfire)
-                {
-                    foreach (var i in ignite)
-                    {
-                        i.StartIgnite(myIgnite.BurnTime, myIgnite.BurnProgress);
-                    }
-                    
-                    // Move OnFire component
-                    var newOnFire = ragdoll.AddComponent<OnFire>();
-                    newOnFire.Copy(onfire);
-
-                    // Optionally remove the original OnFire component
-                    Destroy(onfire);
-                }
+                var chair = Resources.LoadAll<Transform>("Skins/Wheelchairs").Random();
+                var sourceRndr = chair.GetComponent<MeshRenderer>();
+                var sourceFilter = chair.GetComponent<MeshFilter>();
+                var targetRndr = _chair.GetComponent<MeshRenderer>();
+                var targetFilter = _chair.GetComponent<MeshFilter>();
                 
-            }
-
-            return ragdoll.MainRigidbody;
-        }
-
-        private void TransferTransforms(Transform source, Transform target)
-        {
-            if (source == null || target == null) return;
-
-            target.localPosition = source.localPosition;
-            target.localRotation = source.localRotation;
-
-            for (int i = 0; i < source.childCount; i++)
-            {
-                var sourceChild = source.GetChild(i);
-                var targetChild = FindDeepChild(target, sourceChild.name);
-                if (targetChild != null)
-                    TransferTransforms(sourceChild, targetChild);
+                targetRndr.sharedMaterial = sourceRndr.sharedMaterial;
+                targetFilter.sharedMesh = sourceFilter.sharedMesh;
             }
         }
-
+        
         private void TransferMeshProperties(Transform original, Transform ragdoll)
         {
             // Iterate through all children of the original object recursively
             foreach (var originalRenderer in original.GetComponentsInChildren<SkinnedMeshRenderer>(true))
             {
                 // Find a SkinnedMeshRenderer with a matching name in the ragdoll recursively
+                Debug.Log($"Looking for {originalRenderer.name}");
                 var ragdollRenderer = FindChildByName(ragdoll, originalRenderer.name)?.GetComponent<SkinnedMeshRenderer>();
 
                 if (ragdollRenderer != null)
                 {
                     ragdollRenderer.sharedMesh = originalRenderer.sharedMesh;
-                    ragdollRenderer.materials = originalRenderer.materials;
+                    ragdollRenderer.sharedMaterials = originalRenderer.sharedMaterials;
                 }
             }
 
@@ -94,7 +61,7 @@ namespace Game.Entities.Ai
                 var ragdollRenderer = ragdollFilter?.GetComponent<MeshRenderer>();
                 if (originalRenderer != null && ragdollRenderer != null)
                 {
-                    ragdollRenderer.materials = originalRenderer.materials;
+                    ragdollRenderer.sharedMaterials = originalRenderer.sharedMaterials;
                 }
             }
         }

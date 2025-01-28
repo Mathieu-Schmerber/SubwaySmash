@@ -154,6 +154,54 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Other"",
+            ""id"": ""66e1e2a8-0717-4992-9531-7574a18c4527"",
+            ""actions"": [
+                {
+                    ""name"": ""SelectMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""697bc61c-d0d4-4d6a-8fd0-2947273eb8ae"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RestartStage"",
+                    ""type"": ""Button"",
+                    ""id"": ""faf60e39-8862-4a63-a9bc-00166a5f17f6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""bad861bb-7478-41b3-aef0-aaec2918ab5c"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a102fc6-d74d-4848-8187-87bcdb814366"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RestartStage"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -164,11 +212,16 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_Push = m_Player.FindAction("Push", throwIfNotFound: true);
+        // Other
+        m_Other = asset.FindActionMap("Other", throwIfNotFound: true);
+        m_Other_SelectMenu = m_Other.FindAction("SelectMenu", throwIfNotFound: true);
+        m_Other_RestartStage = m_Other.FindAction("RestartStage", throwIfNotFound: true);
     }
 
     ~@Controls()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Controls.Player.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Other.enabled, "This will cause a leak and performance issues, Controls.Other.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -296,11 +349,70 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Other
+    private readonly InputActionMap m_Other;
+    private List<IOtherActions> m_OtherActionsCallbackInterfaces = new List<IOtherActions>();
+    private readonly InputAction m_Other_SelectMenu;
+    private readonly InputAction m_Other_RestartStage;
+    public struct OtherActions
+    {
+        private @Controls m_Wrapper;
+        public OtherActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SelectMenu => m_Wrapper.m_Other_SelectMenu;
+        public InputAction @RestartStage => m_Wrapper.m_Other_RestartStage;
+        public InputActionMap Get() { return m_Wrapper.m_Other; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(OtherActions set) { return set.Get(); }
+        public void AddCallbacks(IOtherActions instance)
+        {
+            if (instance == null || m_Wrapper.m_OtherActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_OtherActionsCallbackInterfaces.Add(instance);
+            @SelectMenu.started += instance.OnSelectMenu;
+            @SelectMenu.performed += instance.OnSelectMenu;
+            @SelectMenu.canceled += instance.OnSelectMenu;
+            @RestartStage.started += instance.OnRestartStage;
+            @RestartStage.performed += instance.OnRestartStage;
+            @RestartStage.canceled += instance.OnRestartStage;
+        }
+
+        private void UnregisterCallbacks(IOtherActions instance)
+        {
+            @SelectMenu.started -= instance.OnSelectMenu;
+            @SelectMenu.performed -= instance.OnSelectMenu;
+            @SelectMenu.canceled -= instance.OnSelectMenu;
+            @RestartStage.started -= instance.OnRestartStage;
+            @RestartStage.performed -= instance.OnRestartStage;
+            @RestartStage.canceled -= instance.OnRestartStage;
+        }
+
+        public void RemoveCallbacks(IOtherActions instance)
+        {
+            if (m_Wrapper.m_OtherActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IOtherActions instance)
+        {
+            foreach (var item in m_Wrapper.m_OtherActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_OtherActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public OtherActions @Other => new OtherActions(this);
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnPush(InputAction.CallbackContext context);
+    }
+    public interface IOtherActions
+    {
+        void OnSelectMenu(InputAction.CallbackContext context);
+        void OnRestartStage(InputAction.CallbackContext context);
     }
 }

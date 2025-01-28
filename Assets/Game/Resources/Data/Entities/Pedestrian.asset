@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d94a7c610c9af74a97785e07ff16b97, type: 3}
-  m_Name: DatabaseConfiguration
+  m_Script: {fileID: 11500000, guid: 437d14c4dc5644d6ad5a27677758f1d6, type: 3}
+  m_Name: Pedestrian
   m_EditorClassIdentifier: 
-  LastSelectedDatabaseId: e28541b0-6248-4664-ac1b-fd3ce85a8b10
-  LastSelectedSectionId: c7db8433-8bb1-469f-becf-68c01ea2bf8b
-  LastSelectedAssetId: 
+  WalkSpeed: 2
+  RunSpeed: 4
+  AttackTriggerDistance: 0
+  AttackCooldown: 0

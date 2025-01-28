@@ -41,15 +41,26 @@ namespace Game.MainMenu
             _deselectFeedback.PlayFeedbacks();
         }
 
-        private void Update()
+        private void OnEnable()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && IsSelected && Interactable)
-            {
-                _clickFeedback.PlayFeedbacks();
-                _deselectFeedback.PlayFeedbacks();
-                Interactable = false;
-                _onClick?.Invoke();
-            }
+            Core.MenuInput.SelectMenu.OnPressed += Click;
+        }
+        
+        private void OnDisable()
+        {
+            if (Core.Instance && Core.MenuInput)
+                Core.MenuInput.SelectMenu.OnPressed -= Click;
+        }
+
+        private void Click()
+        {
+            if (!IsSelected || !Interactable) 
+                return;
+            
+            _clickFeedback.PlayFeedbacks();
+            _deselectFeedback.PlayFeedbacks();
+            Interactable = false;
+            _onClick?.Invoke();
         }
     }
 }

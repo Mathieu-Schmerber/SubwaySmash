@@ -132,6 +132,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Other",
+            "id": "66e1e2a8-0717-4992-9531-7574a18c4527",
+            "actions": [
+                {
+                    "name": "SelectMenu",
+                    "type": "Button",
+                    "id": "697bc61c-d0d4-4d6a-8fd0-2947273eb8ae",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RestartStage",
+                    "type": "Button",
+                    "id": "faf60e39-8862-4a63-a9bc-00166a5f17f6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bad861bb-7478-41b3-aef0-aaec2918ab5c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a102fc6-d74d-4848-8187-87bcdb814366",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RestartStage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

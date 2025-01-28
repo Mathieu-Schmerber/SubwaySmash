@@ -23,6 +23,7 @@ MonoBehaviour:
     - Police
     - ShoppingCart
     - Train
+    - NPC
     _valueData:
     - OnPush: 0
       PushScore:
@@ -59,7 +60,7 @@ MonoBehaviour:
         Points: 0
       OnDeath: 1
       KillScore:
-        Points: 200
+        Points: 300
     - OnPush: 0
       PushScore:
         Points: 0
@@ -78,3 +79,12 @@ MonoBehaviour:
       OnDeath: 0
       KillScore:
         Points: 0
+    - OnPush: 0
+      PushScore:
+        Points: 0
+      OnTrigger: 0
+      TriggerScore:
+        Points: 0
+      OnDeath: 1
+      KillScore:
+        Points: 100
