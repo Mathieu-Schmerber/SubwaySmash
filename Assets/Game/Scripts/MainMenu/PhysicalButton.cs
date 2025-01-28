@@ -48,7 +48,7 @@ namespace Game.MainMenu
         
         private void OnDisable()
         {
-            if (Core.MenuInput)
+            if (Core.Instance && Core.MenuInput)
                 Core.MenuInput.SelectMenu.OnPressed -= Click;
         }
 
