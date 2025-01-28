@@ -5009,7 +5009,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &8004442371073889465
 MonoBehaviour:
@@ -5450,3 +5450,4 @@ MonoBehaviour:
   lerpDuration: 0.3
   defaultEmissionColor: {r: 0, g: 0, b: 0, a: 1}
   defaultEmissionIntensity: 0
+  timeOffsetRange: 0.5
