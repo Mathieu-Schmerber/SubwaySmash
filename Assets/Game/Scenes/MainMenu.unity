@@ -780,11 +780,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!54 &165286741
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2716,11 +2716,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1942068825
+      Data2: 1158956225
+      Data3: -1210711381
+      Data4: 159080715
+    Path: event:/SlapNPC
 --- !u!54 &552076752
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2774,6 +2774,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8ef8e34f6ec6999438097426ca99fd8b, type: 3}
   m_PrefabInstance: {fileID: 783638648}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &552076757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552076750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6530382c3ce444f68e9f57e5865e905e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowStates:
+  - Color: {r: 1, g: 1, b: 1, a: 1}
+    EmissionIntensity: 0
+    Time: 0.7
+  - Color: {r: 1, g: 1, b: 1, a: 1}
+    EmissionIntensity: 0.4
+    Time: 0
+  lerpDuration: 0.5
+  defaultEmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  defaultEmissionIntensity: 0
+  timeOffsetRange: 0.5
 --- !u!1 &566854992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3565,6 +3588,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ef8e34f6ec6999438097426ca99fd8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 552076751}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ef8e34f6ec6999438097426ca99fd8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 552076757}
   m_SourcePrefab: {fileID: 100100000, guid: 8ef8e34f6ec6999438097426ca99fd8b, type: 3}
 --- !u!1001 &803498612
 PrefabInstance:
@@ -4543,11 +4569,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!54 &936165230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7005,11 +7031,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!54 &1335896617
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7927,11 +7953,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1942068825
+      Data2: 1158956225
+      Data3: -1210711381
+      Data4: 159080715
+    Path: event:/SlapNPC
 --- !u!54 &1547761830
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9163,11 +9189,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1942068825
+      Data2: 1158956225
+      Data3: -1210711381
+      Data4: 159080715
+    Path: event:/SlapNPC
 --- !u!54 &1829950991
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10405,11 +10431,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1942068825
+      Data2: 1158956225
+      Data3: -1210711381
+      Data4: 159080715
+    Path: event:/SlapNPC
 --- !u!54 &2067158998
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10519,11 +10545,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1942068825
+      Data2: 1158956225
+      Data3: -1210711381
+      Data4: 159080715
+    Path: event:/SlapNPC
 --- !u!54 &2114281166
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12665,11 +12691,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!54 &2872617096418423229
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13421,11 +13447,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!54 &3550902090623309618
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13584,11 +13610,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!54 &4149694632599268394
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23643,11 +23669,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!54 &6780361799750774476
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23770,11 +23796,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!54 &7117881212081320799
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23916,11 +23942,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!54 &7528946951497825139
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24230,11 +24256,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!54 &8379585739776739044
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24423,11 +24449,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!54 &9013123524284120593
 Rigidbody:
   m_ObjectHideFlags: 0
