@@ -2,6 +2,7 @@ using FMOD.Studio;
 using FMODUnity;
 using LemonInc.Core.Utilities;
 using UnityEngine;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Game.Systems.Audio
 {
@@ -62,6 +63,11 @@ namespace Game.Systems.Audio
 			}
 		}
 
+		public void StopAllSFX()
+		{
+			_sfxBus.stopAllEvents(STOP_MODE.IMMEDIATE);
+		}
+		
 		public void StopMainMusic()
 		{
 			// Implement logic to stop the main music if needed

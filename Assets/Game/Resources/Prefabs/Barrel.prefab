@@ -221,6 +221,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7efced018c4333ba66d479c463d685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!114 &1735605796259634953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +244,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 947
   _velocityThreshold: 8
+  _audio:
+    Guid:
+      Data1: 867041014
+      Data2: 1076885412
+      Data3: 1271309225
+      Data4: 492980351
+    Path: event:/Explode
   _explosionRadius: 2
   _explosionForce: 800
   _explosionOffset: {x: 0, y: 0.5, z: 0}
@@ -708,7 +722,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carbonatedProgress: 0
-  _onFireFX: {fileID: 4417329614617360384, guid: 7e89ef1308c6bb24e85e1072c9815b18, type: 3}
 --- !u!114 &4534905137476405874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,3 +771,4 @@ MonoBehaviour:
   lerpDuration: 0.3
   defaultEmissionColor: {r: 0, g: 0, b: 0, a: 1}
   defaultEmissionIntensity: 0
+  timeOffsetRange: 0.5

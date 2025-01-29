@@ -1,4 +1,6 @@
 using System;
+using FMODUnity;
+using Game.Systems.Audio;
 using UnityEngine;
 
 namespace Game.Systems.Push
@@ -8,6 +10,8 @@ namespace Game.Systems.Push
         [SerializeField] private LayerMask _canTriggerWith;
         [SerializeField] private float _velocityThreshold;
 
+        [SerializeField] private EventReference _audio;
+        
         public event Action OnTrigger;
 
         private static float CalculateImpactForce(Collision collision)
@@ -30,6 +34,7 @@ namespace Game.Systems.Push
             if (impactForce > _velocityThreshold)
             {
                 OnTrigger?.Invoke();
+                AudioManager.PlayOneShot(_audio);
                 Trigger(other.transform);
             }
         }

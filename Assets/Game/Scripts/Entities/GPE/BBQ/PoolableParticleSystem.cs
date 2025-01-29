@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using FMODUnity;
+using Game.Systems.Audio;
 using LemonInc.Core.Pooling.Contracts;
 using UnityEngine;
 
@@ -7,6 +9,7 @@ namespace Game.Entities.GPE.BBQ
 {
     public class PoolableParticleSystem : PoolableBase
     {
+        [SerializeField] private EventReference _audio;
         private List<ParticleSystem> _ps;
         
         private void Awake()
@@ -17,6 +20,7 @@ namespace Game.Entities.GPE.BBQ
 
         protected override void OnInitialize(object data)
         {
+            AudioManager.PlayOneShot(_audio);
             _ps.ForEach(x => x.Play(true));
         }
 
