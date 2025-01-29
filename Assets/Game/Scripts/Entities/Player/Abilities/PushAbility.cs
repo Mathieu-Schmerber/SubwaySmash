@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Databases;
+using FMODUnity;
 using Game.Inputs;
+using Game.Systems.Audio;
 using Game.Systems.Push;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -14,6 +16,7 @@ namespace Game.Entities.Player.Abilities
     {
         private static readonly int Attack = Animator.StringToHash("Attack");
 
+        [SerializeField] private EventReference _audio;
         [SerializeField] private float _sphereCheckRadius;
         [SerializeField] private Vector3 _sphereCheckOffset;
 
@@ -44,6 +47,7 @@ namespace Game.Entities.Player.Abilities
 
         protected override IEnumerator OnPerform(Action performed)
         {
+            AudioManager.PlayOneShot(_audio);
             _animator.SetTrigger(Attack);
             _alreadyPushed = new HashSet<Pushable>();
             _alreadyPlayedFeedback = false;

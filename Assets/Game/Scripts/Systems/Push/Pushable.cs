@@ -1,4 +1,6 @@
 using System;
+using FMODUnity;
+using Game.Systems.Audio;
 using UnityEngine;
 
 namespace Game.Systems.Push
@@ -6,6 +8,8 @@ namespace Game.Systems.Push
     [RequireComponent(typeof(Rigidbody))]
     public class Pushable : MonoBehaviour
     {
+        [SerializeField] private EventReference _audio;
+        
         private Rigidbody _rigidbody;
         
         public event Action OnPushed;
@@ -19,6 +23,7 @@ namespace Game.Systems.Push
         {
             if (enabled)
             {
+                AudioManager.PlayOneShot(_audio);
                 Push(direction, force);
                 OnPushed?.Invoke();
             }

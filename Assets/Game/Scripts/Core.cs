@@ -3,6 +3,7 @@ using System.Collections;
 using Game.Entities.Player;
 using Game.MainMenu;
 using Game.Systems.Alert;
+using Game.Systems.Audio;
 using Game.Systems.Score;
 using Game.Systems.Waypoint;
 using LemonInc.Core.Pooling;
@@ -106,6 +107,7 @@ namespace Game
             if (_openSceneFeedback.IsPlaying || _closeSceneFeedback.IsPlaying)
                 return;
             
+            AudioManager.Instance.StopAllSFX();
             var targetScene = SceneManager.GetActiveScene().name;
             _sceneLoadOperation = SceneManager.LoadSceneAsync(targetScene);
     

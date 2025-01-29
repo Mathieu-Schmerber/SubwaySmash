@@ -449,6 +449,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 951
   _velocityThreshold: 7
+  _audio:
+    Guid:
+      Data1: -943335514
+      Data2: 1274346971
+      Data3: 1919970714
+      Data4: 1106553909
+    Path: event:/Ignite
   _initialSpreadRadius: 1
   _offset: {x: 0, y: 0, z: 0}
   _fireSettings:
@@ -470,6 +477,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7efced018c4333ba66d479c463d685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!114 &5492586022457956541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,7 +797,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carbonatedProgress: 0
-  _onFireFX: {fileID: 4417329614617360384, guid: 7e89ef1308c6bb24e85e1072c9815b18, type: 3}
 --- !u!114 &3029513991565615611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6985,6 +6998,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ae15c8c46145a98b5e20be80a8f179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &7863587328877074130
 GameObject:
   m_ObjectHideFlags: 0

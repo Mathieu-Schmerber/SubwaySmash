@@ -1,9 +1,12 @@
 using System;
+using FMODUnity;
+using Game.Systems.Audio;
 using UnityEngine;
 
 public class PlayParticleOnTrigger : MonoBehaviour
 {
     [SerializeField] private LayerMask triggerLayerMask;
+    [SerializeField] private EventReference audio;
     private ParticleSystem _ps;
 
     private void Awake()
@@ -17,6 +20,7 @@ public class PlayParticleOnTrigger : MonoBehaviour
         {
             if (_ps != null)
             {
+                AudioManager.PlayOneShot(audio, transform.position);
                 _ps.Play();
             }
         }

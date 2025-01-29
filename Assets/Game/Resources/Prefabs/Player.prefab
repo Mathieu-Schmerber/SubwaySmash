@@ -9661,6 +9661,13 @@ MonoBehaviour:
   triggerLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  audio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &3005462311719798330
 GameObject:
   m_ObjectHideFlags: 0
@@ -10581,7 +10588,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6037357776347567063}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8499fe75749e47898c69287e50fe4599, type: 3}
   m_Name: 
@@ -10598,6 +10605,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97c5c1b5c1a4ce8afa41c9b67db294b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: -1872615743
+      Data2: 1175800739
+      Data3: 1262655879
+      Data4: 1510918559
+    Path: event:/Hit
   _sphereCheckRadius: 0.57
   _sphereCheckOffset: {x: 0.15, y: 0.5, z: 0}
   _feedback: {fileID: 2953636237228735601}
@@ -11217,7 +11231,7 @@ PrefabInstance:
       addedObject: {fileID: 8392960780144611788}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2050b4988819fe54abc15bd3c3cdab8f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3012607728396406469}
+      addedObject: {fileID: 743107845459263888}
   m_SourcePrefab: {fileID: 100100000, guid: 2050b4988819fe54abc15bd3c3cdab8f, type: 3}
 --- !u!1 &7305794477688596180 stripped
 GameObject:
@@ -11236,7 +11250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d788545dd76486bb116eb6bb3e20fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &3012607728396406469
+--- !u!95 &743107845459263888
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

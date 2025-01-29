@@ -9687,6 +9687,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 951
   _velocityThreshold: 7
+  _audio:
+    Guid:
+      Data1: -379542923
+      Data2: 1235034240
+      Data3: -1272063615
+      Data4: 733822190
+    Path: event:/Electrocute
 --- !u!114 &5969769264073448259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10197,6 +10204,7 @@ MonoBehaviour:
   lerpDuration: 0.3
   defaultEmissionColor: {r: 0, g: 0, b: 0, a: 1}
   defaultEmissionIntensity: 0
+  timeOffsetRange: 0.5
 --- !u!1 &4399821860354541535
 GameObject:
   m_ObjectHideFlags: 0

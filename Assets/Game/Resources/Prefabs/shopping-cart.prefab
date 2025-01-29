@@ -4962,6 +4962,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   _velocityThreshold: 8
+  _audio:
+    Guid:
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
   _killStrength: 0
 --- !u!65 &8894715633152388945
 BoxCollider:
@@ -5023,6 +5030,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7efced018c4333ba66d479c463d685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!114 &6182627455876453154
 MonoBehaviour:
   m_ObjectHideFlags: 0

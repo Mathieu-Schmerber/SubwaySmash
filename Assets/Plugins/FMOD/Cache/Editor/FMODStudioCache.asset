@@ -26,7 +26,27 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 147071
+  Length: 95908
+--- !u!114 &-7868421035138937889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: subway-smash/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638737654420115305
+  FileSizes:
+  - Name: Desktop
+    Value: 1340
+  Exists: 1
 --- !u!114 &-3986400577292025260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +67,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 922
   Exists: 1
+--- !u!114 &-3873222487691573919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainMusic
+  m_EditorClassIdentifier: 
+  Path: event:/MainMusic
+  Guid:
+    Data1: 1723690174
+    Data2: 1229785324
+    Data3: -1179283805
+    Data4: 634750174
+  Banks:
+  - {fileID: -999968384011033465}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 95908
 --- !u!114 &-3717070286302397361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +109,104 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638736842570179473
+  lastModified: 638737613315245005
   FileSizes:
   - Name: Desktop
-    Value: 2124864
+    Value: 1283360
+  Exists: 1
+--- !u!114 &-2878121832419641472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: subway-smash/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638737663498985401
+  FileSizes:
+  - Name: Desktop
+    Value: 1283360
+  Exists: 1
+--- !u!114 &-2636129177608117603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Explode
+  m_EditorClassIdentifier: 
+  Path: event:/Explode
+  Guid:
+    Data1: 867041014
+    Data2: 1076885412
+    Data3: 1271309225
+    Data4: 492980351
+  Banks:
+  - {fileID: 3121183286542696612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1814902987760962760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainMusic
+  m_EditorClassIdentifier: 
+  Path: event:/MainMusic
+  Guid:
+    Data1: 1723690174
+    Data2: 1229785324
+    Data3: -1179283805
+    Data4: 634750174
+  Banks:
+  - {fileID: -2878121832419641472}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 95908
+--- !u!114 &-999968384011033465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: subway-smash/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638737613315245005
+  FileSizes:
+  - Name: Desktop
+    Value: 1283360
   Exists: 1
 --- !u!114 &-466744557741082600
 MonoBehaviour:
@@ -100,20 +241,289 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -3986400577292025260}
-  - {fileID: -466744557741082600}
-  - {fileID: -3717070286302397361}
-  - {fileID: 3084748262393913403}
+  - {fileID: 1240839813809874335}
+  - {fileID: -7868421035138937889}
+  - {fileID: -2878121832419641472}
+  - {fileID: 3121183286542696612}
   EditorEvents:
-  - {fileID: -8915328699087705992}
+  - {fileID: -1814902987760962760}
+  - {fileID: 6329504723694065067}
+  - {fileID: 1118273664355133115}
+  - {fileID: 3395152399195014977}
+  - {fileID: 7063121389487728729}
+  - {fileID: 6284162335747094408}
+  - {fileID: -2636129177608117603}
+  - {fileID: 1502452319023021952}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -466744557741082600}
+  - {fileID: -7868421035138937889}
   StringsBanks:
-  - {fileID: -3986400577292025260}
-  cacheTime: 638736842570209690
+  - {fileID: 1240839813809874335}
+  cacheTime: 638737664228731722
   cacheVersion: 131622
+--- !u!114 &1118273664355133115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Electrocute
+  m_EditorClassIdentifier: 
+  Path: event:/Electrocute
+  Guid:
+    Data1: -379542923
+    Data2: 1235034240
+    Data3: -1272063615
+    Data4: 733822190
+  Banks:
+  - {fileID: 3121183286542696612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1240839813809874335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: subway-smash/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638737654420125318
+  FileSizes:
+  - Name: Desktop
+    Value: 1220
+  Exists: 1
+--- !u!114 &1341800195014228614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: subway-smash/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638736842569957832
+  FileSizes:
+  - Name: Desktop
+    Value: 922
+  Exists: 1
+--- !u!114 &1502452319023021952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HitMetal
+  m_EditorClassIdentifier: 
+  Path: event:/HitMetal
+  Guid:
+    Data1: 826627321
+    Data2: 1338727439
+    Data3: 1515211402
+    Data4: 1773304609
+  Banks:
+  - {fileID: 3121183286542696612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3084748262393913403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: subway-smash/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638736842570209690
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
+--- !u!114 &3121183286542696612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: subway-smash/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638737664228731722
+  FileSizes:
+  - Name: Desktop
+    Value: 425600
+  Exists: 1
+--- !u!114 &3395152399195014977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SlapNPC
+  m_EditorClassIdentifier: 
+  Path: event:/SlapNPC
+  Guid:
+    Data1: 1942068825
+    Data2: 1158956225
+    Data3: -1210711381
+    Data4: 159080715
+  Banks:
+  - {fileID: 3121183286542696612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4481633562466595593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: subway-smash/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638736842569942796
+  FileSizes:
+  - Name: Desktop
+    Value: 1340
+  Exists: 1
+--- !u!114 &6284162335747094408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Hit
+  Guid:
+    Data1: -1872615743
+    Data2: 1175800739
+    Data3: 1262655879
+    Data4: 1510918559
+  Banks:
+  - {fileID: 3121183286542696612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6329504723694065067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footstep
+  m_EditorClassIdentifier: 
+  Path: event:/Footstep
+  Guid:
+    Data1: -550483602
+    Data2: 1171343201
+    Data3: -1741044817
+    Data4: 272538039
+  Banks:
+  - {fileID: 3121183286542696612}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7063121389487728729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ignite
+  m_EditorClassIdentifier: 
+  Path: event:/Ignite
+  Guid:
+    Data1: -943335514
+    Data2: 1274346971
+    Data3: 1919970714
+    Data4: 1106553909
+  Banks:
+  - {fileID: 3121183286542696612}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7153584252342857733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
