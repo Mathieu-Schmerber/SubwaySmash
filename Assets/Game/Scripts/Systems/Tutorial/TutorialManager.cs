@@ -1,21 +1,35 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Game.Entities;
 using Game.Entities.Player;
 using LemonInc.Core.Utilities;
+using Pixelplacement;
+using Sirenix.OdinInspector;
+
 namespace Game.Systems.Tutorial
 {
+    [Serializable]
+    public class TutorialPart
+    {
+        public Transform CameraPositions;
+        public Transform PlayerPositions;
+        public Animator[] LinkedDoors;
+    }
     public  class TutorialManager : MonoBehaviour
     {
-        [SerializeField] private GameObject _cameraPosParent;
-        [SerializeField] private GameObject _playerPosParent;
-        [SerializeField] private Camera _camera;
+        [SerializeField] private Transform _camera;
         [SerializeField] private GameObject _player;
         private int _index = 0;
+        private int _indexChild = 0;
         private readonly Timer _timer = new();
-        public Animator _animator;
+        public Animator _animatorPlayer;
+        [TableList]
+        public TutorialPart[] _tutorialParts;
+        
         private bool _move;
         private float elapsedTime;
+        private float elapsedTimep;
         [SerializeField] private float _moveduration = 3f;
         private Vector3 _currentPlayerPos;
         private Vector3 _currentCamPos;
@@ -27,16 +41,18 @@ namespace Game.Systems.Tutorial
         private void UpdatePositions()
         {
             Debug.Log(_index);
-            if (_cameraPosParent.transform.GetChild(_index) != null && _playerPosParent.transform.GetChild(_index) != null)
+            if (_tutorialParts.Length >= _index && _tutorialParts[_index].PlayerPositions != null)
             {
                 _player.GetComponent<PlayerInputProvider>().enabled = false;
                 _player.GetComponent<Controller>().enabled = false;
                 _player.GetComponent<PlayerStateMachine>().enabled = false;
-                _animator.SetFloat("Speed",.5f);
+                _animatorPlayer.SetFloat("Speed",.5f);
                 _timer.Start(_moveduration, false, ResetInputs);
                 _currentPlayerPos = _player.transform.position;
                 _currentCamPos = _camera.transform.position;
-                _player.transform.GetChild(0).transform.LookAt(_playerPosParent.transform.GetChild(_index).transform.position);
+                foreach (Animator animator in _tutorialParts[_index].LinkedDoors)
+                    animator.SetTrigger("Open");
+                Tween.Position(_camera.transform, _tutorialParts[_index].CameraPositions.transform.position, _moveduration, 0, Tween.EaseInOut);
                 _move = true;
             }
             else
@@ -50,9 +66,26 @@ namespace Game.Systems.Tutorial
             if (_move)
             {
                 elapsedTime += Time.deltaTime;
-                var percentageCompleted = elapsedTime / _moveduration;
-                _player.transform.position = Vector3.Lerp(_currentPlayerPos, _playerPosParent.transform.GetChild(_index).transform.position, percentageCompleted);
-                _camera.transform.position = Vector3.Lerp(_currentCamPos, _cameraPosParent.transform.GetChild(_index).transform.position, percentageCompleted);
+                elapsedTimep += Time.deltaTime;
+                var count = _tutorialParts[_index].PlayerPositions.transform.childCount;
+                var percentageCompletedplayer = elapsedTimep * count  / _moveduration;
+                var percentageCompletedcam = elapsedTime / _moveduration;
+                
+
+                
+                if (percentageCompletedplayer >= 1 && _indexChild < count-1)
+                {
+                    elapsedTimep = 0;
+                    percentageCompletedplayer--;
+                    _indexChild++;
+                    Debug.Log(count);
+                    _currentPlayerPos = _player.transform.position;
+                }
+                
+                var target = _tutorialParts[_index].PlayerPositions.transform.GetChild(_indexChild).transform.position;
+                _player.transform.GetChild(0).transform.LookAt(target);
+                Debug.Log(target);
+                _player.transform.position = Vector3.Lerp(_currentPlayerPos, target, percentageCompletedplayer);
             }
         }
 
@@ -60,9 +93,12 @@ namespace Game.Systems.Tutorial
         {
             _move = false;
             elapsedTime = 0;
+            elapsedTimep = 0;
             _player.GetComponent<PlayerInputProvider>().enabled = true;
             _player.GetComponent<Controller>().enabled = true;
             _player.GetComponent<PlayerStateMachine>().enabled = true;
+            foreach (Animator animator in _tutorialParts[_index].LinkedDoors)
+                animator.SetTrigger("Close");
             _index++;
         }
         // Update is called once per frame
