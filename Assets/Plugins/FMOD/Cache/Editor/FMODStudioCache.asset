@@ -96,10 +96,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638738477668977930
+  lastModified: 638738538716259644
   FileSizes:
   - Name: Desktop
-    Value: 1332
+    Value: 1552
   Exists: 1
 --- !u!114 &-3717070286302397361
 MonoBehaviour:
@@ -163,7 +163,7 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638738477668967943
+  lastModified: 638738538716249649
   FileSizes:
   - Name: Desktop
     Value: 1340
@@ -197,13 +197,45 @@ MonoBehaviour:
   - {fileID: 7284939939483486173}
   - {fileID: 476646653621149498}
   - {fileID: 3524705880218045686}
+  - {fileID: 740896208985742268}
+  - {fileID: 232666046544540984}
+  - {fileID: 1691894590307513766}
+  - {fileID: 4134906010996615445}
+  - {fileID: 7929712965649500732}
   EditorParameters: []
   MasterBanks:
   - {fileID: -466744557741082600}
   StringsBanks:
   - {fileID: -3986400577292025260}
-  cacheTime: 638738492575300883
+  cacheTime: 638738538716537556
   cacheVersion: 131622
+--- !u!114 &232666046544540984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/NpcDeath
+  m_EditorClassIdentifier: 
+  Path: event:/NpcDeath
+  Guid:
+    Data1: -677891435
+    Data2: 1266645513
+    Data3: -247906679
+    Data4: -1468201404
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &476646653621149498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +290,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &740896208985742268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PoliceAttack
+  m_EditorClassIdentifier: 
+  Path: event:/PoliceAttack
+  Guid:
+    Data1: -562324110
+    Data2: 1109630198
+    Data3: -1536095069
+    Data4: -187457978
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &824940602835756255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +335,33 @@ MonoBehaviour:
     Data2: 1175800739
     Data3: 1262655879
     Data4: 1510918559
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1691894590307513766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LightMetal
+  m_EditorClassIdentifier: 
+  Path: event:/LightMetal
+  Guid:
+    Data1: 815072987
+    Data2: 1216944224
+    Data3: -1707262278
+    Data4: -323593586
   Banks:
   - {fileID: 3084748262393913403}
   IsStream: 0
@@ -327,10 +413,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638738492575300883
+  lastModified: 638738538716537556
   FileSizes:
   - Name: Desktop
-    Value: 490176
+    Value: 588192
   Exists: 1
 --- !u!114 &3524705880218045686
 MonoBehaviour:
@@ -350,6 +436,33 @@ MonoBehaviour:
     Data2: 1260565059
     Data3: 63247759
     Data4: -1139441615
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4134906010996615445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PoliceImpact
+  m_EditorClassIdentifier: 
+  Path: event:/PoliceImpact
+  Guid:
+    Data1: 708046577
+    Data2: 1253991254
+    Data3: -623288924
+    Data4: -715620091
   Banks:
   - {fileID: 3084748262393913403}
   IsStream: 0
@@ -413,3 +526,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7929712965649500732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Alert
+  m_EditorClassIdentifier: 
+  Path: event:/Alert
+  Guid:
+    Data1: 1093561808
+    Data2: 1338450047
+    Data3: -571640163
+    Data4: 206416239
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8478

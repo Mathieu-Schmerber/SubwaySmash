@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8417934010008972222}
   - component: {fileID: 2652583550844308187}
   - component: {fileID: 2143659081787082945}
+  - component: {fileID: 6174901764355116932}
   m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
@@ -143,6 +144,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7efced018c4333ba66d479c463d685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: 815072987
+      Data2: 1216944224
+      Data3: -1707262278
+      Data4: -323593586
+    Path: event:/LightMetal
+--- !u!114 &6174901764355116932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604985638976023539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb5a4a281184750a846e26fbb232c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materialName: LightMetal
+  _ignoreOnStay:
+    serializedVersion: 2
+    m_Bits: 768
 --- !u!1 &605820524940915037
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +470,7 @@ GameObject:
   - component: {fileID: 5351754355092929770}
   - component: {fileID: 5137222787501785431}
   - component: {fileID: 6139210407899475190}
+  - component: {fileID: 7607967882100462751}
   m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
@@ -576,6 +601,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7efced018c4333ba66d479c463d685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: 815072987
+      Data2: 1216944224
+      Data3: -1707262278
+      Data4: -323593586
+    Path: event:/LightMetal
+--- !u!114 &7607967882100462751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174909960190589833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb5a4a281184750a846e26fbb232c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materialName: LightMetal
+  _ignoreOnStay:
+    serializedVersion: 2
+    m_Bits: 768
 --- !u!1 &1243228705886189441
 GameObject:
   m_ObjectHideFlags: 0

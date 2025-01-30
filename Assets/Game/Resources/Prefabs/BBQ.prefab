@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 3029513991565615611}
   - component: {fileID: 6509214834351981178}
   - component: {fileID: 5646645209864718233}
+  - component: {fileID: -7537377311478597255}
   m_Layer: 7
   m_Name: BBQ
   m_TagString: Untagged
@@ -447,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canTriggerWith:
     serializedVersion: 2
-    m_Bits: 951
+    m_Bits: 439
   _velocityThreshold: 7
   _audio:
     Guid:
@@ -847,6 +848,22 @@ MonoBehaviour:
   defaultEmissionColor: {r: 0, g: 0, b: 0, a: 1}
   defaultEmissionIntensity: 0
   timeOffsetRange: 0.5
+--- !u!114 &-7537377311478597255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437752460981726007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb5a4a281184750a846e26fbb232c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materialName: Metal
+  _ignoreOnStay:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &2915950052338110017
 GameObject:
   m_ObjectHideFlags: 0
@@ -7005,6 +7022,7 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  _volume: 0.1
 --- !u!1 &7863587328877074130
 GameObject:
   m_ObjectHideFlags: 0

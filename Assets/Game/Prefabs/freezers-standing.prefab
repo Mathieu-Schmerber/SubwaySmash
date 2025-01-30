@@ -72,6 +72,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5e82e218e0017144c8072b76a3f75ca7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3611482493101714749}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5e82e218e0017144c8072b76a3f75ca7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8106192354476205019}
   m_SourcePrefab: {fileID: 100100000, guid: 5e82e218e0017144c8072b76a3f75ca7, type: 3}
 --- !u!1 &4699165232247642614 stripped
 GameObject:
@@ -152,3 +155,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7efced018c4333ba66d479c463d685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
+--- !u!114 &-8106192354476205019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699165232247642614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb5a4a281184750a846e26fbb232c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materialName: Metal
+  _ignoreOnStay:
+    serializedVersion: 2
+    m_Bits: 768

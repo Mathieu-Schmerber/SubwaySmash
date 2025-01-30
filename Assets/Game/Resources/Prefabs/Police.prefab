@@ -15369,6 +15369,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43eea6b935a84235bd102b6fb64ff977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deathAudio:
+    Guid:
+      Data1: -677891435
+      Data2: 1266645513
+      Data3: -247906679
+      Data4: -1468201404
+    Path: event:/NpcDeath
   _stat: {fileID: 11400000, guid: 9a993b0a778c2d9468b17537422c814d, type: 2}
   _isAggressive: 1
 --- !u!114 &5003607747829876141
@@ -15453,6 +15460,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc7e7e360ca45d7a463df01d07db99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _leapAudio:
+    Guid:
+      Data1: -562324110
+      Data2: 1109630198
+      Data3: -1536095069
+      Data4: -187457978
+    Path: event:/PoliceAttack
+  _slamAudio:
+    Guid:
+      Data1: 708046577
+      Data2: 1253991254
+      Data3: -623288924
+      Data4: -715620091
+    Path: event:/PoliceImpact
   _feedback: {fileID: 1058618154986184642}
   _offset: {x: -0.1, y: 0, z: 0}
   _pushForce: 20

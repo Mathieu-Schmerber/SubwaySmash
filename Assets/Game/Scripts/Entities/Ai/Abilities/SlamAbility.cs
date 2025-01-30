@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using FMODUnity;
 using Game.Entities.Player.Abilities;
+using Game.Systems.Audio;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 
@@ -10,6 +12,8 @@ namespace Game.Entities.Ai.Abilities
     {
         private static readonly int Attack = Animator.StringToHash("Attack");
 
+        [SerializeField] private EventReference _leapAudio;
+        [SerializeField] private EventReference _slamAudio;
         [SerializeField] private MMF_Player _feedback;
         [SerializeField] private Vector3 _offset;
         [SerializeField] private float _pushForce = 20;
@@ -28,6 +32,7 @@ namespace Game.Entities.Ai.Abilities
 
         protected override IEnumerator OnPerform(Action performed)
         {
+            AudioManager.PlayOneShot(_leapAudio);
             _animator.SetTrigger(Attack);
             yield return new WaitForSeconds(_recoverTime);
             performed?.Invoke();
@@ -43,6 +48,7 @@ namespace Game.Entities.Ai.Abilities
 
         private void Slam()
         {
+            AudioManager.PlayOneShot(_slamAudio); 
             _controller.SetSpeed(0);
             _slamImpact.PerformImpact(_pushForce);
             _feedback.PlayFeedbacks();

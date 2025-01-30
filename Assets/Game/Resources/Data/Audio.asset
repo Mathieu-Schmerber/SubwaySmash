@@ -17,6 +17,7 @@ MonoBehaviour:
     - Metal
     - Cardboard
     - Paper
+    - LightMetal
     _valueData:
     - FmodEvent:
         Guid:
@@ -49,5 +50,16 @@ MonoBehaviour:
         Path: event:/Paper
       MinVolume: 0.05
       MaxVolume: 0.1
+      MinForce: 1
+      MaxForce: 10
+    - FmodEvent:
+        Guid:
+          Data1: 815072987
+          Data2: 1216944224
+          Data3: -1707262278
+          Data4: -323593586
+        Path: event:/LightMetal
+      MinVolume: 0.5
+      MaxVolume: 0.5
       MinForce: 1
       MaxForce: 10
