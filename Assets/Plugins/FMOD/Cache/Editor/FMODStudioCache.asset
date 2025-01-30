@@ -26,7 +26,61 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 147071
+  Length: 95908
+--- !u!114 &-7655394016864068268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SlapNPC
+  m_EditorClassIdentifier: 
+  Path: event:/SlapNPC
+  Guid:
+    Data1: 1942068825
+    Data2: 1158956225
+    Data3: -1210711381
+    Data4: 159080715
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4041488987456809123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OnFire
+  m_EditorClassIdentifier: 
+  Path: event:/OnFire
+  Guid:
+    Data1: 2134182574
+    Data2: 1255116248
+    Data3: 1007428785
+    Data4: 439762256
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 29828
 --- !u!114 &-3986400577292025260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +96,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638736872388238802
+  lastModified: 638738477668977930
   FileSizes:
   - Name: Desktop
-    Value: 922
+    Value: 1332
   Exists: 1
 --- !u!114 &-3717070286302397361
 MonoBehaviour:
@@ -62,11 +116,38 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638736872388299846
+  lastModified: 638737663498985401
   FileSizes:
   - Name: Desktop
-    Value: 2124864
+    Value: 1283360
   Exists: 1
+--- !u!114 &-1059419921592800646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ignite
+  m_EditorClassIdentifier: 
+  Path: event:/Ignite
+  Guid:
+    Data1: -943335514
+    Data2: 1274346971
+    Data3: 1919970714
+    Data4: 1106553909
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-466744557741082600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +163,7 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638736872388227255
+  lastModified: 638738477668967943
   FileSizes:
   - Name: Desktop
     Value: 1340
@@ -106,13 +187,131 @@ MonoBehaviour:
   - {fileID: 3084748262393913403}
   EditorEvents:
   - {fileID: -8915328699087705992}
+  - {fileID: -7655394016864068268}
+  - {fileID: 6958109549226897583}
+  - {fileID: 567688055838099962}
+  - {fileID: -1059419921592800646}
+  - {fileID: -4041488987456809123}
+  - {fileID: 824940602835756255}
+  - {fileID: 2963008529425041057}
+  - {fileID: 7284939939483486173}
+  - {fileID: 476646653621149498}
+  - {fileID: 3524705880218045686}
   EditorParameters: []
   MasterBanks:
   - {fileID: -466744557741082600}
   StringsBanks:
   - {fileID: -3986400577292025260}
-  cacheTime: 638736872388309852
+  cacheTime: 638738492575300883
   cacheVersion: 131622
+--- !u!114 &476646653621149498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cardboard
+  m_EditorClassIdentifier: 
+  Path: event:/Cardboard
+  Guid:
+    Data1: -1259426982
+    Data2: 1212793593
+    Data3: -1680463172
+    Data4: 81042162
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &567688055838099962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Electrocute
+  m_EditorClassIdentifier: 
+  Path: event:/Electrocute
+  Guid:
+    Data1: -379542923
+    Data2: 1235034240
+    Data3: -1272063615
+    Data4: 733822190
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &824940602835756255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Hit
+  Guid:
+    Data1: -1872615743
+    Data2: 1175800739
+    Data3: 1262655879
+    Data4: 1510918559
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2963008529425041057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Explode
+  m_EditorClassIdentifier: 
+  Path: event:/Explode
+  Guid:
+    Data1: 867041014
+    Data2: 1076885412
+    Data3: 1271309225
+    Data4: 492980351
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3084748262393913403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,8 +327,89 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638736872388309852
+  lastModified: 638738492575300883
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 490176
   Exists: 1
+--- !u!114 &3524705880218045686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Paper
+  m_EditorClassIdentifier: 
+  Path: event:/Paper
+  Guid:
+    Data1: 253939810
+    Data2: 1260565059
+    Data3: 63247759
+    Data4: -1139441615
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6958109549226897583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footstep
+  m_EditorClassIdentifier: 
+  Path: event:/Footstep
+  Guid:
+    Data1: -550483602
+    Data2: 1171343201
+    Data3: -1741044817
+    Data4: 272538039
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7284939939483486173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HitMetal
+  m_EditorClassIdentifier: 
+  Path: event:/HitMetal
+  Guid:
+    Data1: 826627321
+    Data2: 1338727439
+    Data3: 1515211402
+    Data4: 1773304609
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

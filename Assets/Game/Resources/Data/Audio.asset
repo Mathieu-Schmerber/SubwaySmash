@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf1772f11554907b7b4a8261587c67f, type: 3}
+  m_Name: Audio
+  m_EditorClassIdentifier: 
+  MaterialAudios:
+    _keyData:
+    - Metal
+    - Cardboard
+    - Paper
+    _valueData:
+    - FmodEvent:
+        Guid:
+          Data1: 826627321
+          Data2: 1338727439
+          Data3: 1515211402
+          Data4: 1773304609
+        Path: event:/HitMetal
+      MinVolume: 0.05
+      MaxVolume: 0.1
+      MinForce: 1
+      MaxForce: 10
+    - FmodEvent:
+        Guid:
+          Data1: -1259426982
+          Data2: 1212793593
+          Data3: -1680463172
+          Data4: 81042162
+        Path: event:/Cardboard
+      MinVolume: 0.2
+      MaxVolume: 0.4
+      MinForce: 1
+      MaxForce: 10
+    - FmodEvent:
+        Guid:
+          Data1: 253939810
+          Data2: 1260565059
+          Data3: 63247759
+          Data4: -1139441615
+        Path: event:/Paper
+      MinVolume: 0.05
+      MaxVolume: 0.1
+      MinForce: 1
+      MaxForce: 10

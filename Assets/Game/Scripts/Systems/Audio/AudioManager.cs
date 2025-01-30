@@ -1,3 +1,4 @@
+using FMOD;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
@@ -73,12 +74,34 @@ namespace Game.Systems.Audio
 			_isMainMusicPlaying = false;
 		}
 
-		public static void PlayOneShot(EventReference sound, Vector3 worldPos = default)
+		/*public static void PlayOneShot(EventReference sound, Vector3 worldPos = default)
 		{
 			if (!sound.IsNull)
 				RuntimeManager.PlayOneShot(sound, worldPos);
+		}*/
+		
+		public static EventInstance? PlayOneShot(EventReference sound, Vector3 worldPos = default, float volume = 1f)
+		{
+			if (sound.IsNull)
+				return null;
+			
+			var instance = RuntimeManager.CreateInstance(sound.Guid);
+			instance.set3DAttributes(worldPos.To3DAttributes());
+			instance.setVolume(volume);
+			instance.start();
+			instance.release();
+			return instance;
 		}
 
+		public static void StopSound(EventInstance? instance, STOP_MODE stopMode = STOP_MODE.IMMEDIATE)
+		{
+			if (instance?.isValid() == true)
+			{
+				instance.Value.stop(stopMode);
+				instance.Value.release();
+			}
+		}
+		
 		public static void SetMasterVolume(float arg0)
 		{
 			Instance._masterBus.setVolume(arg0);
