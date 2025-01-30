@@ -10,6 +10,7 @@ namespace Game.Systems.Tutorial
 {
     public class TutorialObject : PushTriggerBase
     {
+        
         private TutorialManager _manager;
         private readonly Timer _timer = new();
         private readonly Timer _timer2 = new();

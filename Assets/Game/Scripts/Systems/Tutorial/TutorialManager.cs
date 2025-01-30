@@ -3,21 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using Game.Entities;
 using Game.Entities.Player;
+using Game.Systems.Waypoint;
 using LemonInc.Core.Utilities;
 using Pixelplacement;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
+using TMPro;
 
 namespace Game.Systems.Tutorial
 {
+    
     [Serializable]
     public class TutorialPart
     {
         public Transform CameraPositions;
         public Transform PlayerPositions;
         public Animator[] LinkedDoors;
+        public GameObject CurrentPart;
+        
     }
     public  class TutorialManager : MonoBehaviour
     {
+        
         [SerializeField] private Transform _camera;
         [SerializeField] private GameObject _player;
         private int _index = 0;
@@ -32,7 +39,6 @@ namespace Game.Systems.Tutorial
         private float elapsedTimep;
         [SerializeField] private float _moveduration = 3f;
         private Vector3 _currentPlayerPos;
-        private Vector3 _currentCamPos;
 
         private void Awake()
         {
@@ -43,15 +49,18 @@ namespace Game.Systems.Tutorial
             Debug.Log(_index);
             if (_tutorialParts.Length >= _index && _tutorialParts[_index].PlayerPositions != null)
             {
+                if(_tutorialParts[_index+1].CurrentPart != null)
+                    _tutorialParts[_index+1].CurrentPart.SetActive(true);
+                Core.Instance._levelExists = FindObjectsByType<Exit>(FindObjectsSortMode.None);
                 _player.GetComponent<PlayerInputProvider>().enabled = false;
                 _player.GetComponent<Controller>().enabled = false;
                 _player.GetComponent<PlayerStateMachine>().enabled = false;
                 _animatorPlayer.SetFloat("Speed",.5f);
                 _timer.Start(_moveduration, false, ResetInputs);
                 _currentPlayerPos = _player.transform.position;
-                _currentCamPos = _camera.transform.position;
                 foreach (Animator animator in _tutorialParts[_index].LinkedDoors)
                     animator.SetTrigger("Open");
+                
                 Tween.Position(_camera.transform, _tutorialParts[_index].CameraPositions.transform.position, _moveduration, 0, Tween.EaseInOut);
                 _move = true;
             }
@@ -91,6 +100,7 @@ namespace Game.Systems.Tutorial
 
         void ResetInputs()
         {
+            
             _move = false;
             elapsedTime = 0;
             elapsedTimep = 0;
@@ -99,6 +109,7 @@ namespace Game.Systems.Tutorial
             _player.GetComponent<PlayerStateMachine>().enabled = true;
             foreach (Animator animator in _tutorialParts[_index].LinkedDoors)
                 animator.SetTrigger("Close");
+            _tutorialParts[_index].CurrentPart.SetActive(false);
             _index++;
         }
         // Update is called once per frame
