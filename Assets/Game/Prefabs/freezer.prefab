@@ -72,6 +72,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7058d021dbc6b1d418b8a5d2a328eeb7, type: 3}
       insertIndex: -1
       addedObject: {fileID: -8342605734930852410}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7058d021dbc6b1d418b8a5d2a328eeb7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3552494470443393068}
   m_SourcePrefab: {fileID: 100100000, guid: 7058d021dbc6b1d418b8a5d2a328eeb7, type: 3}
 --- !u!1 &3634236503842333443 stripped
 GameObject:
@@ -131,6 +134,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7efced018c4333ba66d479c463d685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: 826627321
+      Data2: 1338727439
+      Data3: 1515211402
+      Data4: 1773304609
+    Path: event:/HitMetal
 --- !u!65 &-8342605734930852410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -152,3 +162,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79999995, y: 0.35, z: 0.6}
   m_Center: {x: 0, y: 0.175, z: 0}
+--- !u!114 &-3552494470443393068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3634236503842333443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb5a4a281184750a846e26fbb232c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materialName: Metal
+  _ignoreOnStay:
+    serializedVersion: 2
+    m_Bits: 768

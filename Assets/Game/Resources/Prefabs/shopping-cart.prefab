@@ -4921,6 +4921,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 904330a4e91baaf49bc1bdcd1e9993fd, type: 3}
       insertIndex: -1
       addedObject: {fileID: -2792959892363173488}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 904330a4e91baaf49bc1bdcd1e9993fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 798885926743710543}
   m_SourcePrefab: {fileID: 100100000, guid: 904330a4e91baaf49bc1bdcd1e9993fd, type: 3}
 --- !u!4 &3994713915633186174 stripped
 Transform:
@@ -4960,7 +4963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canTriggerWith:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 256
   _velocityThreshold: 8
   _audio:
     Guid:
@@ -5032,11 +5035,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 826627321
-      Data2: 1338727439
-      Data3: 1515211402
-      Data4: 1773304609
-    Path: event:/HitMetal
+      Data1: 815072987
+      Data2: 1216944224
+      Data3: -1707262278
+      Data4: -323593586
+    Path: event:/LightMetal
 --- !u!114 &6182627455876453154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5465,3 +5468,19 @@ MonoBehaviour:
   defaultEmissionColor: {r: 0, g: 0, b: 0, a: 1}
   defaultEmissionIntensity: 0
   timeOffsetRange: 0.5
+--- !u!114 &798885926743710543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4340277657637777348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb5a4a281184750a846e26fbb232c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materialName: LightMetal
+  _ignoreOnStay:
+    serializedVersion: 2
+    m_Bits: 768

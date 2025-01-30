@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using FMOD.Studio;
 using FMODUnity;
 using Game.Systems.Audio;
 using LemonInc.Core.Pooling.Contracts;
@@ -10,8 +12,10 @@ namespace Game.Entities.GPE.BBQ
     public class PoolableParticleSystem : PoolableBase
     {
         [SerializeField] private EventReference _audio;
+        [SerializeField] private float _volume = .1f;
         private List<ParticleSystem> _ps;
-        
+        private EventInstance? _instance;
+
         private void Awake()
         {
             _ps = transform.GetComponentsInChildren<ParticleSystem>().ToList();
@@ -20,11 +24,23 @@ namespace Game.Entities.GPE.BBQ
 
         protected override void OnInitialize(object data)
         {
-            AudioManager.PlayOneShot(_audio);
             _ps.ForEach(x => x.Play(true));
         }
+        
+        private void OnEnable()
+        {
+            _instance = AudioManager.PlayOneShot(_audio, transform.position, _volume);
+        }
 
-        protected override void OnRelease() { }
+        private void OnDisable()
+        {
+            AudioManager.StopSound(_instance);
+        }
+
+        protected override void OnRelease()
+        {
+            AudioManager.StopSound(_instance);
+        }
 
         public void StopThenRelease()
         {
