@@ -18,6 +18,7 @@ namespace Game.Systems.Tutorial
         [Space(20)]
         [SerializeField] private float _timeBeforeChange = 3f;
         [SerializeField] private float _timeBeforeText = 2f;
+        [SerializeField] private GameObject _completionText;
         private Pushable _pushable;
         
         [Space(20)]
@@ -36,7 +37,12 @@ namespace Game.Systems.Tutorial
         public override void Trigger(Transform actor)
         {
             if (_useAsTrigger)
+            {
                 _timer.Start(_timeBeforeChange, false, _manager.ChangeStage);
+                if(_completionText != null)
+                    _completionText.SetActive(true);
+            }
+                
         }
 
         private void OnEnable()
@@ -47,16 +53,19 @@ namespace Game.Systems.Tutorial
                 if (_pushTriggersSteps)
                 {
                     _timer.Start(_timeBeforeChange, false, _manager.ChangeStage);
+                    if(_completionText != null)
+                        _completionText.SetActive(true);
                 }
             }
         }
 
         void RemoveText()
         {
-            foreach (var textObject in _textObjects)
-            {
-                textObject.gameObject.SetActive(false);
-            }
+            if(_textObjects != null)
+                foreach (var textObject in _textObjects)
+                {
+                    textObject.gameObject.SetActive(false);
+                }
             _timer2.Start(_timeBeforeText, false, RepopText);
         }
         void RepopText()

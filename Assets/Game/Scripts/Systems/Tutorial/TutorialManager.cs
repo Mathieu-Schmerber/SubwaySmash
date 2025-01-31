@@ -49,9 +49,10 @@ namespace Game.Systems.Tutorial
             Debug.Log(_index);
             if (_tutorialParts.Length >= _index && _tutorialParts[_index].PlayerPositions != null)
             {
-                if(_tutorialParts[_index+1].CurrentPart != null)
+                if(_tutorialParts[_index+1]!= null)
                     _tutorialParts[_index+1].CurrentPart.SetActive(true);
                 Core.Instance._levelExists = FindObjectsByType<Exit>(FindObjectsSortMode.None);
+                Core.AlertSystem.ResetAlert();
                 _player.GetComponent<PlayerInputProvider>().enabled = false;
                 _player.GetComponent<Controller>().enabled = false;
                 _player.GetComponent<PlayerStateMachine>().enabled = false;
