@@ -10461,7 +10461,6 @@ GameObject:
   - component: {fileID: 953917332832680345}
   - component: {fileID: 519953554880207298}
   - component: {fileID: 3528049846249707922}
-  - component: {fileID: 3069981332371420000}
   - component: {fileID: 8798479092349692153}
   - component: {fileID: 6630693922689218249}
   - component: {fileID: 3524945449099494992}
@@ -10588,18 +10587,6 @@ MonoBehaviour:
   _turnLerp: 0
   _turnSpeed: 10
   _graphic: {fileID: 8043032575660203575}
---- !u!114 &3069981332371420000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6037357776347567063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8499fe75749e47898c69287e50fe4599, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8798479092349692153
 MonoBehaviour:
   m_ObjectHideFlags: 0
