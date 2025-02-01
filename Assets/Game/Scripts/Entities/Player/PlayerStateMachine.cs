@@ -14,7 +14,6 @@ namespace Game.Entities.Player
         private PlayerStates _payload;
         private readonly StateMachine<PlayerStates> _stateMachine = new();
         private IInputProvider _input;
-        private DashAbility _dash;
         private PushAbility _push;
         private Controller _controller;
 
@@ -27,8 +26,6 @@ namespace Game.Entities.Player
         {
             _controller = GetComponent<Controller>();
             _input = GetComponent<IInputProvider>();
-            _dash = GetComponent<DashAbility>();
-            _dash.SetCooldown(RuntimeDatabase.Data.PlayerData.DashCooldown);
             
             _push = GetComponent<PushAbility>();
             _push.SetCooldown(RuntimeDatabase.Data.PlayerData.PushCooldown);
@@ -47,13 +44,11 @@ namespace Game.Entities.Player
 
         private void OnEnable()
         {
-            _input.Dash.OnPressed += OnDashPressed;
             _input.Push.OnPressed += OnPushPressed;
         }
 
         private void OnDisable()
         {
-            _input.Dash.OnPressed -= OnDashPressed;
             _input.Push.OnPressed -= OnPushPressed;
         }
 		
@@ -61,12 +56,6 @@ namespace Game.Entities.Player
         {
             if (_push.IsReady())
                 _stateMachine.SwitchState(_payload.Attack);
-        }
-        
-        private void OnDashPressed()
-        {
-            if (_dash.IsReady())
-                _stateMachine.SwitchState(_payload.Dash);
         }
         
         private void Start()

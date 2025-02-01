@@ -8,14 +8,12 @@ namespace Game.Entities.Player.States
     public class PlayerAttackState : State<PlayerStates>
     {
         private PushAbility _push;
-        private DashAbility _dash;
         private Controller _controller;
         private IInputProvider _input;
 
         public override void Awake()
         {
             _push = StateMachine.Owner.GetComponent<PushAbility>();
-            _dash = StateMachine.Owner.GetComponent<DashAbility>();
             _controller = StateMachine.Owner.GetComponent<Controller>();
             _input = StateMachine.Owner.GetComponent<IInputProvider>();
         }
@@ -23,7 +21,6 @@ namespace Game.Entities.Player.States
         public override void Enter()
         {
             _controller.SetSpeed(RuntimeDatabase.Data.PlayerData.MovementSpeed);
-            _dash.SetLocked(true);
             _controller.LockAim(true, _input.AimDirection);
             _push.Perform(() =>
             {
@@ -34,7 +31,6 @@ namespace Game.Entities.Player.States
         public override void Exit()
         {
             _controller.LockAim(false);
-            _dash.SetLocked(false);
         }
         
         public override void Update()
