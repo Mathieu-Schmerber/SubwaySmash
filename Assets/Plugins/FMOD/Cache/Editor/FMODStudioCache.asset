@@ -123,10 +123,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638739357914778302
+  lastModified: 638740356852306385
   FileSizes:
   - Name: Desktop
-    Value: 1594
+    Value: 1642
   Exists: 1
 --- !u!114 &-3717070286302397361
 MonoBehaviour:
@@ -190,7 +190,7 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638739357914755504
+  lastModified: 638740356852296392
   FileSizes:
   - Name: Desktop
     Value: 1340
@@ -230,12 +230,13 @@ MonoBehaviour:
   - {fileID: 4134906010996615445}
   - {fileID: 7929712965649500732}
   - {fileID: -5984583673960636188}
+  - {fileID: 7406092165974976129}
   EditorParameters: []
   MasterBanks:
   - {fileID: -466744557741082600}
   StringsBanks:
   - {fileID: -3986400577292025260}
-  cacheTime: 638739360733455880
+  cacheTime: 638740360415945288
   cacheVersion: 131622
 --- !u!114 &232666046544540984
 MonoBehaviour:
@@ -441,10 +442,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638739360733455880
+  lastModified: 638740360415945288
   FileSizes:
   - Name: Desktop
-    Value: 642624
+    Value: 658176
   Exists: 1
 --- !u!114 &3524705880218045686
 MonoBehaviour:
@@ -545,6 +546,33 @@ MonoBehaviour:
     Data2: 1338727439
     Data3: 1515211402
     Data4: 1773304609
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7406092165974976129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TrainKill
+  m_EditorClassIdentifier: 
+  Path: event:/TrainKill
+  Guid:
+    Data1: 140637857
+    Data2: 1169790267
+    Data3: 386194106
+    Data4: 2070240106
   Banks:
   - {fileID: 3084748262393913403}
   IsStream: 0

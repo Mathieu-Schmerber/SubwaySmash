@@ -1,3 +1,4 @@
+using System;
 using FMODUnity;
 using Game.Systems.Audio;
 using LemonInc.Core.Utilities;
@@ -9,27 +10,25 @@ namespace Game.Entities.GPE.Train
     {
         [SerializeField] private float _trainSpeed = 1.0f;
         [SerializeField] private Rigidbody _rb;
-        private bool _isTriggered;
-        [SerializeField] private Vector3 _startPos;
         [SerializeField] private Transform _train;
+        private bool _isTriggered;
+        private Vector3 _startPos;
         private readonly Timer _timer = new();
 
         [SerializeField] private EventReference _audio;
         
-        private BoxCollider _collider;
-
-        private void Awake()
-        {
-            _collider = GetComponent<BoxCollider>();
-        }
+        [SerializeField] private float _resetCooldown = 1f;
 
         private void Start()
         {
             _startPos = _train.position;
         }
         
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay(Collider other)
         {
+            if (_isTriggered)
+                return;
+            
             var killable = other.GetComponent<IKillable>();
             if (killable == null) 
                 return;
@@ -39,13 +38,13 @@ namespace Game.Entities.GPE.Train
             other.attachedRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
             other.attachedRigidbody.linearDamping = 0f;
             _isTriggered = true;
-            _timer.Start(3f, false, ResetPosition);
+            _timer.Start(_resetCooldown, false, ResetPosition);
         }
-        
+
         private void FixedUpdate()
         {
             if (_isTriggered)
-                _rb.MovePosition(_rb.transform.position + (transform.forward * _trainSpeed * Time.fixedDeltaTime));
+                _rb.linearVelocity = transform.forward * _trainSpeed;
         }
 
         private void ResetPosition()

@@ -14,14 +14,36 @@ namespace Game.Systems.Alert
         private void Awake()
         {
             _feedbacks = GetComponentsInChildren<MMF_Player>();
+            Hide();
         }
 
-        [Button]
         public void Play()
         {
             AudioManager.PlayOneShot(_audio);
             foreach (var player in _feedbacks)
                 player.PlayFeedbacks();
+        }
+
+        [Button]
+        private void Show()
+        {
+            _feedbacks = GetComponentsInChildren<MMF_Player>();
+            foreach (var player in _feedbacks)
+            {
+                var light = player.GetFeedbackOfType<MMF_Light>();
+                light.BoundLight.intensity = light.RemapIntensityOne;
+            }
+        }
+
+        [Button]
+        private void Hide()
+        {
+            _feedbacks = GetComponentsInChildren<MMF_Player>();
+            foreach (var player in _feedbacks)
+            {
+                var light = player.GetFeedbackOfType<MMF_Light>();
+                light.BoundLight.intensity = 0;
+            }
         }
     }
 }
