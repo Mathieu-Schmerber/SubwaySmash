@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Databases;
 using FMODUnity;
+using Game.Entities.Ai.Abilities;
 using Game.Inputs;
 using Game.Systems.Audio;
 using Game.Systems.Push;
@@ -12,7 +13,7 @@ using UnityEngine;
 
 namespace Game.Entities.Player.Abilities
 {
-    public class PushAbility : AbilityBase
+    public class PushAbility : AbilityBase, IAnimationEventListener
     {
         private static readonly int Attack = Animator.StringToHash("Attack");
 

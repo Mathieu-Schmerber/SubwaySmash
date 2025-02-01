@@ -1,3 +1,5 @@
+using FMODUnity;
+using Game.Systems.Audio;
 using LemonInc.Core.Utilities;
 using UnityEngine;
 
@@ -11,6 +13,8 @@ namespace Game.Entities.GPE.Train
         [SerializeField] private Vector3 _startPos;
         [SerializeField] private Transform _train;
         private readonly Timer _timer = new();
+
+        [SerializeField] private EventReference _audio;
         
         private BoxCollider _collider;
 
@@ -26,11 +30,11 @@ namespace Game.Entities.GPE.Train
         
         private void OnTriggerEnter(Collider other)
         {
-            
             var killable = other.GetComponent<IKillable>();
             if (killable == null) 
                 return;
 
+            AudioManager.PlayOneShot(_audio);
             other.attachedRigidbody.useGravity = true;
             other.attachedRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
             other.attachedRigidbody.linearDamping = 0f;

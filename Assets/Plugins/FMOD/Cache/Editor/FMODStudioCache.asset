@@ -54,6 +54,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5984583673960636188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TrainPassing
+  m_EditorClassIdentifier: 
+  Path: event:/TrainPassing
+  Guid:
+    Data1: 265471519
+    Data2: 1322325077
+    Data3: 398371464
+    Data4: 759012103
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3319
 --- !u!114 &-4041488987456809123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,10 +123,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638738538716259644
+  lastModified: 638739357914778302
   FileSizes:
   - Name: Desktop
-    Value: 1552
+    Value: 1594
   Exists: 1
 --- !u!114 &-3717070286302397361
 MonoBehaviour:
@@ -163,7 +190,7 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638738538716249649
+  lastModified: 638739357914755504
   FileSizes:
   - Name: Desktop
     Value: 1340
@@ -202,12 +229,13 @@ MonoBehaviour:
   - {fileID: 1691894590307513766}
   - {fileID: 4134906010996615445}
   - {fileID: 7929712965649500732}
+  - {fileID: -5984583673960636188}
   EditorParameters: []
   MasterBanks:
   - {fileID: -466744557741082600}
   StringsBanks:
   - {fileID: -3986400577292025260}
-  cacheTime: 638738538716537556
+  cacheTime: 638739360733455880
   cacheVersion: 131622
 --- !u!114 &232666046544540984
 MonoBehaviour:
@@ -413,10 +441,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638738538716537556
+  lastModified: 638739360733455880
   FileSizes:
   - Name: Desktop
-    Value: 588192
+    Value: 642624
   Exists: 1
 --- !u!114 &3524705880218045686
 MonoBehaviour:

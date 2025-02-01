@@ -1,12 +1,22 @@
+using System;
+using Game.Entities.Ai.Abilities;
 using UnityEngine;
 
 namespace Game.Entities
 {
     public class AnimationTransmitter : MonoBehaviour
     {
+        private IAnimationEventListener[] _listeners;
+
+        private void Awake()
+        {
+            _listeners = GetComponentsInParent<IAnimationEventListener>();
+        }
+
         public void OnAnimationEvent(string eventName)
         {
-            transform.root.SendMessageUpwards("OnAnimationEventReceived", eventName, SendMessageOptions.DontRequireReceiver);
+            foreach (var listener in _listeners)
+                listener.OnAnimationEventReceived(eventName);
         }
     }
 }

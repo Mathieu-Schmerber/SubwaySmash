@@ -8,7 +8,12 @@ using UnityEngine;
 
 namespace Game.Entities.Ai.Abilities
 {
-    public class SlamAbility : AbilityBase
+    public interface IAnimationEventListener
+    {
+        void OnAnimationEventReceived(string eventName);
+    }
+
+    public class SlamAbility : AbilityBase, IAnimationEventListener
     {
         private static readonly int Attack = Animator.StringToHash("Attack");
 
