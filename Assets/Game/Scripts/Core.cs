@@ -29,7 +29,7 @@ namespace Game
         private IPoolProvider<string> _poolProvider;
         private ScoreSystem _scoreSystem;
         private AlertSystem _alertSystem;
-        private Exit[] _levelExists;
+        [HideInInspector] public Exit[] _levelExists;
         private MenuInputProvider _menuInput;
 
         [SerializeField] private bool _assertSystems = true;
