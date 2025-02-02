@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Pixelplacement;
 using UnityEngine;
 
@@ -25,6 +26,7 @@ namespace Game
         [SerializeField] private Color defaultEmissionColor = Color.black; // Default emission color (no glow)
         [SerializeField] private float defaultEmissionIntensity = 0f; // Default emission intensity (no glow)
         [SerializeField] private float timeOffsetRange = 0.5f; // Maximum random offset for each object
+        [SerializeField] private LayerMask _ignore;
 
         private Renderer[] _renderers;
         private float _lerpTime;
@@ -41,7 +43,9 @@ namespace Game
             _startOffset = UnityEngine.Random.Range(0f, timeOffsetRange);
 
             // Get all MeshRenderers in the scene
-            _renderers = GetComponentsInChildren<Renderer>(); // To include children objects
+            _renderers = GetComponentsInChildren<Renderer>()
+                .Where(x => !IsLayerInLayerMask(x.gameObject.layer, _ignore))
+                .ToArray(); // To include children objects
             
             // Enable the emission keyword to modify emission properties for all renderers
             foreach (var renderer in _renderers)
@@ -63,6 +67,11 @@ namespace Game
             }
         }
 
+        private bool IsLayerInLayerMask(int layer, LayerMask layerMask)
+        {
+            return (layerMask.value & (1 << layer)) != 0;
+        }
+        
         private void Update()
         {
             if (_renderers.Length == 0 || glowStates.Length < 2) return;
