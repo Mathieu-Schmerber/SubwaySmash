@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
+using System.ComponentModel.Design.Serialization;
 using Game.Entities.Player;
 using Game.MainMenu;
 using Game.Systems.Alert;
 using Game.Systems.Audio;
 using Game.Systems.Score;
+using Game.Systems.Stage;
 using Game.Systems.Waypoint;
 using LemonInc.Core.Pooling;
 using LemonInc.Core.Pooling.Contracts;
@@ -29,9 +31,10 @@ namespace Game
         private IPoolProvider<string> _poolProvider;
         private ScoreSystem _scoreSystem;
         private AlertSystem _alertSystem;
-        [HideInInspector] public Exit[] _levelExists;
         private MenuInputProvider _menuInput;
+        [HideInInspector] public Exit[] _levelExists;
 
+        [SerializeField] private StageData _stages;
         [SerializeField] private bool _assertSystems = true;
         [SerializeField] private MMF_Player _closeSceneFeedback;
         [SerializeField] private MMF_Player _openSceneFeedback;
@@ -117,6 +120,31 @@ namespace Game
             StartCoroutine(WaitForFeedbackAndSwitchScene());
         }
 
+        public void LoadStageByName(string stageName)
+        {
+            if (_openSceneFeedback.IsPlaying || _closeSceneFeedback.IsPlaying)
+                return;
+            
+            AudioManager.Instance.StopAllSFX();
+            _sceneLoadOperation = _stages.GetStage(stageName);
+    
+            // Don't allow the scene to activate immediately
+            _sceneLoadOperation.allowSceneActivation = false;
+
+            StartCoroutine(WaitForFeedbackAndSwitchScene());
+        }
+        
+        private void LoadNextStage()
+        {
+            AudioManager.Instance.StopAllSFX();
+            _sceneLoadOperation = _stages.GetNextStage();
+    
+            // Don't allow the scene to activate immediately
+            _sceneLoadOperation.allowSceneActivation = false;
+
+            StartCoroutine(WaitForFeedbackAndSwitchScene());
+        }
+        
         private IEnumerator WaitForFeedbackAndSwitchScene()
         {
             yield return _closeSceneFeedback.PlayFeedbacksCoroutine(Vector3.zero);
