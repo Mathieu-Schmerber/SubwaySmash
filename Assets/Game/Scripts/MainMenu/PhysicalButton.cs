@@ -1,3 +1,4 @@
+using System;
 using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
@@ -12,10 +13,30 @@ namespace Game.MainMenu
         [SerializeField] private MMF_Player _deselectFeedback;
         [SerializeField] private MMF_Player _clickFeedback;
         [SerializeField] private UnityEvent _onClick;
-     
+        private TextMeshProUGUI _textMeshpro;
+        
         public bool Interactable { get; set; }
         public bool IsSelected { get; set; }
 
+        private void Awake()
+        {
+            _textMeshpro = GetComponentInChildren<TextMeshProUGUI>();
+        }
+
+        public void SetText(string text)
+        {
+            _text = text;
+            _textMeshpro.text = text;
+        }
+
+        public void AddListener(Action callback)
+        {
+            _onClick.AddListener(() =>
+            {
+                callback?.Invoke();
+            });
+        }
+        
         private void OnValidate()
         {
             var tmpText = GetComponentInChildren<TextMeshProUGUI>();

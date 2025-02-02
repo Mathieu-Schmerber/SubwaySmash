@@ -82,5 +82,7 @@ namespace Game.Systems.Stage
             Debug.LogError($"Stage '{stageName}' not found");
             return SceneManager.LoadSceneAsync(MainMenu);
         }
+
+        public string[] GetAllStages() => Stages.Select(x => x.Name).ToArray();
     }
 }

@@ -63,6 +63,7 @@ namespace Game
         public static Camera Camera => Instance._camera;
         public static MenuInputProvider MenuInput => Instance._menuInput ??= Instance.Fetch<MenuInputProvider>();
         public static Exit[] LevelExists => Instance._levelExists;
+        public static StageData Stages => Instance._stages;
         
         private void Awake()
         {
