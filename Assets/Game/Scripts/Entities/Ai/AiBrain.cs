@@ -1,4 +1,4 @@
-using Game.Inputs;
+using Game.Systems.Inputs;
 using Game.Systems.Waypoint;
 using LemonInc.Core.Input;
 using LemonInc.Core.Utilities.Extensions;

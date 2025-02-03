@@ -1,4 +1,4 @@
-using Game.Inputs;
+using Game.Systems.Inputs;
 using UnityEngine;
 
 namespace Game.Entities.Player
