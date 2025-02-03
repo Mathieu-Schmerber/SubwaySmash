@@ -135,7 +135,7 @@ namespace Game
             StartCoroutine(WaitForFeedbackAndSwitchScene());
         }
         
-        private void LoadNextStage()
+        public void LoadNextStage()
         {
             AudioManager.Instance.StopAllSFX();
             _sceneLoadOperation = _stages.GetNextStage();
