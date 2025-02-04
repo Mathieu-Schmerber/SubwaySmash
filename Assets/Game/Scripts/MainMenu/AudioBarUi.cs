@@ -78,10 +78,7 @@ namespace Game.MainMenu
             var increment = _audioIncrements.FirstOrDefault(x => !x.Active);
             
             var volume = GetVolume();
-            Debug.Log($"Volume was: {volume}");
-            Debug.Log($"Setting {volume + step}");
             SetVolume(volume + step);
-            Debug.Log($"Volume is {GetVolume()}");
             
             increment?.Increment();
         }
@@ -92,10 +89,7 @@ namespace Game.MainMenu
             var increment = _audioIncrements.LastOrDefault(x => x.Active);
 
             var volume = GetVolume();
-            Debug.Log($"Volume was: {volume}");
-            Debug.Log($"Setting {volume - step}");
             SetVolume(volume - step);
-            Debug.Log($"Volume is {GetVolume()}");
             increment?.Decrement();
         }
     }

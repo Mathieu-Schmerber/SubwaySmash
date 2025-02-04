@@ -4,11 +4,9 @@ using System.Linq;
 using UnityEngine;
 using Game.Entities;
 using Game.Entities.Player;
-using Game.Systems.Inputs;
+using Game.Inputs;
 using Game.Systems.Waypoint;
-using LemonInc.Core.Input;
 using LemonInc.Core.Utilities;
-using LemonInc.Core.Utilities.Extensions;
 using Pixelplacement;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
@@ -40,11 +38,11 @@ namespace Game.Systems.Tutorial
 
         private void OnControlResumed()
         {
-            _tutorialParts[_tutorialPartIndex-1].CompletionText.SetActive(false);
+            _tutorialParts[_tutorialPartIndex - 1].CompletionText.SetActive(false);
             var current = _tutorialParts[_tutorialPartIndex];
-            
+
             Core.AlertSystem.ResetAlert();
-            Core.AlertSystem.LockAlert(current.InitialState.ForceAlertLevel,current.InitialState.AlertLevel);
+            Core.AlertSystem.LockAlert(current.InitialState.ForceAlertLevel, current.InitialState.AlertLevel);
             foreach (var ai in current.InitialState.NPCs)
             {
                 ai.enabled = true;
@@ -64,7 +62,7 @@ namespace Game.Systems.Tutorial
 
         private void Start()
         {
-            
+
             foreach (var tutorialPart in _tutorialParts)
             {
                 foreach (var ai in tutorialPart.InitialState.NPCs)
@@ -72,8 +70,9 @@ namespace Game.Systems.Tutorial
                     ai.enabled = false;
                 }
             }
+
             OnControlResumed();
-            
+
         }
 
         private void SubscribeAndInitialize(TutorialPart tutorialPart)
@@ -88,14 +87,15 @@ namespace Game.Systems.Tutorial
             current.CompletionText.SetActive(true);
             current.OnCompleted -= OnCurrentPartCompleted;
             current.Exit();
-            
+
             if (!IsLastPart())
             {
                 _tutorialPartIndex++;
                 var next = _tutorialParts[_tutorialPartIndex];
                 SubscribeAndInitialize(next);
-                return next; 
+                return next;
             }
+
             throw new Exception("Already reached the last part.");
         }
 
@@ -111,7 +111,7 @@ namespace Game.Systems.Tutorial
             {
                 EndTutorial();
             }
-            
+
         }
 
         private void EndTutorial()
@@ -128,8 +128,8 @@ namespace Game.Systems.Tutorial
         {
             var previousWaypoints = previous.InitialState.PlayerPositions;
             var nextWaypoint = next.InitialState.PlayerPositions.First();
-            var waypoints = previousWaypoints.Concat(new []{nextWaypoint}).ToArray();
-            
+            var waypoints = previousWaypoints.Concat(new[] { nextWaypoint }).ToArray();
+
             _controlledInput.Init(waypoints);
             _playerInputProvider.TakeControl(_controlledInput);
             Tween.Position(Core.CameraRig, next.InitialState.CameraPosition, _transitionTime, 0, Tween.EaseOut);
@@ -144,85 +144,25 @@ namespace Game.Systems.Tutorial
                 var part = _tutorialParts[i];
                 for (int j = 0; j < part.InitialState.PlayerPositions.Length; j++)
                 {
-                    Gizmos.DrawWireCube(part.InitialState.PlayerPositions[j],new Vector3(1,.1f,1));
+                    Gizmos.DrawWireCube(part.InitialState.PlayerPositions[j], new Vector3(1, .1f, 1));
                     if (j + 1 < part.InitialState.PlayerPositions.Length)
                     {
                         var nextpoint = part.InitialState.PlayerPositions[j + 1];
                         Gizmos.DrawLine(part.InitialState.PlayerPositions[j], nextpoint);
                     }
                 }
-                
+
                 if (i + 1 < _tutorialParts.Length)
                 {
                     var nextPart = _tutorialParts[i + 1];
                     if (nextPart.InitialState.PlayerPositions.Length > 0)
                     {
                         Gizmos.color = new Color(1f, 0.65f, 0f);
-                        Gizmos.DrawLine(part.InitialState.PlayerPositions.Last(), nextPart.InitialState.PlayerPositions.First()); 
+                        Gizmos.DrawLine(part.InitialState.PlayerPositions.Last(),
+                            nextPart.InitialState.PlayerPositions.First());
                     }
                 }
             }
         }
     }
-
-    internal class ControlledInputSet : InputSet
-    {
-        private Vector3[] _initialStatePlayerPositions;
-        private int _index;
-        private float _minDistance = 0.15f;
-        private readonly PlayerInputProvider _inputProvider;
-        private Vector3 _movementDirection;
-        private Vector3 _aimDirection;
-        public event Action OnReleased;
-        
-
-        public ControlledInputSet(Transform transform) : base(transform)
-        {
-            _inputProvider = transform.GetComponent<PlayerInputProvider>();
-        }
-        
-        public override Vector3 MovementDirection => _movementDirection;
-        public override Vector3 AimDirection => _aimDirection;
-        public override InputState Dash { get; }
-        public override InputState Push { get; }
-        
-        public bool HasControl { get; private set; }
-
-        public void Update()
-        {
-            if (_index >= _initialStatePlayerPositions.Length)
-            {
-                HasControl = false;
-                return;
-            }
-            
-            GoTo(_initialStatePlayerPositions[_index]);
-            
-            if (Vector3.Distance(Owner.position, _initialStatePlayerPositions[_index]) < _minDistance)
-            {
-                _index++;
-                if (_index >= _initialStatePlayerPositions.Length)
-                {
-                    _inputProvider.ReleaseControl();
-                    HasControl = false;
-                    OnReleased?.Invoke();
-                }
-            }
-            
-        }
-
-        private void GoTo(Vector3 targetPosition)
-        {
-            _movementDirection = (targetPosition.WithY(Owner.position.y) - Owner.position).normalized;
-            _aimDirection = _movementDirection;
-        }
-
-        public void Init(Vector3[] waypoints)
-        {
-            _index = 0;
-            HasControl = true;
-            _initialStatePlayerPositions = waypoints;
-        }
-    }
 }
-
