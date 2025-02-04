@@ -31,6 +31,7 @@ namespace Game.Systems.Tutorial
     public class TutorialPart
     {
         public string Name;
+        public GameObject CompletionText;
         public TutorialCondition[] Conditions;
         public InitialState InitialState;
         public event Action OnCompleted;

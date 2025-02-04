@@ -40,7 +40,9 @@ namespace Game.Systems.Tutorial
 
         private void OnControlResumed()
         {
+            _tutorialParts[_tutorialPartIndex-1].CompletionText.SetActive(false);
             var current = _tutorialParts[_tutorialPartIndex];
+            
             Core.AlertSystem.ResetAlert();
             Core.AlertSystem.LockAlert(current.InitialState.ForceAlertLevel,current.InitialState.AlertLevel);
             foreach (var ai in current.InitialState.NPCs)
@@ -83,6 +85,7 @@ namespace Game.Systems.Tutorial
         private TutorialPart GoNextTutorialPart()
         {
             var current = _tutorialParts[_tutorialPartIndex];
+            current.CompletionText.SetActive(true);
             current.OnCompleted -= OnCurrentPartCompleted;
             current.Exit();
             
