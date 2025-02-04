@@ -9,6 +9,7 @@ namespace Game.MainMenu
     public class PhysicalButton : MonoBehaviour
     {
         [SerializeField] private string _text;
+        [SerializeField] private bool _deactivateOnClick = true;
         [SerializeField] private MMF_Player _selectFeedback;
         [SerializeField] private MMF_Player _deselectFeedback;
         [SerializeField] private MMF_Player _clickFeedback;
@@ -80,7 +81,7 @@ namespace Game.MainMenu
             
             _clickFeedback.PlayFeedbacks();
             _deselectFeedback.PlayFeedbacks();
-            Interactable = false;
+            Interactable = !_deactivateOnClick;
             _onClick?.Invoke();
         }
     }
