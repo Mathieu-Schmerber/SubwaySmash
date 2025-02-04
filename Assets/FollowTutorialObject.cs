@@ -8,6 +8,14 @@ public class FollowTutorialObject : MonoBehaviour
 
     private void Update()
     {
-        transform.position = _tutorialObject.transform.position + _offset;
+        if (_tutorialObject != null)
+        {
+            transform.position = _tutorialObject.transform.position + _offset;  
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
