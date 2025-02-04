@@ -19,7 +19,14 @@ namespace Game.Systems.Tutorial
 
         private void Awake()
         {
-            _tutorialParts[_tutorialPartIndex].Initialize();
+            var current = _tutorialParts[_tutorialPartIndex];
+            SubscribeAndInitialize(current);
+        }
+
+        private void SubscribeAndInitialize(TutorialPart tutorialPart)
+        {
+            tutorialPart.OnCompleted += OnCurrentPartCompleted;
+            tutorialPart.Initialize();
         }
 
         private TutorialPart GoNextTutorialPart()
@@ -32,8 +39,7 @@ namespace Game.Systems.Tutorial
             {
                 _tutorialPartIndex++;
                 var next = _tutorialParts[_tutorialPartIndex];
-                next.OnCompleted += OnCurrentPartCompleted;
-                next.Initialize();
+                SubscribeAndInitialize(next);
                 return next; 
             }
             throw new Exception("Already reached the last part.");
@@ -54,7 +60,7 @@ namespace Game.Systems.Tutorial
 
         private void EndTutorial()
         {
-            //Core.Instance.
+            Core.Instance.LoadNextStage();
         }
 
         private bool IsLastPart()
