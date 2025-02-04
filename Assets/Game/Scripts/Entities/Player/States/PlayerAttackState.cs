@@ -1,6 +1,6 @@
 using Databases;
 using Game.Entities.Player.Abilities;
-using Game.Inputs;
+using Game.Systems.Inputs;
 using Game.Systems.StateMachine;
 
 namespace Game.Entities.Player.States

@@ -1,6 +1,5 @@
-using Game.Inputs;
+using Game.Systems.Inputs;
 using LemonInc.Core.Input;
-using LemonInc.Core.Utilities.Extensions;
 using UnityEngine;
 
 namespace Game.Entities.Player
@@ -10,56 +9,39 @@ namespace Game.Entities.Player
     /// </summary>
     public class PlayerInputProvider : InputProviderBase<Controls>, IInputProvider
     {
-        public PhysicalInputValue<Vector2, Vector3> Movement { get; } = new(vector2 => vector2
-            .ToVector3Xz()
-            .ToIsometric()
-            .normalized
-        );
+        private PhysicalInputSet _physicalInputSet;
+        private IInputProvider _currentInputSet;
+
+        public Vector3 MovementDirection => _currentInputSet.MovementDirection;
+        public Vector3 AimDirection => _currentInputSet.AimDirection;
+        public InputState Dash => _currentInputSet.Dash;
+        public InputState Push => _currentInputSet.Push;
         
-        private readonly PhysicalInput _dash = new();
-        private readonly PhysicalInput _push = new();
-        private PhysicalInputValue<Vector2, Vector3> _aim;
-
-        public Vector3 MovementDirection => Movement.Value;
-        public Vector3 AimDirection => _aim.Value;
-        public InputState Dash => _dash;
-        public InputState Push => _push;
-
         protected override void Awake()
         {
             base.Awake();
-            _aim ??= new PhysicalInputValue<Vector2, Vector3>(CalculateAimDirection);
+            _physicalInputSet = new PhysicalInputSet(transform);
+            _currentInputSet = _physicalInputSet;
         }
 
+        public void TakeControl(InputSet inputSet)
+        {
+            _currentInputSet = inputSet;
+        }
+
+        public void ReleaseControl()
+        {
+            _currentInputSet = _physicalInputSet;
+        }
+        
         protected override void SubscribeInputs()
         {
-            Movement.Subscribe(Controls.Player.Movement);
-            _dash.Subscribe(Controls.Player.Dash);
-            _push.Subscribe(Controls.Player.Push);
-            _aim.Subscribe(Controls.Player.Aim);
+            _physicalInputSet.Subscribe(Controls);
         }
 
         protected override void UnSubscribeInputs()
         {
-            Movement.UnSubscribe();
-            _dash.UnSubscribe();
-            _aim.UnSubscribe();
-            _push.UnSubscribe();
-        }
-        
-        private Vector3 CalculateAimPosition(Vector2 mousePosition)
-        {
-            var floorPlane = new Plane(Vector3.up, transform.position);
-            var ray = Core.Camera.ScreenPointToRay(mousePosition);
-            
-            return floorPlane.Raycast(ray, out var enter) ? ray.GetPoint(enter) : Vector3.zero;
-        }
-
-        private Vector3 CalculateAimDirection(Vector2 mousePosition)
-        {
-            var worldMousePosition = CalculateAimPosition(mousePosition);
-            Debug.DrawRay(worldMousePosition, Vector3.up, Color.yellow);
-            return (worldMousePosition - transform.position).normalized;
+            _physicalInputSet.UnSubscribe();
         }
     }
 }

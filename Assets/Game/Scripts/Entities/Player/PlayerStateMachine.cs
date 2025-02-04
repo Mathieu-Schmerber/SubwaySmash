@@ -2,7 +2,7 @@ using System;
 using Databases;
 using Game.Entities.Player.Abilities;
 using Game.Entities.Player.States;
-using Game.Inputs;
+using Game.Systems.Inputs;
 using Game.Systems.StateMachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
