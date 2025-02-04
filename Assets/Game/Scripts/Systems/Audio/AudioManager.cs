@@ -9,10 +9,10 @@ namespace Game.Systems.Audio
 	public class AudioManager : PersistentSingleton<AudioManager>
 	{
 		[Header("Volume")]
-		[Range(0, 1), SerializeField] private float _masterVolume = 1;
-		[Range(0, 1), SerializeField] private float _musicVolume = 1;
-		[Range(0, 1), SerializeField] private float _ambienceVolume = 1;
-		[Range(0, 1), SerializeField] private float _sfxVolume = 1;
+		private float _masterVolume;
+		private float _musicVolume;
+		private float _ambienceVolume;
+		private float _sfxVolume;
 
 		[SerializeField] private EventReference _mainMusic;
 
@@ -39,11 +39,7 @@ namespace Game.Systems.Audio
 			_masterVolume = PlayerPrefs.GetFloat(MASTER_BUS, 1);
 			_musicVolume = PlayerPrefs.GetFloat(MUSIC_BUS, 1);
 			_sfxVolume = PlayerPrefs.GetFloat(SFX_BUS, 1);
-		}
-
-		private void OnValidate()
-		{
-			if (!Application.isPlaying) return;
+			
 			SetMasterVolume(_masterVolume);
 			SetMusicVolume(_musicVolume);
 			SetSfxVolume(_sfxVolume);
@@ -73,12 +69,6 @@ namespace Game.Systems.Audio
 			// Implement logic to stop the main music if needed
 			_isMainMusicPlaying = false;
 		}
-
-		/*public static void PlayOneShot(EventReference sound, Vector3 worldPos = default)
-		{
-			if (!sound.IsNull)
-				RuntimeManager.PlayOneShot(sound, worldPos);
-		}*/
 		
 		public static EventInstance? PlayOneShot(EventReference sound, Vector3 worldPos = default, float volume = 1f)
 		{
@@ -104,20 +94,29 @@ namespace Game.Systems.Audio
 		
 		public static void SetMasterVolume(float arg0)
 		{
-			Instance._masterBus.setVolume(arg0);
-			PlayerPrefs.SetFloat(MASTER_BUS, arg0);
+			var value = Mathf.Clamp01(arg0);
+			
+			Instance._masterVolume = value;
+			Instance._masterBus.setVolume(value);
+			PlayerPrefs.SetFloat(MASTER_BUS, value);
 		}
 
 		public static void SetMusicVolume(float arg0)
 		{
-			Instance._musicBus.setVolume(arg0);
-			PlayerPrefs.SetFloat(MUSIC_BUS, arg0);
+			var value = Mathf.Clamp01(arg0);
+
+			Instance._musicVolume = value;
+			Instance._musicBus.setVolume(value);
+			PlayerPrefs.SetFloat(MUSIC_BUS, value);
 		}
 
 		public static void SetSfxVolume(float arg0)
 		{
-			Instance._sfxBus.setVolume(arg0);
-			PlayerPrefs.SetFloat(SFX_BUS, arg0);
+			var value = Mathf.Clamp01(arg0);
+
+			Instance._sfxVolume = value;
+			Instance._sfxBus.setVolume(value);
+			PlayerPrefs.SetFloat(SFX_BUS, value);
 		}
 
 		public static float GetMasterVolume()
