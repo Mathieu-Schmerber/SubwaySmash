@@ -26,7 +26,7 @@ namespace Game
     [DefaultExecutionOrder(1)]
     public class Core : ManagerSingleton<Core>
     {
-        private Camera _camera;
+        [SerializeField]private Camera _camera;
         
         private IPoolProvider<string> _poolProvider;
         private ScoreSystem _scoreSystem;
@@ -34,6 +34,7 @@ namespace Game
         private MenuInputProvider _menuInput;
         [HideInInspector] public Exit[] _levelExists;
 
+        [SerializeField] private Transform _player;
         [SerializeField] private StageData _stages;
         [SerializeField] private bool _assertSystems = true;
         [SerializeField] private MMF_Player _closeSceneFeedback;
@@ -60,10 +61,12 @@ namespace Game
 
         public static ScoreSystem ScoreSystem => Instance._scoreSystem ??= Instance.Fetch<ScoreSystem>();
         public static AlertSystem AlertSystem => Instance._alertSystem ??= Instance.Fetch<AlertSystem>();
-        public static Camera Camera => Instance._camera;
+        public static Camera Camera => Instance._camera ??= FindFirstObjectByType<Camera>();
+        public static Transform CameraRig => Camera.transform.parent.parent;
         public static MenuInputProvider MenuInput => Instance._menuInput ??= Instance.Fetch<MenuInputProvider>();
         public static Exit[] LevelExists => Instance._levelExists;
         public static StageData Stages => Instance._stages;
+        public static Transform Player => Instance._player;
         
         private void Awake()
         {

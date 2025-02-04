@@ -51,6 +51,17 @@ namespace Game.Systems.Alert
         }
 
         public void ResetAlert() => AlertLevel = AlertLevel.LOW;
+        
+        public void LockAlert(bool state, AlertLevel value = AlertLevel.LOW)
+        {
+            Debug.Log($"Locking alert state: {value} {state}");
+            _locked = state;
+            if (state)
+            {
+                AlertLevel = value; 
+            }
+            
+        }
 
         private void OnScoreUpdated(float value)
         {
