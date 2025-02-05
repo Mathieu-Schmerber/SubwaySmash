@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Databases;
+using Game.Entities.Ai;
 using UnityEngine;
 
 namespace Game.Entities.GPE.BBQ
@@ -37,6 +38,10 @@ namespace Game.Entities.GPE.BBQ
         public void StartIgnite(float burnTime, float _initialProgress = 0)
         {
             if (_isBurning) return;
+            
+            if (GetComponent<AiStateMachine>())
+                Core.AlertSystem.RaiseAlert();
+            
             SetupMaterials();
             var instance = Instantiate(_onFireFX, transform.position, transform.rotation, transform);
             _fx = instance.GetComponent<ParticleSystem>();

@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.ComponentModel.Design.Serialization;
 using Game.Entities.Player;
 using Game.MainMenu;
 using Game.Systems.Alert;
@@ -16,7 +14,6 @@ using MoreMountains.Feedbacks;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 namespace Game
 {
@@ -79,7 +76,6 @@ namespace Game
         }
         #endif
         
-        
         private void Awake()
         {
             _camera = FindFirstObjectByType<Camera>();
@@ -99,28 +95,21 @@ namespace Game
 
         private void OnEnable()
         {
-            PlayerStateMachine.OnPlayerDeath += OnPlayerDeath;
             _menuInput.RestartStage.OnPressed += RestartLevel;
         }
 
         private void OnDisable()
         {
-            PlayerStateMachine.OnPlayerDeath -= OnPlayerDeath;
             _menuInput.RestartStage.OnPressed -= RestartLevel;
         }
 
         private void Start()
         {
             _openSceneFeedback.PlayFeedbacks();
-            Core.AlertSystem.LockAlert(_lockAlert);
+            Core.AlertSystem?.LockAlert(_lockAlert);
         }
 
-        private void OnPlayerDeath(Transform player)
-        {
-            Invoke(nameof(ResetLevel), 3f);
-        }
-
-        private void RestartLevel() => ResetLevel();
+        public void RestartLevel() => ResetLevel();
         
         private void ResetLevel()
         {

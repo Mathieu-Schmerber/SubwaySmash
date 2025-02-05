@@ -1,7 +1,9 @@
+using System;
 using FMOD;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Game.Systems.Audio
@@ -48,6 +50,11 @@ namespace Game.Systems.Audio
 		private void Start()
 		{
 			PlayMainMusic();
+		}
+
+		private void Update()
+		{
+			RuntimeManager.StudioSystem.setParameterByName("time_scale", Time.timeScale);
 		}
 
 		public void PlayMainMusic()

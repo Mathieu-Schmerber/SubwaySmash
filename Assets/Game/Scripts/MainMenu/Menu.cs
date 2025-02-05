@@ -14,13 +14,10 @@ namespace Game.MainMenu
 
         private PhysicalButton[] _buttons;
 
-        private void Awake()
-        {
-            _buttons = GetComponentsInChildren<PhysicalButton>();
-        }
-
         private void Start()
         {
+            _buttons = GetComponentsInChildren<PhysicalButton>();
+
             if (_startOpen)
             {
                 GetComponent<CanvasGroup>().alpha = 1;

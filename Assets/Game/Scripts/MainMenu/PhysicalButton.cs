@@ -1,5 +1,6 @@
 using System;
 using MoreMountains.Feedbacks;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,8 +16,8 @@ namespace Game.MainMenu
         [SerializeField] private MMF_Player _clickFeedback;
         [SerializeField] private UnityEvent _onClick;
         private TextMeshProUGUI _textMeshpro;
-        
-        public bool Interactable { get; set; }
+
+        [ShowInInspector, ReadOnly] public bool Interactable { get; set; }
         public bool IsSelected { get; set; }
 
         private void Awake()

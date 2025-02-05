@@ -70,3 +70,22 @@ Assets/Plugins/Stylized Water For URP/Materials/Ocean.mat
 Assets/Plugins/Stylized Water For URP/Materials/Ocean.mat
 
 ProjectSettings/
+
+# FMOD Studio
+/FMODStudioCache.asset
+/FMODStudioSettings.asset
+/Assets/Plugins/FMOD/Cache/*
+/Assets/StreamingAssets/*.bank
+/Assets/StreamingAssets/*.bank.meta
+*.user
+*.log
+*.bak
+
+# Ignore FMOD platform-specific build folders
+/FMOD/Build
+/FMOD/Desktop
+/FMOD/Mobile
+/FMOD/Console
+
+# FMOD Temporary Files
+/FMOD/.fspro.user

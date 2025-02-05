@@ -66,6 +66,7 @@ namespace Game.Entities.Ai
             payload.DeathDirection = direction;
             _stateMachine.SetPayload(payload);
             _stateMachine.LockState(_stateMachine.Payload.DeadState);
+            Core.AlertSystem.RaiseAlert();
         }
     }
 }

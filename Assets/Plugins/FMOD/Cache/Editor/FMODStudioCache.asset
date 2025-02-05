@@ -23,7 +23,8 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 2574852385848912976}
   MinDistance: 1
   MaxDistance: 20
   Length: 95908
@@ -123,10 +124,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638741881192759808
+  lastModified: 638743742640726476
   FileSizes:
   - Name: Desktop
-    Value: 1642
+    Value: 1694
   Exists: 1
 --- !u!114 &-3717070286302397361
 MonoBehaviour:
@@ -143,10 +144,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638737699921772265
+  lastModified: 638743742640964415
   FileSizes:
   - Name: Desktop
-    Value: 1283360
+    Value: 1284096
   Exists: 1
 --- !u!114 &-1059419921592800646
 MonoBehaviour:
@@ -190,10 +191,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638737699921707133
+  lastModified: 638743742640721437
   FileSizes:
   - Name: Desktop
-    Value: 1340
+    Value: 1526
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -231,12 +232,13 @@ MonoBehaviour:
   - {fileID: 7929712965649500732}
   - {fileID: -5984583673960636188}
   - {fileID: 7406092165974976129}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: 1534760737497313310}
   MasterBanks:
   - {fileID: -466744557741082600}
   StringsBanks:
   - {fileID: -3986400577292025260}
-  cacheTime: 638741881192791079
+  cacheTime: 638743747152161345
   cacheVersion: 131622
 --- !u!114 &232666046544540984
 MonoBehaviour:
@@ -373,6 +375,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1534760737497313310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/time_scale
+  m_EditorClassIdentifier: 
+  Name: time_scale
+  StudioPath: parameter:/time_scale
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 4101643267
+    data2: 2979414973
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &1691894590307513766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +426,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2574852385848912976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainMusic/time_scale
+  m_EditorClassIdentifier: 
+  Name: time_scale
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 4101643267
+    data2: 2979414973
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &2963008529425041057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,10 +492,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638741881192791079
+  lastModified: 638743747152161345
   FileSizes:
   - Name: Desktop
-    Value: 658176
+    Value: 728576
   Exists: 1
 --- !u!114 &3524705880218045686
 MonoBehaviour:
