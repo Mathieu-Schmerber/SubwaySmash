@@ -18,7 +18,6 @@ namespace Game.Systems.Alert
 
         private void Start()
         {
-            
             if (_alertLights.Length == 0)
                 Debug.LogError("No AlertLights in the scene.");
         }
@@ -26,7 +25,6 @@ namespace Game.Systems.Alert
         private void OnEnable()
         {
             PlayerStateMachine.OnPlayerDeath += OnPlayerDeath;
-            Core.ScoreSystem.OnScoreUpdated += OnScoreUpdated;
         }
 
         private void OnPlayerDeath(Transform obj)
@@ -37,7 +35,6 @@ namespace Game.Systems.Alert
 
         private void OnDisable()
         {
-            Core.ScoreSystem.OnScoreUpdated -= OnScoreUpdated;
             PlayerStateMachine.OnPlayerDeath -= OnPlayerDeath;
         }
 
@@ -55,18 +52,11 @@ namespace Game.Systems.Alert
         
         public void LockAlert(bool state, AlertLevel value = AlertLevel.LOW)
         {
-            Debug.Log($"Locking alert state: {value} {state}");
             _locked = state;
             if (state)
             {
                 AlertLevel = value; 
             }
-            
-        }
-
-        private void OnScoreUpdated(float value)
-        {
-            RaiseAlert();
         }
     }
 }
