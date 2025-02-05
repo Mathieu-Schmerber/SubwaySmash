@@ -62,6 +62,7 @@ namespace Game.MainMenu
         
         public void SetVolumeDisplay(float volume)
         {
+            SetVolume(volume);
             var step = volume * _audioIncrements.Length; 
             for (var i = 0; i < _audioIncrements.Length; i++)
             {

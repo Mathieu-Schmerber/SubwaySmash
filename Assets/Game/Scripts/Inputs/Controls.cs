@@ -176,6 +176,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""4ee3869f-456e-4c33-ad01-c712ec154282"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -200,6 +209,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""RestartStage"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5cc4ed12-792f-41d1-9498-3a5d7b2e61d7"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -216,6 +236,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Other = asset.FindActionMap("Other", throwIfNotFound: true);
         m_Other_SelectMenu = m_Other.FindAction("SelectMenu", throwIfNotFound: true);
         m_Other_RestartStage = m_Other.FindAction("RestartStage", throwIfNotFound: true);
+        m_Other_Pause = m_Other.FindAction("Pause", throwIfNotFound: true);
     }
 
     ~@Controls()
@@ -355,12 +376,14 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private List<IOtherActions> m_OtherActionsCallbackInterfaces = new List<IOtherActions>();
     private readonly InputAction m_Other_SelectMenu;
     private readonly InputAction m_Other_RestartStage;
+    private readonly InputAction m_Other_Pause;
     public struct OtherActions
     {
         private @Controls m_Wrapper;
         public OtherActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @SelectMenu => m_Wrapper.m_Other_SelectMenu;
         public InputAction @RestartStage => m_Wrapper.m_Other_RestartStage;
+        public InputAction @Pause => m_Wrapper.m_Other_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Other; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -376,6 +399,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @RestartStage.started += instance.OnRestartStage;
             @RestartStage.performed += instance.OnRestartStage;
             @RestartStage.canceled += instance.OnRestartStage;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IOtherActions instance)
@@ -386,6 +412,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @RestartStage.started -= instance.OnRestartStage;
             @RestartStage.performed -= instance.OnRestartStage;
             @RestartStage.canceled -= instance.OnRestartStage;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IOtherActions instance)
@@ -414,5 +443,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     {
         void OnSelectMenu(InputAction.CallbackContext context);
         void OnRestartStage(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
