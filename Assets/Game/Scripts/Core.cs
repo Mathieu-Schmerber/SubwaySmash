@@ -13,6 +13,7 @@ using LemonInc.Core.Pooling.Contracts;
 using LemonInc.Core.Pooling.Providers;
 using LemonInc.Core.Utilities;
 using MoreMountains.Feedbacks;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -22,7 +23,7 @@ namespace Game
     /// <summary>
     /// References the game systems.
     /// </summary>
-    /// <seealso cref="LemonInc.Core.Utilities.ManagerSingleton&lt;Game.Core&gt;" />
+    /// <seealso cref="Core" />
     [DefaultExecutionOrder(1)]
     public class Core : ManagerSingleton<Core>
     {
@@ -67,6 +68,15 @@ namespace Game
         public static Exit[] LevelExists => Instance._levelExists;
         public static StageData Stages => Instance._stages;
         public static Transform Player => Instance._player;
+        
+        #if UNITY_EDITOR
+        [Button]
+        private void BindPlayerAndCamera()
+        {
+            _camera = FindFirstObjectByType<Camera>();
+            _player = FindFirstObjectByType<PlayerStateMachine>().transform;
+        }
+        #endif
         
         private void Awake()
         {
