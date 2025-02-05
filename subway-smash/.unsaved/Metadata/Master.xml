@@ -17,8 +17,8 @@
 	<object class="MixerBusEffectChain" id="{99badc36-a25e-448b-98a8-46eb27ba6387}">
 		<relationship name="effects">
 			<destination>{1444354f-b730-4b28-a7f6-d6bb0e6185a2}</destination>
-			<destination>{304cfb6e-0949-4f33-b4e0-e277a0679dc2}</destination>
 			<destination>{fd6fe643-7827-41d5-b15f-f745dd0bf43c}</destination>
+			<destination>{304cfb6e-0949-4f33-b4e0-e277a0679dc2}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a87d269e-c3b6-4a08-920f-b2ca18e257ef}">
@@ -31,7 +31,6 @@
 			<destination>{36c3e765-1c4b-45ac-8846-a22cb97af3be}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusFader" id="{304cfb6e-0949-4f33-b4e0-e277a0679dc2}" />
 	<object class="PitchShifterEffect" id="{fd6fe643-7827-41d5-b15f-f745dd0bf43c}">
 		<property name="pitch">
 			<value>1</value>
@@ -46,6 +45,7 @@
 			<destination>{6160aea4-e13e-4f7c-aa03-f45b7ad786fc}</destination>
 		</relationship>
 	</object>
+	<object class="MixerBusFader" id="{304cfb6e-0949-4f33-b4e0-e277a0679dc2}" />
 	<object class="Automator" id="{36c3e765-1c4b-45ac-8846-a22cb97af3be}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>gain</value>
