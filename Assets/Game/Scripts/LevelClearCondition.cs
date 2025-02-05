@@ -14,6 +14,10 @@ namespace Game
     
     public class LevelClearCondition : MonoBehaviour
     {
+        [SerializeField] private bool _handlePlayerDeath = true;
+        [SerializeField] private bool _handleNpcEscape = true;
+        [SerializeField] private bool _handleNpcDeath = true;
+        
         private AiStateMachine[] _ais;
         private IKillable _player;
 
@@ -45,12 +49,23 @@ namespace Game
             }
         }
 
-        private void OnPlayerDeath() => RaiseLoseCondition(FailReason.PLAYER_DEATH);
+        private void OnPlayerDeath()
+        {
+            if (_handlePlayerDeath)
+                RaiseLoseCondition(FailReason.PLAYER_DEATH);
+        }
 
-        private void OnNpcEscape() => RaiseLoseCondition(FailReason.NPC_ESCAPED);
+        private void OnNpcEscape()
+        {
+            if (_handleNpcEscape)
+                RaiseLoseCondition(FailReason.NPC_ESCAPED);
+        }
 
         private void OnNpcDeath()
         {
+            if (!_handleNpcDeath)
+                return;
+            
             foreach (var ai in _ais)
             {
                 if (ai.IsDead)
