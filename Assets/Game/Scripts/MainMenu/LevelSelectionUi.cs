@@ -18,7 +18,6 @@ namespace Game.MainMenu
                 var displayName = ConvertToRoman(i + 1);
                 
                 instance.SetText(displayName);
-                Debug.Log(stageName);
                 instance.AddListener(() => Core.Instance.LoadStageByName(stageName));
             }
         }

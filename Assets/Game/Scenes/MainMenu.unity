@@ -12086,13 +12086,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de0355db6874b9ca6bf42e0a56fc49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
+  _camera: {fileID: 915357650}
   _levelExists: []
-  _player: {fileID: 0}
+  _player: {fileID: 356762809223657361}
   _stages: {fileID: 11400000, guid: 3e15b694aa51de6489e9a1cc4f37bfd1, type: 2}
   _assertSystems: 0
   _closeSceneFeedback: {fileID: 1678377375}
   _openSceneFeedback: {fileID: 818521146}
+  _lockAlert: 0
 --- !u!4 &1693430359
 Transform:
   m_ObjectHideFlags: 0

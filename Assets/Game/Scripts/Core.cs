@@ -112,7 +112,7 @@ namespace Game
         private void Start()
         {
             _openSceneFeedback.PlayFeedbacks();
-            Core.AlertSystem.LockAlert(_lockAlert);
+            Core.AlertSystem?.LockAlert(_lockAlert);
         }
 
         private void OnPlayerDeath(Transform player)
