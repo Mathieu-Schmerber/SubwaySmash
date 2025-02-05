@@ -38,13 +38,15 @@ namespace Game.Systems.Tutorial
 
         private void OnControlResumed()
         {
-            _tutorialParts[_tutorialPartIndex - 1].CompletionText.SetActive(false);
+            if(_tutorialPartIndex > 0 )
+                _tutorialParts[_tutorialPartIndex - 1].CompletionText.SetActive(false);
             var current = _tutorialParts[_tutorialPartIndex];
 
             Core.AlertSystem.ResetAlert();
             Core.AlertSystem.LockAlert(current.InitialState.ForceAlertLevel, current.InitialState.AlertLevel);
             foreach (var ai in current.InitialState.NPCs)
             {
+                Debug.Log("???");
                 ai.enabled = true;
             }
         }
