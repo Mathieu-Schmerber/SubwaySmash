@@ -41,7 +41,8 @@ namespace Game
         }
         private void OnDisable()
         {
-            _player.OnDeath -= OnPlayerDeath;
+            if (_player != null)
+                _player.OnDeath -= OnPlayerDeath;
             Exit.OnEscaped -= OnNpcEscape;
             foreach (var ai in _ais)
             {
