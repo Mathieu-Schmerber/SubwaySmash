@@ -1,3 +1,4 @@
+using System;
 using Game.Entities.Ai;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -14,6 +15,8 @@ namespace Game.Systems.Waypoint
         private float _arrowHeadLength = 0.3f; // Arrowhead length
         private float _arrowHeadRadius = 0.11f; // Arrowhead base radius
 
+        public static event Action OnEscaped; 
+        
         private Mesh _arrowHeadMesh = null;
         private Animator _animator;
         private MMF_Player _feedback;
@@ -37,6 +40,7 @@ namespace Game.Systems.Waypoint
                 {
                     _animator.SetTrigger(Open);
                     _feedback.PlayFeedbacks();
+                    OnEscaped?.Invoke();
                     Destroy(aiBrain.gameObject);
                 }
             }

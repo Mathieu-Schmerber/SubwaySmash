@@ -1,8 +1,10 @@
+using FMOD.Studio;
 using FMODUnity;
 using Game.Systems.Audio;
 using MoreMountains.Feedbacks;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Game.Systems.Alert
 {
@@ -10,6 +12,7 @@ namespace Game.Systems.Alert
     {
         [SerializeField] private EventReference _audio;
         private MMF_Player[] _feedbacks;
+        private EventInstance? _audioInstance;
 
         private void Awake()
         {
@@ -19,9 +22,16 @@ namespace Game.Systems.Alert
 
         public void Play()
         {
-            AudioManager.PlayOneShot(_audio);
+            _audioInstance = AudioManager.PlayOneShot(_audio);
             foreach (var player in _feedbacks)
                 player.PlayFeedbacks();
+        }
+        
+        public void Stop()
+        {
+            AudioManager.StopSound(_audioInstance, STOP_MODE.ALLOWFADEOUT);
+            foreach (var player in _feedbacks)
+                player.ResetFeedbacks();
         }
 
         [Button]

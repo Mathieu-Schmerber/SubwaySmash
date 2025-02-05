@@ -48,8 +48,13 @@ namespace Game.Systems.Alert
             AlertLevel = AlertLevel.HIGH;
         }
 
-        public void ResetAlert() => AlertLevel = AlertLevel.LOW;
-        
+        public void ResetAlert()
+        {
+            AlertLevel = AlertLevel.LOW;
+            foreach (var alert in _alertLights)
+                alert.Stop();
+        }
+
         public void LockAlert(bool state, AlertLevel value = AlertLevel.LOW)
         {
             _locked = state;
