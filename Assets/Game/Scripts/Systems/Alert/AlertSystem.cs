@@ -18,7 +18,7 @@ namespace Game.Systems.Alert
 
         private void Start()
         {
-            _locked = Core.AlertLock;
+            
             if (_alertLights.Length == 0)
                 Debug.LogError("No AlertLights in the scene.");
         }

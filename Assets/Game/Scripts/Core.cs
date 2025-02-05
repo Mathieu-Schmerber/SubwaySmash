@@ -65,7 +65,6 @@ namespace Game
         public static AlertSystem AlertSystem => Instance._alertSystem ??= Instance.Fetch<AlertSystem>();
         public static Camera Camera => Instance._camera ??= FindFirstObjectByType<Camera>();
         public static Transform CameraRig => Camera.transform.parent.parent;
-        public static bool AlertLock => Instance._lockAlert;
         public static MenuInputProvider MenuInput => Instance._menuInput ??= Instance.Fetch<MenuInputProvider>();
         public static Exit[] LevelExists => Instance._levelExists;
         public static StageData Stages => Instance._stages;
@@ -79,6 +78,7 @@ namespace Game
             _player = FindFirstObjectByType<PlayerStateMachine>().transform;
         }
         #endif
+        
         
         private void Awake()
         {
@@ -112,6 +112,7 @@ namespace Game
         private void Start()
         {
             _openSceneFeedback.PlayFeedbacks();
+            Core.AlertSystem.LockAlert(_lockAlert);
         }
 
         private void OnPlayerDeath(Transform player)
