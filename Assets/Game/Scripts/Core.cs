@@ -39,6 +39,7 @@ namespace Game
         [SerializeField] private MMF_Player _openSceneFeedback;
         [SerializeField] private bool _lockAlert;
         private AsyncOperation _sceneLoadOperation;
+        private NotificationManagerUi _notificationManager;
 
         /// <summary>
         /// Pooling access.
@@ -63,6 +64,7 @@ namespace Game
         public static Camera Camera => Instance._camera ??= FindFirstObjectByType<Camera>();
         public static Transform CameraRig => Camera.transform.parent.parent;
         public static MenuInputProvider MenuInput => Instance._menuInput ??= Instance.Fetch<MenuInputProvider>();
+        public static NotificationManagerUi NotificationManager => Instance._notificationManager ??= Instance.Fetch<NotificationManagerUi>();
         public static Exit[] LevelExists => Instance._levelExists;
         public static StageData Stages => Instance._stages;
         public static Transform Player => Instance._player;
@@ -83,6 +85,7 @@ namespace Game
             _poolProvider = Fetch<NamedObjectPoolProvider>();
             _levelExists = FindObjectsByType<Exit>(FindObjectsSortMode.None);
             _menuInput = Fetch<MenuInputProvider>();
+            _notificationManager = Fetch<NotificationManagerUi>();
         }
 
         private T Fetch<T>()
