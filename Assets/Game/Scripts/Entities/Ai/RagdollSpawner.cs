@@ -15,10 +15,37 @@ namespace Game.Entities.Ai
             // Instantiate the ragdoll
             var ragdoll = Instantiate(_ragdoll, transform.position, transform.rotation);
 
+            // Ignore collisions between ragdoll and source
+            var sourceColliders = GetComponentsInChildren<Collider>();
+            var ragdollColliders = ragdoll.GetComponentsInChildren<Collider>();
+
+            foreach (var sourceCollider in sourceColliders)
+            {
+                foreach (var ragdollCollider in ragdollColliders)
+                {
+                    Physics.IgnoreCollision(sourceCollider, ragdollCollider);
+                }
+            }
+            
             // Transfer SkinnedMeshRenderer and MeshFilter values
             TransferMeshProperties(transform, ragdoll.transform);
             
-            TransferTransforms(transform, ragdoll.transform);
+            //if (ragdoll.SyncTransformRecursively)
+            //TransferTransforms(transform, ragdoll.transform);
+            var gfx = FindDeepChild(ragdoll.transform, "GFX");
+            if (gfx)
+            {
+                gfx.rotation = FindDeepChild(transform, "GFX").rotation;
+            }
+            
+            var chair = FindDeepChild(ragdoll.transform, "Chair");
+            if (chair)
+            {
+                chair.rotation = FindDeepChild(transform, "Chair").rotation;
+            }
+            
+            //ragdoll.transform.position = transform.position;
+            //ragdoll.transform.rotation = transform.rotation;
 
             var rb = GetComponent<Rigidbody>();
             ragdoll.MainRigidbody.linearVelocity = rb.linearVelocity;
@@ -54,7 +81,7 @@ namespace Game.Entities.Ai
 
             target.localPosition = source.localPosition;
             target.localRotation = source.localRotation;
-
+            
             for (int i = 0; i < source.childCount; i++)
             {
                 var sourceChild = source.GetChild(i);

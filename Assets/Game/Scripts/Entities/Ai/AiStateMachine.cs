@@ -59,6 +59,7 @@ namespace Game.Entities.Ai
             _stateMachine.SwitchState(_stateMachine.Payload.StunState);
         }
         
+        [Button]
         protected override void OnKill(Vector3 direction, float force)
         {
             var payload = _stateMachine.Payload;
