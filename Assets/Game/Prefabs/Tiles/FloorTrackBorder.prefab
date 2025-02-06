@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7928820508318416284}
-  - component: {fileID: -2684329344010672867}
   m_Layer: 6
   m_Name: FloorTrackBorder
   m_TagString: Untagged
@@ -33,20 +32,6 @@ Transform:
   - {fileID: 8547881735879247744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-2684329344010672867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7296680849680295718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 419c7d983c4047b5ab2542e2db285c31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer: {fileID: 11400000, guid: 58843841d348c134fbcf87223b54f3f8, type: 2}
-  allowRandomRotation: 0
 --- !u!1001 &8154493194132562027
 PrefabInstance:
   m_ObjectHideFlags: 0

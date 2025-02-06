@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7753905842945826792}
   - component: {fileID: 7428058651976728002}
   - component: {fileID: 4679579439334820104}
-  - component: {fileID: 211623013813457139}
   - component: {fileID: 8417829948148314412}
   - component: {fileID: 5759998009871317606}
   - component: {fileID: 1089411881908555994}
@@ -95,20 +94,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &211623013813457139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6625297274558327005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 419c7d983c4047b5ab2542e2db285c31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer: {fileID: 11400000, guid: 4d790146632ee4c4394432609624968c, type: 2}
-  allowRandomRotation: 0
 --- !u!114 &8417829948148314412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,6 +672,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f2f903737a57f3144bed4edf3e5778f3, type: 2}
     m_RemovedComponents:
     - {fileID: 5787726505055487413, guid: 9b0b70b155b434a4cb5058fb1ed47910, type: 3}
+    - {fileID: 346863599742982141, guid: 9b0b70b155b434a4cb5058fb1ed47910, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

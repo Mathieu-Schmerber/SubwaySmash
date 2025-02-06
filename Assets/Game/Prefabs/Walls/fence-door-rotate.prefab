@@ -70,9 +70,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2056308607250107317}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5382241545383940581}
     - targetCorrespondingSourceObject: {fileID: -4701060226211541619, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
       insertIndex: -1
@@ -203,6 +200,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7efced018c4333ba66d479c463d685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &1328477108879142911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4701060226211541619, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
@@ -307,25 +311,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7efced018c4333ba66d479c463d685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &2336419964229394211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bd5e98fe59a100469e0aff0b8d6c4eb, type: 3}
   m_PrefabInstance: {fileID: 3219449511513105010}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2056308607250107317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2336419964229394211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 419c7d983c4047b5ab2542e2db285c31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer: {fileID: 11400000, guid: 633b63b07f56b9e43b6cc4bca255d544, type: 2}
-  allowRandomRotation: 0
 --- !u!54 &5382241545383940581
 Rigidbody:
   m_ObjectHideFlags: 0

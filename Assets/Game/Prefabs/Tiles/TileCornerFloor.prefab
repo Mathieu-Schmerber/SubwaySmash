@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6885948328112243165}
-  - component: {fileID: 9148775803455148143}
   m_Layer: 0
   m_Name: TileCornerFloor
   m_TagString: Untagged
@@ -34,20 +33,6 @@ Transform:
   - {fileID: 856405797969011582}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9148775803455148143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189049186996686015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 419c7d983c4047b5ab2542e2db285c31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer: {fileID: 11400000, guid: 58843841d348c134fbcf87223b54f3f8, type: 2}
-  allowRandomRotation: 0
 --- !u!1001 &1785809290160341101
 PrefabInstance:
   m_ObjectHideFlags: 0

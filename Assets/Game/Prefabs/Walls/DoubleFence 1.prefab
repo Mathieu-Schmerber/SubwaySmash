@@ -2494,7 +2494,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6212132612661941750}
-  - component: {fileID: 7063150838154010020}
   m_Layer: 7
   m_Name: DoubleFence 1
   m_TagString: Untagged
@@ -2518,20 +2517,6 @@ Transform:
   - {fileID: 7597407246641891351}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &7063150838154010020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7243375469417930616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 419c7d983c4047b5ab2542e2db285c31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer: {fileID: 11400000, guid: 633b63b07f56b9e43b6cc4bca255d544, type: 2}
-  allowRandomRotation: 0
 --- !u!1 &8074913921416613010
 GameObject:
   m_ObjectHideFlags: 0
