@@ -306,13 +306,34 @@ MonoBehaviour:
   _notificationSettings:
     _keyData: 000000000100000002000000
     _valueData:
-    - Color: {r: 0.38039216, g: 1, b: 0.41568628, a: 1}
+    - Audio:
+        Guid:
+          Data1: -1779602396
+          Data2: 1300779512
+          Data3: -49934970
+          Data4: -1490030406
+        Path: event:/SuccessNotif
+      Color: {r: 0.38039216, g: 1, b: 0.41568628, a: 1}
       Picto: {fileID: 21300000, guid: 28185bdfc6545cb4faf70df2a8a74f7a, type: 3}
       Text: Level cleared !
-    - Color: {r: 1, g: 0.29803923, b: 0.29803923, a: 1}
+    - Audio:
+        Guid:
+          Data1: -1829859175
+          Data2: 1324530300
+          Data3: -357816924
+          Data4: -1688838091
+        Path: event:/ErrorNotif
+      Color: {r: 1, g: 0.29803923, b: 0.29803923, a: 1}
       Picto: {fileID: 21300000, guid: 7d67602e5fc28d9488db934179f87bbb, type: 3}
       Text: Citizen escaped !
-    - Color: {r: 1, g: 0.58431375, b: 0.29803923, a: 1}
+    - Audio:
+        Guid:
+          Data1: -1829859175
+          Data2: 1324530300
+          Data3: -357816924
+          Data4: -1688838091
+        Path: event:/ErrorNotif
+      Color: {r: 1, g: 0.58431375, b: 0.29803923, a: 1}
       Picto: {fileID: 21300000, guid: ab16f071fbb5f114380d9199089a9520, type: 3}
       Text: You died
   _notificationType: 2

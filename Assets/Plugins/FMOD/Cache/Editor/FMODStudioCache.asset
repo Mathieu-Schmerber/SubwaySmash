@@ -124,10 +124,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638743742640726476
+  lastModified: 638744610349545105
   FileSizes:
   - Name: Desktop
-    Value: 1694
+    Value: 1788
   Exists: 1
 --- !u!114 &-3717070286302397361
 MonoBehaviour:
@@ -191,7 +191,7 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638743742640721437
+  lastModified: 638744610349535105
   FileSizes:
   - Name: Desktop
     Value: 1526
@@ -232,13 +232,15 @@ MonoBehaviour:
   - {fileID: 7929712965649500732}
   - {fileID: -5984583673960636188}
   - {fileID: 7406092165974976129}
+  - {fileID: 326492499849066632}
+  - {fileID: 6751778415602900437}
   EditorParameters:
   - {fileID: 1534760737497313310}
   MasterBanks:
   - {fileID: -466744557741082600}
   StringsBanks:
   - {fileID: -3986400577292025260}
-  cacheTime: 638743747152161345
+  cacheTime: 638744611886013499
   cacheVersion: 131622
 --- !u!114 &232666046544540984
 MonoBehaviour:
@@ -258,6 +260,33 @@ MonoBehaviour:
     Data2: 1266645513
     Data3: -247906679
     Data4: -1468201404
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &326492499849066632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SuccessNotif
+  m_EditorClassIdentifier: 
+  Path: event:/SuccessNotif
+  Guid:
+    Data1: -1779602396
+    Data2: 1300779512
+    Data3: -49934970
+    Data4: -1490030406
   Banks:
   - {fileID: 3084748262393913403}
   IsStream: 0
@@ -492,10 +521,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638743747152161345
+  lastModified: 638744611886013499
   FileSizes:
   - Name: Desktop
-    Value: 728576
+    Value: 741504
   Exists: 1
 --- !u!114 &3524705880218045686
 MonoBehaviour:
@@ -542,6 +571,33 @@ MonoBehaviour:
     Data2: 1253991254
     Data3: -623288924
     Data4: -715620091
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6751778415602900437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ErrorNotif
+  m_EditorClassIdentifier: 
+  Path: event:/ErrorNotif
+  Guid:
+    Data1: -1829859175
+    Data2: 1324530300
+    Data3: -357816924
+    Data4: -1688838091
   Banks:
   - {fileID: 3084748262393913403}
   IsStream: 0

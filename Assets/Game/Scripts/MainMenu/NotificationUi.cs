@@ -1,4 +1,6 @@
 using System;
+using FMODUnity;
+using Game.Systems.Audio;
 using LemonInc.Core.Utilities;
 using MoreMountains.Feedbacks;
 using TMPro;
@@ -19,6 +21,7 @@ namespace Game.MainMenu
         [Serializable]
         public struct Notification
         {
+            public EventReference Audio;
             public Color Color;
             public Sprite Picto;
             public string Text;
@@ -47,6 +50,7 @@ namespace Game.MainMenu
             _image.sprite = _notificationSettings[_notificationType].Picto;
             _image.color = _notificationSettings[_notificationType].Color;
             _text.text = _notificationSettings[_notificationType].Text;
+            AudioManager.PlayOneShot(_notificationSettings[_notificationType].Audio);
         }
 
         private void OnValidate()
