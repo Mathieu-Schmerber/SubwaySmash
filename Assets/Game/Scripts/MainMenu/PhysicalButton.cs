@@ -53,6 +53,7 @@ namespace Game.MainMenu
             
             IsSelected = true;
             _selectFeedback.PlayFeedbacks();
+            other.GetComponentInChildren<PlayerInputDialog>()?.ShowMenuNav(true);
         }
         
         private void OnTriggerExit(Collider other)
@@ -62,6 +63,7 @@ namespace Game.MainMenu
             
             IsSelected = false;
             _deselectFeedback.PlayFeedbacks();
+            other.GetComponentInChildren<PlayerInputDialog>()?.ShowMenuNav(false);
         }
 
         private void OnEnable()
