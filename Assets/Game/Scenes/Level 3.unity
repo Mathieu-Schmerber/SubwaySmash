@@ -754,6 +754,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a58ed39ab238345b211e31be302ab0, type: 3}
+--- !u!20 &63624037 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8290200137891394987, guid: e6a58ed39ab238345b211e31be302ab0, type: 3}
+  m_PrefabInstance: {fileID: 63624036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &63723535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10045,6 +10050,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &1024460692 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 356762809593850558, guid: 294237b1259eb4b4e917ad52b51c3b6b, type: 3}
+  m_PrefabInstance: {fileID: 1024460689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1039509416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15162,6 +15172,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 864468651119019890, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 63624037}
+    - target: {fileID: 864468651119019890, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1024460692}
     - target: {fileID: 885316243960698702, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

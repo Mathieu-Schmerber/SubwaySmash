@@ -90,7 +90,7 @@ namespace Game.Systems.Waypoint
 
         public Transform GetAt(int wayPointIndex) => _wayPoints[wayPointIndex];
 
-        private void OnDrawGizmosSelected()
+        private void OnDrawGizmos()
         {
             if (_wayPoints != null && _wayPoints.Count > 0)
             {
