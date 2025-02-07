@@ -8,6 +8,7 @@ namespace Game.Entities.GPE.Train
 {
     public class TrainSpawner : MonoBehaviour
     {
+        [SerializeField] private bool _notAffectGravity = false;
         [SerializeField] private float _trainSpeed = 1.0f;
         [SerializeField] private Rigidbody _rb;
         [SerializeField] private Transform _train;
@@ -34,9 +35,14 @@ namespace Game.Entities.GPE.Train
                 return;
 
             AudioManager.PlayOneShot(_audio);
-            other.attachedRigidbody.useGravity = true;
-            other.attachedRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-            other.attachedRigidbody.linearDamping = 0f;
+
+            if (!_notAffectGravity)
+            {
+                other.attachedRigidbody.useGravity = true;
+                other.attachedRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+                other.attachedRigidbody.linearDamping = 0f;
+            }
+
             _isTriggered = true;
             _timer.Start(_resetCooldown, false, ResetPosition);
         }

@@ -45,17 +45,17 @@ namespace Game.Systems.Score
         
         private void OnDeath()
         {
-            Core.ScoreSystem.OnDeath(_identifier, transform.position);
+            Core.ScoreSystem?.OnDeath(_identifier, transform.position);
         }
 
         public void OnTrigger()
         {
-            Core.ScoreSystem.OnTrigger(_identifier, transform.position);
+            Core.ScoreSystem?.OnTrigger(_identifier, transform.position);
         }
 
         private void OnPush()
         {
-            Core.ScoreSystem.OnPush(_identifier, transform.position);
+            Core.ScoreSystem?.OnPush(_identifier, transform.position);
         }
 
 #if UNITY_EDITOR

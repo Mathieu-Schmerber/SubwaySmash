@@ -11,6 +11,8 @@ namespace Game.Entities.Player
 {
     public class PlayerStateMachine : KillableBase
     {
+        [SerializeField] private bool _canDie = true;
+        
         private PlayerStates _payload;
         private readonly StateMachine<PlayerStates> _stateMachine = new();
         private IInputProvider _input;
@@ -71,6 +73,9 @@ namespace Game.Entities.Player
 
         protected override void OnKill(Vector3 direction, float force)
         {
+            if (!_canDie)
+                return;
+            
             var payload = _stateMachine.Payload;
             payload.DeathForce = force;
             payload.DeathDirection = direction;
