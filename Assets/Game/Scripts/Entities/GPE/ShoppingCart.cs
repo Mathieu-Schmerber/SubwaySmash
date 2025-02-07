@@ -8,11 +8,11 @@ namespace Game.Entities.GPE
     {
         private MMF_Player _feedback;
         [SerializeField] private float _killStrength;
+        
         private void Awake()
         {
             _feedback = GetComponent<MMF_Player>();
         }
-        
         
         public override void Trigger(Transform actor)
         {
