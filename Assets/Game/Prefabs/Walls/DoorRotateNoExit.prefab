@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 012282e0870ce354b92125df84cd0b9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.009846687
+      value: 0.000000044703484
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 012282e0870ce354b92125df84cd0b9e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 012282e0870ce354b92125df84cd0b9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.7175145
+      value: -2.72
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 012282e0870ce354b92125df84cd0b9e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -222,7 +222,7 @@ Rigidbody:
   m_GameObject: {fileID: 7634405887130802177}
   serializedVersion: 4
   m_Mass: 0.5
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -254,11 +254,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1259426982
+      Data2: 1212793593
+      Data3: -1680463172
+      Data4: 81042162
+    Path: event:/Cardboard
 --- !u!59 &9021802321844462214
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -335,7 +335,7 @@ Rigidbody:
   m_GameObject: {fileID: 8671689363355164650}
   serializedVersion: 4
   m_Mass: 0.5
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -367,11 +367,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1259426982
+      Data2: 1212793593
+      Data3: -1680463172
+      Data4: 81042162
+    Path: event:/Cardboard
 --- !u!59 &7156822614683538550
 HingeJoint:
   m_ObjectHideFlags: 0
