@@ -60,7 +60,7 @@ namespace Game.Inputs
 
         public void Init(Vector3[] waypoints)
         {
-            _index = 0;
+            _index = 1;
             HasControl = true;
             _waypoints = waypoints;
         }
