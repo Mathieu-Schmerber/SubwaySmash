@@ -403,7 +403,6 @@ GameObject:
   - component: {fileID: 4877401839843207263}
   - component: {fileID: 5892316602808201738}
   - component: {fileID: 9074286990725327362}
-  - component: {fileID: 4336312041236073982}
   - component: {fileID: 3098088956777091482}
   m_Layer: 8
   m_Name: NPC_Fast
@@ -583,19 +582,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carbonatedProgress: 0
---- !u!114 &4336312041236073982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6070745269598059759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1c29767f614f55aec77b1faac7438e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _identifier: NPC
 --- !u!114 &3098088956777091482
 MonoBehaviour:
   m_ObjectHideFlags: 0

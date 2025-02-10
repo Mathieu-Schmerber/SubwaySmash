@@ -6,6 +6,8 @@ namespace Game.Systems.Tutorial
     
     public abstract class TutorialCondition : MonoBehaviour
     {
+        [field: SerializeField] public string Label { get; set; }
+        
         public event Action<bool> OnConditionChanged;  
         public bool IsVerified { get; private set; }
 

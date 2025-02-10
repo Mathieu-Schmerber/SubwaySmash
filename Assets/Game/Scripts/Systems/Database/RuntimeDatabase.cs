@@ -22,7 +22,6 @@ public DatabaseData RuntimeDatabase => _data ??= Resources.Load<DatabaseData>("R
 public static class Data
 {
 public static Game.Entities.Player.PlayerStatData PlayerData = (Game.Entities.Player.PlayerStatData)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["ae9f60c8-bb58-4ed4-8926-0646c0279b0f"].Data;
-public static Game.Systems.Score.ScoreData Score = (Game.Systems.Score.ScoreData)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["02224c32-d29a-4569-a8c0-44169cdecda5"].Data;
 public static UnityEngine.GameObject OnFireFx = (UnityEngine.GameObject)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["45c381f1-0a29-4d68-9067-fb5a01f3b4e1"].Data;
 public static Game.Systems.Audio.AudioData Audio = (Game.Systems.Audio.AudioData)RuntimeDatabase.Instance.RuntimeDatabaseData.AssetDefinitions["18bbdfa4-a50b-4fd9-863e-070dd019f119"].Data;
 
@@ -33,7 +32,7 @@ public static Game.Systems.Audio.AudioData Audio = (Game.Systems.Audio.AudioData
 public static IEnumerable<T> All<T>()
    where T : UnityEngine.Object
 {
-   var all = new UnityEngine.Object[4] { PlayerData, Score, OnFireFx, Audio };
+   var all = new UnityEngine.Object[3] { PlayerData, OnFireFx, Audio };
    return all.OfType<T>();
 }
 }

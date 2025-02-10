@@ -10,15 +10,15 @@ namespace Game.MainMenu
 
         private void Awake()
         {
-            var stages = Core.Stages.GetAllStages();
+            var stages = Core.Stages.GetAllStageEntries();
             for (int i = 0; i < stages.Length; i++)
             {
-                var stageName = stages[i];
+                var stage = stages[i];
                 var instance = Instantiate(_prefab, _container);
                 var displayName = ConvertToRoman(i + 1);
                 
                 instance.SetText(displayName);
-                instance.AddListener(() => Core.Instance.LoadStageByName(stageName));
+                instance.AddListener(() => Core.Instance.LoadStageByName(stage.Levels[0]));
             }
         }
         

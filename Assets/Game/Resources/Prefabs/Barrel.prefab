@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 1735605796259634953}
   - component: {fileID: 8495376293676518436}
   - component: {fileID: 1798730628158742050}
-  - component: {fileID: 4534905137476405874}
   - component: {fileID: -7134603183888194452}
   - component: {fileID: 3268851499548921757}
   m_Layer: 7
@@ -722,19 +721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carbonatedProgress: 0
---- !u!114 &4534905137476405874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3445785523242228427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1c29767f614f55aec77b1faac7438e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _identifier: Barrel
 --- !u!114 &-7134603183888194452
 MonoBehaviour:
   m_ObjectHideFlags: 0

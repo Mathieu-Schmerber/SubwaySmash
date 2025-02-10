@@ -3,7 +3,6 @@ using Game.Entities.Player;
 using Game.MainMenu;
 using Game.Systems.Alert;
 using Game.Systems.Audio;
-using Game.Systems.Score;
 using Game.Systems.Stage;
 using Game.Systems.Waypoint;
 using LemonInc.Core.Pooling;
@@ -27,7 +26,6 @@ namespace Game
         [SerializeField]private Camera _camera;
         
         private IPoolProvider<string> _poolProvider;
-        private ScoreSystem _scoreSystem;
         private AlertSystem _alertSystem;
         private MenuInputProvider _menuInput;
         [HideInInspector] public Exit[] _levelExists;
@@ -40,6 +38,7 @@ namespace Game
         [SerializeField] private bool _lockAlert;
         private AsyncOperation _sceneLoadOperation;
         private NotificationManagerUi _notificationManager;
+        private LevelClearCondition _levelClearCondition;
 
         /// <summary>
         /// Pooling access.
@@ -59,7 +58,6 @@ namespace Game
             public static IPool From(string pool) => Instance._poolProvider.Get(pool);
         }
 
-        public static ScoreSystem ScoreSystem => Instance._scoreSystem ??= Instance.Fetch<ScoreSystem>();
         public static AlertSystem AlertSystem => Instance._alertSystem ??= Instance.Fetch<AlertSystem>();
         public static Camera Camera => Instance._camera ??= FindFirstObjectByType<Camera>();
         public static Transform CameraRig => Camera.transform.parent.parent;
@@ -68,6 +66,7 @@ namespace Game
         public static Exit[] LevelExists => Instance._levelExists;
         public static StageData Stages => Instance._stages;
         public static Transform Player => Instance._player;
+        public static LevelClearCondition LevelClearCondition => Instance._levelClearCondition;
         
         #if UNITY_EDITOR
         [Button]
@@ -81,11 +80,11 @@ namespace Game
         private void Awake()
         {
             _camera = FindFirstObjectByType<Camera>();
-            _scoreSystem = Fetch<ScoreSystem>();
             _poolProvider = Fetch<NamedObjectPoolProvider>();
             _levelExists = FindObjectsByType<Exit>(FindObjectsSortMode.None);
             _menuInput = Fetch<MenuInputProvider>();
             _notificationManager = Fetch<NotificationManagerUi>();
+            _levelClearCondition = Fetch<LevelClearCondition>();
         }
 
         private T Fetch<T>()

@@ -4914,9 +4914,6 @@ PrefabInstance:
       addedObject: {fileID: 6182627455876453154}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 904330a4e91baaf49bc1bdcd1e9993fd, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -2455591014553965489}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 904330a4e91baaf49bc1bdcd1e9993fd, type: 3}
-      insertIndex: -1
       addedObject: {fileID: -2792959892363173488}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 904330a4e91baaf49bc1bdcd1e9993fd, type: 3}
       insertIndex: -1
@@ -5415,19 +5412,6 @@ MonoBehaviour:
         DeclaredDuration: 0
         ForceSimulationSpeed: 0
         ForcedSimulationSpeed: {x: 0.1, y: 1}
---- !u!114 &-2455591014553965489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4340277657637777348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1c29767f614f55aec77b1faac7438e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _identifier: ShoppingCart
 --- !u!114 &-2792959892363173488
 MonoBehaviour:
   m_ObjectHideFlags: 0

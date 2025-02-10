@@ -606,7 +606,6 @@ GameObject:
   - component: {fileID: 7921408941897772923}
   - component: {fileID: 5806632527037631698}
   - component: {fileID: 2721653030555017846}
-  - component: {fileID: 1340783633400352001}
   - component: {fileID: 1122761760077456212}
   m_Layer: 8
   m_Name: DisabledTemplate
@@ -693,6 +692,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fea16e3275e473aabbde2436fa973b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   _killOnPush: 0
   _raiseAlertOnPush: 1
 --- !u!114 &5927732568628980547
@@ -707,6 +713,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43eea6b935a84235bd102b6fb64ff977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deathAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   _stat: {fileID: 11400000, guid: 7895df35b3408cf4f9e0caada9d6dbce, type: 2}
   _isAggressive: 0
 --- !u!114 &3205816066234716975
@@ -771,19 +784,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carbonatedProgress: 0
---- !u!114 &1340783633400352001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8769119814483147434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af1c29767f614f55aec77b1faac7438e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _identifier: NPC
 --- !u!114 &1122761760077456212
 MonoBehaviour:
   m_ObjectHideFlags: 0

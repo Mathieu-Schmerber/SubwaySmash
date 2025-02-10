@@ -12,21 +12,21 @@ namespace Game
         NPC_ESCAPED,
         PLAYER_DEATH
     }
-    
+
     public class LevelClearCondition : MonoBehaviour
     {
         [SerializeField] private bool _handlePlayerDeath = true;
         [SerializeField] private bool _handleNpcEscape = true;
         [SerializeField] private bool _handleNpcDeath = true;
-        
+
         private AiStateMachine[] _ais;
         private IKillable _player;
 
         private bool _loseRaised;
-        
+
         public static event Action OnLevelCleared;
         public static event Action<FailReason> OnLevelFailed;
-        
+
         private void Awake()
         {
             _player = Core.Player.GetComponent<IKillable>();
@@ -42,6 +42,7 @@ namespace Game
                 ai.OnDeath += OnNpcDeath;
             }
         }
+
         private void OnDisable()
         {
             if (_player != null)
@@ -75,7 +76,7 @@ namespace Game
         {
             if (!_handleNpcDeath)
                 return;
-            
+
             foreach (var ai in _ais)
             {
                 if (ai.IsDead)
@@ -84,6 +85,11 @@ namespace Game
                     return;
             }
 
+            MarkLevelCleared();
+        }
+
+        public void MarkLevelCleared()
+        {
             Core.NotificationManager.PushNotification(NotificationUi.NotificationType.LEVEL_CLEAR);
             RaiseWinCondition();
         }
@@ -92,7 +98,7 @@ namespace Game
         {
             if (_loseRaised)
                 return;
-            
+
             OnLevelCleared?.Invoke();
             Invoke(nameof(LoadNextStage), 3f);
         }
@@ -101,12 +107,12 @@ namespace Game
         {
             if (_loseRaised)
                 return;
-            
+
             _loseRaised = true;
             OnLevelFailed?.Invoke(reason);
             Invoke(nameof(RestartStage), 3f);
         }
-        
+
         private void LoadNextStage()
         {
             if (_player.IsDead)
