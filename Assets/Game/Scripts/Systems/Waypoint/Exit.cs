@@ -31,7 +31,9 @@ namespace Game.Systems.Waypoint
 
         private void CheckForAiBrain()
         {
-            var hits = Physics.OverlapSphere(transform.position + _offset, _radius);
+            // Apply the offset in local space using the transform's rotation
+            var positionWithOffset = transform.position + transform.TransformDirection(_offset);
+            var hits = Physics.OverlapSphere(positionWithOffset, _radius);
 
             foreach (var hit in hits)
             {
@@ -47,21 +49,25 @@ namespace Game.Systems.Waypoint
         }
 
         private bool TargetIsThis(Transform aiBrainTarget)
-            => Vector3.Distance(transform.position + _offset, aiBrainTarget.position) <= _radius;
+        {
+            var positionWithOffset = transform.position + transform.TransformDirection(_offset);
+            return Vector3.Distance(positionWithOffset, aiBrainTarget.position) <= _radius;
+        }
 
         private void OnDrawGizmos()
         {
             if (!_debug)
                 return;
-            
+
             _arrowHeadMesh = CreateConeMesh(_arrowHeadRadius, _arrowHeadLength, 12);
-            
+
             // Draw sphere
             Gizmos.color = Color.cyan;
-            Gizmos.DrawWireCube(transform.position + Vector3.Scale(new Vector3(1, .001f, 1), _offset), new Vector3(1, 0, 1) * _radius);
+            var positionWithOffset = transform.position + transform.TransformDirection(_offset);
+            Gizmos.DrawWireCube(positionWithOffset, new Vector3(1, 0, 1) * _radius);
 
             // Draw arrow pointing in the forward direction
-            Vector3 arrowStart = transform.position + _offset;
+            Vector3 arrowStart = positionWithOffset;
             Vector3 arrowEnd = arrowStart + transform.forward * _arrowLength;
 
             // Draw arrow shaft
@@ -73,6 +79,7 @@ namespace Game.Systems.Waypoint
                 Gizmos.DrawMesh(_arrowHeadMesh, arrowEnd, Quaternion.LookRotation(transform.forward));
             }
         }
+
 
         private Mesh CreateConeMesh(float radius, float height, int segments)
         {

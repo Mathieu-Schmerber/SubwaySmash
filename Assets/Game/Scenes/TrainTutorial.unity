@@ -11985,6 +11985,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 294237b1259eb4b4e917ad52b51c3b6b, type: 3}
+--- !u!4 &1024460690 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 356762809593850558, guid: 294237b1259eb4b4e917ad52b51c3b6b, type: 3}
+  m_PrefabInstance: {fileID: 1024460689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1031998433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3994713915633186174, guid: 43d8576c4ffbfcb44a8299a40842d39d, type: 3}
@@ -12114,6 +12119,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 864468651119019890, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 9017402060879199557}
+    - target: {fileID: 864468651119019890, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1024460690}
     - target: {fileID: 885316243960698702, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -20245,6 +20258,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a58ed39ab238345b211e31be302ab0, type: 3}
+--- !u!20 &9017402060879199557 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8290200137891394987, guid: e6a58ed39ab238345b211e31be302ab0, type: 3}
+  m_PrefabInstance: {fileID: 9017402060879199556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

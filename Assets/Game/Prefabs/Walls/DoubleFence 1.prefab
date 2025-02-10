@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8644147012175031262}
   - component: {fileID: 904147879299211429}
   - component: {fileID: 8417934010008972222}
-  - component: {fileID: 2652583550844308187}
   - component: {fileID: 2143659081787082945}
   - component: {fileID: 6174901764355116932}
-  m_Layer: 7
+  - component: {fileID: 3632242163300881958}
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 604985638976023539}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 7.99, y: 2.23, z: -0.020000339}
+  m_LocalPosition: {x: 7.99, y: 1.96, z: -0.020000339}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54,7 +54,7 @@ Rigidbody:
   m_GameObject: {fileID: 604985638976023539}
   serializedVersion: 4
   m_Mass: 2
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -82,10 +82,10 @@ HingeJoint:
   serializedVersion: 3
   m_ConnectedBody: {fileID: 992400396934598944}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Anchor: {x: -0.62, y: -0.41, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.03, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 0
+  m_ConnectedAnchor: {x: 8.5, y: 0, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -97,11 +97,11 @@ HingeJoint:
     force: 0
     freeSpin: 0
   m_UseLimits: 1
-  m_ExtendedLimits: 1
+  m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: -154.1957
-    max: 136.2797
+    min: -90
+    max: 90
     bounciness: 0.8
     bounceMinVelocity: 0.15
     contactDistance: 0
@@ -111,27 +111,6 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 100
   m_ConnectedMassScale: 1
---- !u!65 &2652583550844308187
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604985638976023539}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5.6, y: 2.85, z: 1}
-  m_Center: {x: 2.4, y: 0, z: 0}
 --- !u!114 &2143659081787082945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +146,29 @@ MonoBehaviour:
   _ignoreOnStay:
     serializedVersion: 2
     m_Bits: 768
+--- !u!136 &3632242163300881958
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604985638976023539}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.53214735
+  m_Height: 3.8744144
+  m_Direction: 0
+  m_Center: {x: 2.6946454, y: 0.063506216, z: -0.050806068}
 --- !u!1 &605820524940915037
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4688802735010835917}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: DoorRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +212,7 @@ GameObject:
   - component: {fileID: 3756784076937464788}
   - component: {fileID: 3743456336018222917}
   - component: {fileID: 1636009071858844092}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: cylinderVertex 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +298,7 @@ GameObject:
   - component: {fileID: 6696604191994788479}
   - component: {fileID: 3594225122647336899}
   - component: {fileID: 1915913651446095423}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: block 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +384,7 @@ GameObject:
   - component: {fileID: 692373002450879028}
   - component: {fileID: 3839730721467423870}
   - component: {fileID: 79081821670715402}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: block 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,10 +470,10 @@ GameObject:
   - component: {fileID: 58275601342294073}
   - component: {fileID: 2722922916197434100}
   - component: {fileID: 5351754355092929770}
-  - component: {fileID: 5137222787501785431}
   - component: {fileID: 6139210407899475190}
   - component: {fileID: 7607967882100462751}
-  m_Layer: 7
+  - component: {fileID: 1825980759491578720}
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +489,7 @@ Transform:
   m_GameObject: {fileID: 1174909960190589833}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.52, y: 2.23, z: -0.02}
+  m_LocalPosition: {x: -3.52, y: 1.96, z: -0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -511,7 +513,7 @@ Rigidbody:
   m_GameObject: {fileID: 1174909960190589833}
   serializedVersion: 4
   m_Mass: 2
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -537,12 +539,12 @@ HingeJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174909960190589833}
   serializedVersion: 3
-  m_ConnectedBody: {fileID: 5421034111060240199}
+  m_ConnectedBody: {fileID: 992400396934598944}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Anchor: {x: -0.62, y: -0.41, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.03, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 0
+  m_ConnectedAnchor: {x: -4.17, y: 0, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -554,11 +556,11 @@ HingeJoint:
     force: 0
     freeSpin: 0
   m_UseLimits: 1
-  m_ExtendedLimits: 1
+  m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: -136.72777
-    max: 145.30345
+    min: -90
+    max: 90
     bounciness: 0.8
     bounceMinVelocity: 0.15
     contactDistance: 0
@@ -568,27 +570,6 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 100
   m_ConnectedMassScale: 1
---- !u!65 &5137222787501785431
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174909960190589833}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5.6, y: 2.85, z: 1}
-  m_Center: {x: 2.4, y: 0, z: 0}
 --- !u!114 &6139210407899475190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,6 +605,29 @@ MonoBehaviour:
   _ignoreOnStay:
     serializedVersion: 2
     m_Bits: 768
+--- !u!136 &1825980759491578720
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174909960190589833}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5448492
+  m_Height: 4.4634314
+  m_Direction: 0
+  m_Center: {x: 2.531027, y: 0.063506216, z: 0.038103905}
 --- !u!1 &1243228705886189441
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +639,7 @@ GameObject:
   - component: {fileID: 8702743819108503201}
   - component: {fileID: 7081965810520119190}
   - component: {fileID: 3878776279568628516}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: block 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -807,7 +811,7 @@ GameObject:
   - component: {fileID: 5684700585609202254}
   - component: {fileID: 2616063718879601878}
   - component: {fileID: 8068662074391208355}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: cylinderVertex 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -977,7 +981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3309349254352752390}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: DoorLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1097,7 +1101,7 @@ GameObject:
   - component: {fileID: 7199802073252694642}
   - component: {fileID: 2338053185758903247}
   - component: {fileID: 1607818156397005882}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: cylinderVertex 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1353,7 +1357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7597407246641891351}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: DoubleBarrierv2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1390,7 +1394,7 @@ GameObject:
   - component: {fileID: 3775913791863942906}
   - component: {fileID: 4433952695436915770}
   - component: {fileID: 282798711048697556}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: cylinderVertex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1991,8 +1995,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7690643586163241288}
   - component: {fileID: 992400396934598944}
-  - component: {fileID: 894544073776666734}
-  m_Layer: 2
+  - component: {fileID: 7581618062489140664}
+  m_Layer: 0
   m_Name: PillarRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2045,22 +2049,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!208 &894544073776666734
-NavMeshObstacle:
+--- !u!136 &7581618062489140664
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4774120609739847233}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 3, y: 1, z: 3}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 10.94, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  serializedVersion: 2
+  m_Radius: 1.8792166
+  m_Height: 7.358296
+  m_Direction: 1
+  m_Center: {x: 9.7, y: 1.8145621, z: -0.00000029802314}
 --- !u!1 &5666288060778773586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,8 +2254,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3338955897629991229}
   - component: {fileID: 5421034111060240199}
-  - component: {fileID: 7822496973758099793}
-  m_Layer: 2
+  - component: {fileID: 2146248080985025339}
+  m_Layer: 0
   m_Name: PillarLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2297,22 +2308,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!208 &7822496973758099793
-NavMeshObstacle:
+--- !u!136 &2146248080985025339
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6060482174332851150}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 3, y: 1, z: 3}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -6.88, y: 0.39, z: 0}
-  m_TimeToStationary: 0.5
+  serializedVersion: 2
+  m_Radius: 1.8792166
+  m_Height: 7.358296
+  m_Direction: 1
+  m_Center: {x: -5.784823, y: 1.8145621, z: -0.00000029802314}
 --- !u!1 &6619109433743387732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2410,7 +2428,7 @@ GameObject:
   - component: {fileID: 1186495602787836231}
   - component: {fileID: 8404746914342424482}
   - component: {fileID: 8833368859795753313}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: block 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2494,7 +2512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6212132612661941750}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: DoubleFence 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2511,7 +2529,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.25}
-  m_LocalScale: {x: 0.10000001, y: 0.1, z: 0.10000001}
+  m_LocalScale: {x: 0.10000002, y: 0.1, z: 0.10000002}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7597407246641891351}
