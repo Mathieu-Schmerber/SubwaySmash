@@ -703,6 +703,10 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 647169101324164726, guid: db1c5ac6b09e58940ad03ceca0442415, type: 3}
+      propertyPath: _fireSettings.IgniteTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 647169101324164726, guid: db1c5ac6b09e58940ad03ceca0442415, type: 3}
       propertyPath: _fireSettings.SpreadRadius
       value: 1.5
       objectReference: {fileID: 0}
@@ -3024,6 +3028,10 @@ PrefabInstance:
     - target: {fileID: 647169101324164726, guid: db1c5ac6b09e58940ad03ceca0442415, type: 3}
       propertyPath: _initialSpreadRadius
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 647169101324164726, guid: db1c5ac6b09e58940ad03ceca0442415, type: 3}
+      propertyPath: _fireSettings.IgniteTime
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 647169101324164726, guid: db1c5ac6b09e58940ad03ceca0442415, type: 3}
       propertyPath: _fireSettings.SpreadRadius
