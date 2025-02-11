@@ -22,6 +22,7 @@ namespace Game.MainMenu
         public struct Notification
         {
             public EventReference Audio;
+            public EventReference CancelAudio;
             public Color Color;
             public Sprite Picto;
             public string Text;
@@ -37,6 +38,8 @@ namespace Game.MainMenu
         private TextMeshProUGUI _text;
         private MMF_Player _feedback;
 
+        public NotificationType NotifType => _notificationType;
+        
         private void Awake()
         {
             _text = GetComponentInChildren<TextMeshProUGUI>();
@@ -61,6 +64,12 @@ namespace Game.MainMenu
                 _image.color = _notificationSettings[_notificationType].Color;
                 GetComponentInChildren<TextMeshProUGUI>().text = _notificationSettings[_notificationType].Text;
             }
+        }
+
+        public void UnBind()
+        {
+            Destroy(gameObject);
+            AudioManager.PlayOneShot(_notificationSettings[_notificationType].CancelAudio);
         }
     }
 }

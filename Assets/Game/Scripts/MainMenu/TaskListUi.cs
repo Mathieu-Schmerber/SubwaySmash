@@ -26,7 +26,11 @@ namespace Game.MainMenu
         private void OnConditionChanged(bool obj)
         {
             if (_conditions.Any(condition => !condition.IsVerified))
+            {
+                Core.LevelClearCondition.MarkLevelNotCleared();
                 return;
+            }
+
             Core.LevelClearCondition.MarkLevelCleared();
         }
 

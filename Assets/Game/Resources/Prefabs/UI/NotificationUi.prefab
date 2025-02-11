@@ -313,6 +313,13 @@ MonoBehaviour:
           Data3: -49934970
           Data4: -1490030406
         Path: event:/SuccessNotif
+      CancelAudio:
+        Guid:
+          Data1: -1829859175
+          Data2: 1324530300
+          Data3: -357816924
+          Data4: -1688838091
+        Path: event:/ErrorNotif
       Color: {r: 0.38039216, g: 1, b: 0.41568628, a: 1}
       Picto: {fileID: 21300000, guid: 28185bdfc6545cb4faf70df2a8a74f7a, type: 3}
       Text: Level cleared !
@@ -323,6 +330,13 @@ MonoBehaviour:
           Data3: -357816924
           Data4: -1688838091
         Path: event:/ErrorNotif
+      CancelAudio:
+        Guid:
+          Data1: 0
+          Data2: 0
+          Data3: 0
+          Data4: 0
+        Path: 
       Color: {r: 1, g: 0.29803923, b: 0.29803923, a: 1}
       Picto: {fileID: 21300000, guid: 7d67602e5fc28d9488db934179f87bbb, type: 3}
       Text: Citizen escaped !
@@ -333,6 +347,13 @@ MonoBehaviour:
           Data3: -357816924
           Data4: -1688838091
         Path: event:/ErrorNotif
+      CancelAudio:
+        Guid:
+          Data1: 0
+          Data2: 0
+          Data3: 0
+          Data4: 0
+        Path: 
       Color: {r: 1, g: 0.58431375, b: 0.29803923, a: 1}
       Picto: {fileID: 21300000, guid: ab16f071fbb5f114380d9199089a9520, type: 3}
       Text: You died

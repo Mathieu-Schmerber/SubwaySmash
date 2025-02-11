@@ -23,6 +23,7 @@ namespace Game
         private IKillable _player;
 
         private bool _loseRaised;
+        private bool _markedClear;
 
         public static event Action OnLevelCleared;
         public static event Action<FailReason> OnLevelFailed;
@@ -58,6 +59,7 @@ namespace Game
         {
             if (_handlePlayerDeath)
             {
+                _markedClear = false;
                 Core.NotificationManager.PushNotification(NotificationUi.NotificationType.DEATH);
                 RaiseLoseCondition(FailReason.PLAYER_DEATH);
             }
@@ -67,6 +69,7 @@ namespace Game
         {
             if (_handleNpcEscape)
             {
+                _markedClear = false;
                 Core.NotificationManager.PushNotification(NotificationUi.NotificationType.ESCAPED);
                 RaiseLoseCondition(FailReason.NPC_ESCAPED);
             }
@@ -90,8 +93,15 @@ namespace Game
 
         public void MarkLevelCleared()
         {
+            _markedClear = true;
             Core.NotificationManager.PushNotification(NotificationUi.NotificationType.LEVEL_CLEAR);
             RaiseWinCondition();
+        }
+        
+        public void MarkLevelNotCleared()
+        {
+            _markedClear = false;
+            Core.NotificationManager.UnPushNotification(NotificationUi.NotificationType.LEVEL_CLEAR);
         }
 
         private void RaiseWinCondition()
@@ -115,6 +125,9 @@ namespace Game
 
         private void LoadNextStage()
         {
+            if (!_markedClear)
+                return;
+            
             if (_player.IsDead)
                 RestartStage();
             else
