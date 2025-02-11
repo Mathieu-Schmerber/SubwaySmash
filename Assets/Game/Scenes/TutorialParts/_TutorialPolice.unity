@@ -1506,6 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4890b10bf348bf8b2b4ccec6c7a6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Order>k__BackingField: 1
   <Label>k__BackingField: And finish him off
 --- !u!114 &1007282988
 MonoBehaviour:
@@ -1519,6 +1520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a276f50f75047e7baea8113f8ecd2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Order>k__BackingField: 0
   <Label>k__BackingField: Push him to anger him
 --- !u!1 &1024230612
 GameObject:
@@ -2066,6 +2068,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4453052042168211488, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484358243957010500, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}
+      propertyPath: _handleNpcDeath
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4511448995841118843, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}

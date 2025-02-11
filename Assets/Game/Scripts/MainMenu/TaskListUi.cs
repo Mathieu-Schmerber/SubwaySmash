@@ -42,7 +42,7 @@ namespace Game.MainMenu
 
         private void Start()
         {
-            foreach (var condition in _conditions)
+            foreach (var condition in _conditions.OrderBy(x => x.Order))
             {
                 var entry = Instantiate(_entryPrefab, transform);
                 var task = entry.GetComponent<TaskEntryUi>();

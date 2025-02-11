@@ -105,7 +105,7 @@ namespace Game.Entities.GPE
         {
             _tween?.Cancel();
 
-            StartCoroutine(LerpLineColors());
+            ApplyColors();
             if (IsVerified)
             {
                 _unvalidateFeedback.PlayFeedbacks();

@@ -1,5 +1,7 @@
+using System;
 using FMODUnity;
 using Game.Systems.Audio;
+using LemonInc.Core.Utilities.Extensions;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 
@@ -15,8 +17,14 @@ namespace Game.Entities.GPE.Train
             _feedback = GetComponent<MMF_Player>();
         }
 
+        private void Update()
+        {
+            GetComponent<Rigidbody>().linearVelocity = GetComponent<Rigidbody>().linearVelocity.WithY(0);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
+            Debug.Log(other.gameObject.name);
             var killable = other.GetComponent<IKillable>();
             if (killable == null) 
                 return;

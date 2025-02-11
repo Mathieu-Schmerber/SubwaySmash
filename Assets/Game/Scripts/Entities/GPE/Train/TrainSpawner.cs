@@ -17,7 +17,6 @@ namespace Game.Entities.GPE.Train
         private readonly Timer _timer = new();
 
         [SerializeField] private EventReference _audio;
-        
         [SerializeField] private float _resetCooldown = 1f;
 
         private void Start()

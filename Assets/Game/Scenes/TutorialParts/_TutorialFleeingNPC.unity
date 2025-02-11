@@ -1485,7 +1485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a276f50f75047e7baea8113f8ecd2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Label>k__BackingField: Push the NPC
+  <Order>k__BackingField: 1
+  <Label>k__BackingField: Push the citizen
 --- !u!114 &1007282997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1498,7 +1499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4890b10bf348bf8b2b4ccec6c7a6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Label>k__BackingField: Let him die :)
+  <Order>k__BackingField: 2
+  <Label>k__BackingField: Watch him die :)
 --- !u!1 &1024230612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,6 +2047,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4453052042168211488, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484358243957010500, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}
+      propertyPath: _handleNpcDeath
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4511448995841118843, guid: 34195f6e783fe204fb17a505d4b14663, type: 3}
@@ -3077,7 +3083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e3fdd1cebe9b242862bc33829baa21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Label>k__BackingField: Trigger the Machine
+  <Order>k__BackingField: 0
+  <Label>k__BackingField: Break the soda machine
 --- !u!1 &1369605720
 GameObject:
   m_ObjectHideFlags: 0
