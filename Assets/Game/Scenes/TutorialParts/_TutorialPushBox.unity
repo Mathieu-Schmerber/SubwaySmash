@@ -3150,10 +3150,17 @@ PrefabInstance:
       propertyPath: <Label>k__BackingField
       value: Place the boxes
       objectReference: {fileID: 0}
+    - target: {fileID: 5145500406727899306, guid: 8e29b31b0fd8ed04493d612587c46d44, type: 3}
+      propertyPath: _elementCountToValidate
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9001788478957919540, guid: 8e29b31b0fd8ed04493d612587c46d44, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8e29b31b0fd8ed04493d612587c46d44, type: 3}
 --- !u!1001 &1507748682
 PrefabInstance:
