@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5759998009871317606}
   - component: {fileID: 1089411881908555994}
   - component: {fileID: 4668307981204772676}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,8 +346,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0000002, y: 0.19999999, z: 0.60000014}
-  m_Center: {x: 0, y: 0.099999994, z: 0}
+  m_Size: {x: 1.0000002, y: 1.0233701, z: 0.60000014}
+  m_Center: {x: 0, y: 0.5116851, z: 0}
 --- !u!1 &7548341837570315951
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 5624435446927603287}
   - component: {fileID: 6277527474511820678}
   - component: {fileID: 5040528207639197710}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 6763643158583405340}
   - component: {fileID: 2137274619879067166}
   - component: {fileID: 5797289613590871294}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: door-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 626375561075200417}
   - component: {fileID: 7674748179251049551}
   - component: {fileID: 5107006066702562537}
-  m_Layer: 12
+  m_Layer: 16
   m_Name: door-right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,6 +665,10 @@ PrefabInstance:
     - target: {fileID: 5233191927904464256, guid: 9b0b70b155b434a4cb5058fb1ed47910, type: 3}
       propertyPath: m_Name
       value: FloorTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233191927904464256, guid: 9b0b70b155b434a4cb5058fb1ed47910, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5787726505055487413, guid: 9b0b70b155b434a4cb5058fb1ed47910, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
