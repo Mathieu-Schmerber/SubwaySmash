@@ -6,7 +6,9 @@ using LemonInc.Core.Utilities;
 using LemonInc.Tools.Databases.Models;
 using System.Collections.Generic;
 using System.Linq;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace Databases
@@ -17,7 +19,7 @@ private DatabaseData _data;
 #if UNITY_EDITOR
 public DatabaseData RuntimeDatabaseData => _data ??= AssetDatabase.LoadAllAssetsAtPath("Assets/Game/Resources/Runtime.asset").FirstOrDefault() as DatabaseData;
 #else
-public DatabaseData RuntimeDatabase => _data ??= Resources.Load<DatabaseData>("Runtime");
+public DatabaseData RuntimeDatabaseData => _data ??= Resources.Load<DatabaseData>("Runtime");
 #endif
 public static class Data
 {

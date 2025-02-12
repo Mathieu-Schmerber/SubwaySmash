@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Databases;
 using Sirenix.OdinInspector;
@@ -8,7 +7,9 @@ namespace Game.Systems.Audio
 {
     public class PhysicsSound : MonoBehaviour
     {
+        #if UNITY_EDITOR
         [ValueDropdown(nameof(GetAudioEntry))]
+        #endif
         [SerializeField] private string _materialName;
         [SerializeField] private LayerMask _ignoreOnStay;
 
