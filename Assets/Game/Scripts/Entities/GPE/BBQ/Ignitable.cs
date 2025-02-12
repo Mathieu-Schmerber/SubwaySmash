@@ -8,6 +8,8 @@ namespace Game.Entities.GPE.BBQ
 {
     public class Ignitable : MonoBehaviour
     {
+        private const float BURN_TIME = 3f;
+        
         [SerializeField, Range(0, 1)] private float _carbonatedProgress;
         private Color _targetBurnColor = new Color(0.2f, 0.2f, 0.2f, 0.8f);
         private GameObject _onFireFX;
@@ -56,7 +58,7 @@ namespace Game.Entities.GPE.BBQ
         {
             if (!_isBurning) return;
 
-            _carbonatedProgress += Time.deltaTime / _burnTime;
+            _carbonatedProgress += Time.deltaTime / BURN_TIME;
             _carbonatedProgress = Mathf.Clamp01(_carbonatedProgress);
 
             ApplyColorBlend();
