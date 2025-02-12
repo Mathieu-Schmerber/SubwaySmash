@@ -6048,6 +6048,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 952919416}
     m_Modifications:
     - target: {fileID: 647169101324164726, guid: db1c5ac6b09e58940ad03ceca0442415, type: 3}
+      propertyPath: _fireSettings.IgniteTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 647169101324164726, guid: db1c5ac6b09e58940ad03ceca0442415, type: 3}
       propertyPath: _fireSettings.TimeToKill
       value: 1
       objectReference: {fileID: 0}
@@ -6610,6 +6614,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 952919416}
     m_Modifications:
+    - target: {fileID: 647169101324164726, guid: db1c5ac6b09e58940ad03ceca0442415, type: 3}
+      propertyPath: _fireSettings.IgniteTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 647169101324164726, guid: db1c5ac6b09e58940ad03ceca0442415, type: 3}
       propertyPath: _fireSettings.TimeToKill
       value: 1
