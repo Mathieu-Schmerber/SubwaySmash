@@ -979,13 +979,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4626682086701972788, guid: 3743398a449239c4297c6668adf05b54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 98834119}
   m_SourcePrefab: {fileID: 100100000, guid: 3743398a449239c4297c6668adf05b54, type: 3}
 --- !u!4 &98834117 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5439950827558594446, guid: 3743398a449239c4297c6668adf05b54, type: 3}
   m_PrefabInstance: {fileID: 98834116}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &98834118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4626682086701972788, guid: 3743398a449239c4297c6668adf05b54, type: 3}
+  m_PrefabInstance: {fileID: 98834116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &98834119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98834118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd25f12f34d3474ebb31bf905b72689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _threshold: 10
 --- !u!21 &120075771
 Material:
   serializedVersion: 8
@@ -2879,8 +2900,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4626682086701972788, guid: 3743398a449239c4297c6668adf05b54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1401768708}
   m_SourcePrefab: {fileID: 100100000, guid: 3743398a449239c4297c6668adf05b54, type: 3}
+--- !u!1 &344788546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4626682086701972788, guid: 3743398a449239c4297c6668adf05b54, type: 3}
+  m_PrefabInstance: {fileID: 344788545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &351282621
 GameObject:
   m_ObjectHideFlags: 0
@@ -14898,13 +14927,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4626682086701972788, guid: 3743398a449239c4297c6668adf05b54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1256598077}
   m_SourcePrefab: {fileID: 100100000, guid: 3743398a449239c4297c6668adf05b54, type: 3}
 --- !u!4 &1256598075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5439950827558594446, guid: 3743398a449239c4297c6668adf05b54, type: 3}
   m_PrefabInstance: {fileID: 1256598074}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1256598076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4626682086701972788, guid: 3743398a449239c4297c6668adf05b54, type: 3}
+  m_PrefabInstance: {fileID: 1256598074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1256598077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256598076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd25f12f34d3474ebb31bf905b72689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _threshold: 10
 --- !u!4 &1262373627 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1381172006734439187, guid: 9b0b70b155b434a4cb5058fb1ed47910, type: 3}
@@ -15870,6 +15920,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5439950827558594446, guid: 3743398a449239c4297c6668adf05b54, type: 3}
   m_PrefabInstance: {fileID: 344788545}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1401768708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344788546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd25f12f34d3474ebb31bf905b72689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _threshold: 10
 --- !u!4 &1408930553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7519110994923470635, guid: 87e33f3265e78e147b1afd62963d90a6, type: 3}
