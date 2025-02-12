@@ -1,7 +1,9 @@
 using System;
 using System.Linq;
 using Sirenix.OdinInspector;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,9 +15,12 @@ namespace Game.Systems.Stage
         [Serializable, InlineProperty]
         public struct Stage
         {
+            #if UNITY_EDITOR
             [ValueDropdown("GetAvailableScenes")]
+            #endif
             public string[] Levels;
 
+            #if UNITY_EDITOR
             private static ValueDropdownList<string> GetAvailableScenes()
             {
                 var sceneList = new ValueDropdownList<string>();
@@ -27,6 +32,7 @@ namespace Game.Systems.Stage
                 }
                 return sceneList;
             }
+            #endif
         }
 
         [Scene] public string MainMenu;

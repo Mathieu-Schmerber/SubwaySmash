@@ -1,7 +1,5 @@
-using System;
 using System.Linq;
 using Game.Systems.Tutorial;
-using Sirenix.OdinInspector.Editor.GettingStarted;
 using UnityEngine;
 
 namespace Game.MainMenu

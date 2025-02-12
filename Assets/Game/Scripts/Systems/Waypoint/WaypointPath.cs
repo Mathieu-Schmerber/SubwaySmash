@@ -16,6 +16,8 @@ namespace Game.Systems.Waypoint
         [Header("Pathfinding")] [SerializeField]
         private float _wayPointRadius = .1f;
 
+        private int _lastChildCount;
+        
         private void Awake()
         {
             UpdateWaypoints();
@@ -32,11 +34,8 @@ namespace Game.Systems.Waypoint
 
             _lastChildCount = transform.childCount;
         }
-
+        
 #if UNITY_EDITOR
-
-        private int _lastChildCount;
-
         private void Update()
         {
             if (!Application.isPlaying)
