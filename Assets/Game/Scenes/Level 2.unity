@@ -10361,6 +10361,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1493764576}
     m_Modifications:
     - target: {fileID: 3230273600533074491, guid: 43d8576c4ffbfcb44a8299a40842d39d, type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230273600533074491, guid: 43d8576c4ffbfcb44a8299a40842d39d, type: 3}
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
