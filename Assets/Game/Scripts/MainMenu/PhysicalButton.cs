@@ -1,4 +1,6 @@
 using System;
+using FMODUnity;
+using Game.Systems.Audio;
 using MoreMountains.Feedbacks;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -15,6 +17,8 @@ namespace Game.MainMenu
         [SerializeField] private MMF_Player _deselectFeedback;
         [SerializeField] private MMF_Player _clickFeedback;
         [SerializeField] private UnityEvent _onClick;
+        [SerializeField] private EventReference _clickAudio;
+        
         private TextMeshProUGUI _textMeshpro;
 
         [ShowInInspector, ReadOnly] public bool Interactable { get; set; }
@@ -81,7 +85,8 @@ namespace Game.MainMenu
         {
             if (!IsSelected || !Interactable) 
                 return;
-            
+
+            AudioManager.PlayOneShot(_clickAudio);
             _clickFeedback.PlayFeedbacks();
             _deselectFeedback.PlayFeedbacks();
             Interactable = !_deactivateOnClick;

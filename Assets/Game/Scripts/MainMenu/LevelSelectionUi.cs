@@ -15,7 +15,7 @@ namespace Game.MainMenu
             {
                 var stage = stages[i];
                 var instance = Instantiate(_prefab, _container);
-                var displayName = ConvertToRoman(i + 1);
+                var displayName = ConvertToRoman(i);
                 
                 instance.SetText(displayName);
                 instance.AddListener(() => Core.Instance.LoadStageByName(stage.Levels[0]));
@@ -25,9 +25,7 @@ namespace Game.MainMenu
         private static string ConvertToRoman(int number)
         {
             if (number <= 0 || number > 3999)
-            {
-                throw new ArgumentOutOfRangeException(nameof(number), "Number must be between 1 and 3999.");
-            }
+                return "T";
 
             (int value, string numeral)[] romanMap = new[]
             {
