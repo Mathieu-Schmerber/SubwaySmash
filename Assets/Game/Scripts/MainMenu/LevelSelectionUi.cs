@@ -25,7 +25,7 @@ namespace Game.MainMenu
         private static string ConvertToRoman(int number)
         {
             if (number <= 0 || number > 3999)
-                return "T";
+                return "0";
 
             (int value, string numeral)[] romanMap = new[]
             {
