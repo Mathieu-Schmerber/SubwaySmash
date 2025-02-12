@@ -178,10 +178,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638744625049593784
+  lastModified: 638749689548833969
   FileSizes:
   - Name: Desktop
-    Value: 1788
+    Value: 1834
   Exists: 1
 --- !u!114 &-3717070286302397361
 MonoBehaviour:
@@ -198,7 +198,7 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638743791602051847
+  lastModified: 638743742640964415
   FileSizes:
   - Name: Desktop
     Value: 1284096
@@ -230,6 +230,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-835412837606853203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Click
+  m_EditorClassIdentifier: 
+  Path: event:/Click
+  Guid:
+    Data1: 1128981818
+    Data2: 1262410966
+    Data3: -1469680486
+    Data4: -917584657
+  Banks:
+  - {fileID: 3084748262393913403}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-466744557741082600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +272,7 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638743791601914018
+  lastModified: 638749689548833969
   FileSizes:
   - Name: Desktop
     Value: 1526
@@ -288,13 +315,14 @@ MonoBehaviour:
   - {fileID: 7406092165974976129}
   - {fileID: -6328838878028027299}
   - {fileID: -4218456019430191540}
+  - {fileID: -835412837606853203}
   EditorParameters:
   - {fileID: 1534760737497313310}
   MasterBanks:
   - {fileID: -466744557741082600}
   StringsBanks:
   - {fileID: -3986400577292025260}
-  cacheTime: 638744625049644080
+  cacheTime: 638749692012860231
   cacheVersion: 131622
 --- !u!114 &232666046544540984
 MonoBehaviour:
@@ -548,10 +576,10 @@ MonoBehaviour:
   Path: subway-smash/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638744625049644080
+  lastModified: 638749692012860231
   FileSizes:
   - Name: Desktop
-    Value: 741504
+    Value: 765312
   Exists: 1
 --- !u!114 &3524705880218045686
 MonoBehaviour:

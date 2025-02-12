@@ -45,7 +45,6 @@ namespace Game.Entities.GPE
         private void Start()
         {
             UpdateText();
-            ApplyLineColor(_gradient.Evaluate(0));
         }
 
         private void UpdateText()
@@ -70,7 +69,7 @@ namespace Game.Entities.GPE
         {
             if (_lines is not { Length: > 0 }) 
                 return;
-            
+
             foreach (var line in _lines)
             {
                 var offset = line.material.mainTextureOffset;
@@ -81,10 +80,7 @@ namespace Game.Entities.GPE
 
         private void SetValid()
         {
-            ApplyLineColor(_gradient.Evaluate(1));
-            ApplyColors();
-
-            if (_containedObjects.Count == _elementCountToValidate)
+            if (_tween == null && _containedObjects.Count >= _elementCountToValidate)
             {
                 _validateTimer.Start(_timeToValidate, false, OnValidateTick);
                 _text.text = "";
@@ -94,7 +90,7 @@ namespace Game.Entities.GPE
 
         private void OnValidateTick()
         {
-            if (_containedObjects.Count == _elementCountToValidate)
+            if (_containedObjects.Count >= _elementCountToValidate)
             {
                 Verify();
                 _validateFeedback.PlayFeedbacks();
@@ -103,14 +99,16 @@ namespace Game.Entities.GPE
 
         private void SetInvalid()
         {
-            _tween?.Cancel();
+            if (_tween != null)
+            {
+                _tween.Cancel();
+                _tween = null;
+                _unvalidateFeedback.PlayFeedbacks();
+            }
 
             ApplyColors();
             if (IsVerified)
-            {
-                _unvalidateFeedback.PlayFeedbacks();
                 UnVerify();
-            }
         }
 
         public void OnTriggerEnter(Collider other)
@@ -120,7 +118,8 @@ namespace Game.Entities.GPE
                 if (!_containedObjects.Contains(other.gameObject))
                 {
                     _containedObjects.Add(other.gameObject);
-                    UpdateText();
+                    if (_tween == null)
+                        UpdateText();
                     SetValid();
                 }
             }
@@ -134,8 +133,10 @@ namespace Game.Entities.GPE
                 {
                     _containedObjects.Remove(other.gameObject);
                     if (_containedObjects.Count < _elementCountToValidate)
+                    {
                         SetInvalid();
-                    UpdateText();
+                        UpdateText();
+                    }
                 }
             }
         }
@@ -143,28 +144,12 @@ namespace Game.Entities.GPE
         private void ApplyLineColor(Color color)
         {
             foreach (var line in _lines)
-                line.material.SetColor(BaseColor, color);
-        }
-
-        private IEnumerator<WaitForSeconds> LerpLineColors()
-        {
-            var time = 0f;
-
-            while (time < _lerpDuration)
-            {
-                var t = time / _lerpDuration;
-                var lerpColor = _gradient.Evaluate(t);
-                ApplyLineColor(lerpColor);
-                time += Time.deltaTime;
-                yield return new WaitForSeconds(Time.deltaTime);
-            }
-
-            ApplyLineColor(_gradient.colorKeys[_gradient.colorKeys.Length - 1].color);
+                line.sharedMaterial.SetColor(BaseColor, color);
         }
 
         private void ApplyColors()
         {
-            var completionPercentage = Mathf.Clamp01((float)_containedObjects.Count / _elementCountToValidate);
+            var completionPercentage = Mathf.Clamp01(Mathf.Clamp((float)_containedObjects.Count, 0, _elementCountToValidate) / _elementCountToValidate);
             var lerpColor = _gradient.Evaluate(completionPercentage);
             ApplyLineColor(lerpColor);
         }
