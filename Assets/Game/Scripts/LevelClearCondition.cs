@@ -61,6 +61,7 @@ namespace Game
             {
                 _markedClear = false;
                 Core.NotificationManager.PushNotification(NotificationUi.NotificationType.DEATH);
+                Core.NotificationManager.UnPushNotification(NotificationUi.NotificationType.LEVEL_CLEAR);
                 RaiseLoseCondition(FailReason.PLAYER_DEATH);
             }
         }
@@ -71,6 +72,7 @@ namespace Game
             {
                 _markedClear = false;
                 Core.NotificationManager.PushNotification(NotificationUi.NotificationType.ESCAPED);
+                Core.NotificationManager.UnPushNotification(NotificationUi.NotificationType.LEVEL_CLEAR);
                 RaiseLoseCondition(FailReason.NPC_ESCAPED);
             }
         }
