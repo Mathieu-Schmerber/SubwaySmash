@@ -14,7 +14,6 @@ public class CartGravity : MonoBehaviour
     void Update()
     {
         var magnitude = _rb.linearVelocity.magnitude;
-        Debug.Log(magnitude);
         if (magnitude < _threshold)
         {
             _rb.useGravity = true;

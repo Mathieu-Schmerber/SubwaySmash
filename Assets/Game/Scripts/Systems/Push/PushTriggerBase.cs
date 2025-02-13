@@ -30,7 +30,6 @@ namespace Game.Systems.Push
                 return;
 
             var impactForce = CalculateImpactForce(other);
-            Debug.Log($"[PushTrigger] {name} vs {other.transform.name} -> Force: {impactForce}, Threshold: {_velocityThreshold}");
             if (impactForce > _velocityThreshold)
             {
                 OnTrigger?.Invoke();

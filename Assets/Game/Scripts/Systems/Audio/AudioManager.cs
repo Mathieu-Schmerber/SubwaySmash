@@ -39,7 +39,7 @@ namespace Game.Systems.Audio
 			_sfxBus = RuntimeManager.GetBus(SFX_BUS);
 
 			_masterVolume = PlayerPrefs.GetFloat(MASTER_BUS, 1);
-			_musicVolume = PlayerPrefs.GetFloat(MUSIC_BUS, 1);
+			_musicVolume = PlayerPrefs.GetFloat(MUSIC_BUS, .2f);
 			_sfxVolume = PlayerPrefs.GetFloat(SFX_BUS, 1);
 			
 			SetMasterVolume(_masterVolume);

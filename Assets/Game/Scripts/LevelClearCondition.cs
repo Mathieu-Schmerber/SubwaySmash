@@ -95,6 +95,8 @@ namespace Game
 
         public void MarkLevelCleared()
         {
+            if (_markedClear)
+                return;
             _markedClear = true;
             Core.NotificationManager.PushNotification(NotificationUi.NotificationType.LEVEL_CLEAR);
             RaiseWinCondition();
