@@ -9,7 +9,6 @@ namespace Game.Systems.Inputs
 
         public abstract Vector3 MovementDirection { get; }
         public abstract Vector3 AimDirection { get; }
-        public abstract InputState Dash { get; }
         public abstract InputState Push { get; }
 
         protected InputSet(Transform owner)

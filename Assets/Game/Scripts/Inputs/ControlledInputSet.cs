@@ -24,7 +24,6 @@ namespace Game.Inputs
 
         public override Vector3 MovementDirection => _movementDirection;
         public override Vector3 AimDirection => _aimDirection;
-        public override InputState Dash { get; }
         public override InputState Push { get; }
 
         public bool HasControl { get; private set; }

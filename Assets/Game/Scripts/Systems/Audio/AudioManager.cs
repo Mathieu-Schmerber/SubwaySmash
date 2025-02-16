@@ -18,10 +18,10 @@ namespace Game.Systems.Audio
 
 		[SerializeField] private EventReference _mainMusic;
 
-		private Bus _masterBus;
-		private Bus _musicBus;
-		private Bus _ambienceBus;
-		private Bus _sfxBus;
+		private Bus? _masterBus;
+		private Bus? _musicBus;
+		private Bus? _ambienceBus;
+		private Bus? _sfxBus;
 
 		private const string MASTER_BUS = "bus:/";
 		private const string MUSIC_BUS = "bus:/Music";
@@ -34,9 +34,9 @@ namespace Game.Systems.Audio
 			base.Awake();
 			DontDestroyOnLoad(gameObject);
 
-			_masterBus = RuntimeManager.GetBus(MASTER_BUS);
-			_musicBus = RuntimeManager.GetBus(MUSIC_BUS);
-			_sfxBus = RuntimeManager.GetBus(SFX_BUS);
+			_masterBus = TryGetBus(MASTER_BUS);
+			_musicBus = TryGetBus(MUSIC_BUS);
+			_sfxBus = TryGetBus(SFX_BUS);
 
 			_masterVolume = PlayerPrefs.GetFloat(MASTER_BUS, 1);
 			_musicVolume = PlayerPrefs.GetFloat(MUSIC_BUS, .2f);
@@ -57,6 +57,18 @@ namespace Game.Systems.Audio
 			RuntimeManager.StudioSystem.setParameterByName("time_scale", Time.timeScale);
 		}
 
+		private Bus? TryGetBus(string path)
+		{
+			try
+			{
+				return RuntimeManager.GetBus(path);
+			}
+			catch (Exception e)
+			{
+				return null;
+			}
+		}
+		
 		public void PlayMainMusic()
 		{
 			if (!_mainMusic.IsNull && !_isMainMusicPlaying)
@@ -68,7 +80,7 @@ namespace Game.Systems.Audio
 
 		public void StopAllSFX()
 		{
-			_sfxBus.stopAllEvents(STOP_MODE.IMMEDIATE);
+			_sfxBus?.stopAllEvents(STOP_MODE.IMMEDIATE);
 		}
 		
 		public void StopMainMusic()
@@ -81,13 +93,20 @@ namespace Game.Systems.Audio
 		{
 			if (sound.IsNull)
 				return null;
-			
-			var instance = RuntimeManager.CreateInstance(sound.Guid);
-			instance.set3DAttributes(worldPos.To3DAttributes());
-			instance.setVolume(volume);
-			instance.start();
-			instance.release();
-			return instance;
+
+			try
+			{
+				var instance = RuntimeManager.CreateInstance(sound.Guid);
+				instance.set3DAttributes(worldPos.To3DAttributes());
+				instance.setVolume(volume);
+				instance.start();
+				instance.release();
+				return instance;
+			}
+			catch (Exception)
+			{
+				return null;
+			}
 		}
 
 		public static void StopSound(EventInstance? instance, STOP_MODE stopMode = STOP_MODE.IMMEDIATE)
@@ -104,7 +123,7 @@ namespace Game.Systems.Audio
 			var value = Mathf.Clamp01(arg0);
 			
 			Instance._masterVolume = value;
-			Instance._masterBus.setVolume(value);
+			Instance._masterBus?.setVolume(value);
 			PlayerPrefs.SetFloat(MASTER_BUS, value);
 		}
 
@@ -113,7 +132,7 @@ namespace Game.Systems.Audio
 			var value = Mathf.Clamp01(arg0);
 
 			Instance._musicVolume = value;
-			Instance._musicBus.setVolume(value);
+			Instance._musicBus?.setVolume(value);
 			PlayerPrefs.SetFloat(MUSIC_BUS, value);
 		}
 
@@ -122,7 +141,7 @@ namespace Game.Systems.Audio
 			var value = Mathf.Clamp01(arg0);
 
 			Instance._sfxVolume = value;
-			Instance._sfxBus.setVolume(value);
+			Instance._sfxBus?.setVolume(value);
 			PlayerPrefs.SetFloat(SFX_BUS, value);
 		}
 
