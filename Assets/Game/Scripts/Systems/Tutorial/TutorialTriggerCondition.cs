@@ -1,6 +1,4 @@
-using System;
 using Game.Systems.Push;
-using Unity.VisualScripting;
 
 namespace Game.Systems.Tutorial
 {

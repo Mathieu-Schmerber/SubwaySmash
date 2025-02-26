@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Databases;
+using Game.Entities.Shared;
 using Game.Systems.Inputs;
 using UnityEngine;
 

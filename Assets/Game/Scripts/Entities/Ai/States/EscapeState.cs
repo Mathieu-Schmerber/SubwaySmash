@@ -1,3 +1,5 @@
+using Game.Entities.Shared;
+using Game.Systems;
 using Game.Systems.StateMachine;
 using Game.Systems.Waypoint;
 using UnityEngine;

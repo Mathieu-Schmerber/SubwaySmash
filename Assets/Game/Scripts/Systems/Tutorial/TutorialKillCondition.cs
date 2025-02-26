@@ -1,5 +1,5 @@
-using System;
 using Game.Entities;
+using Game.Systems.Kill;
 
 namespace Game.Systems.Tutorial
 {

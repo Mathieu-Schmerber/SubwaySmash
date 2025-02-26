@@ -1,6 +1,6 @@
-using System;
 using FMODUnity;
 using Game.Systems.Audio;
+using Game.Systems.Kill;
 using LemonInc.Core.Utilities;
 using UnityEngine;
 

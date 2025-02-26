@@ -9,11 +9,12 @@ namespace Game.Systems.Waypoint
     {
         private static readonly int Open = Animator.StringToHash("Open");
         [SerializeField] private float _radius = .2f;
-        [SerializeField] private Vector3 _offset = Vector3.zero; // Offset field
+        [SerializeField] private Vector3 _offset = Vector3.zero;
         [SerializeField] private bool _debug = true;
-        private float _arrowLength = 1f; // Arrow length
-        private float _arrowHeadLength = 0.3f; // Arrowhead length
-        private float _arrowHeadRadius = 0.11f; // Arrowhead base radius
+        
+        private const float ARROW_LENGTH = 1f;
+        private const float ARROW_HEAD_LENGTH = 0.3f;
+        private const float ARROW_HEAD_RADIUS = 0.11f;
 
         public static event Action OnEscaped; 
         
@@ -31,7 +32,6 @@ namespace Game.Systems.Waypoint
 
         private void CheckForAiBrain()
         {
-            // Apply the offset in local space using the transform's rotation
             var positionWithOffset = transform.position + transform.TransformDirection(_offset);
             var hits = Physics.OverlapSphere(positionWithOffset, _radius);
 
@@ -59,7 +59,7 @@ namespace Game.Systems.Waypoint
             if (!_debug)
                 return;
 
-            _arrowHeadMesh = CreateConeMesh(_arrowHeadRadius, _arrowHeadLength, 12);
+            _arrowHeadMesh = CreateConeMesh(ARROW_HEAD_RADIUS, ARROW_HEAD_LENGTH, 12);
 
             // Draw sphere
             Gizmos.color = Color.cyan;
@@ -67,17 +67,15 @@ namespace Game.Systems.Waypoint
             Gizmos.DrawWireCube(positionWithOffset, new Vector3(1, 0, 1) * _radius);
 
             // Draw arrow pointing in the forward direction
-            Vector3 arrowStart = positionWithOffset;
-            Vector3 arrowEnd = arrowStart + transform.forward * _arrowLength;
+            var arrowStart = positionWithOffset;
+            var arrowEnd = arrowStart + transform.forward * ARROW_LENGTH;
 
             // Draw arrow shaft
             Gizmos.DrawLine(arrowStart, arrowEnd);
 
             // Draw 3D arrowhead using Gizmos.DrawMesh
             if (_arrowHeadMesh != null)
-            {
                 Gizmos.DrawMesh(_arrowHeadMesh, arrowEnd, Quaternion.LookRotation(transform.forward));
-            }
         }
 
 
@@ -86,28 +84,28 @@ namespace Game.Systems.Waypoint
             var mesh = new Mesh();
 
             // Vertices
-            Vector3[] vertices = new Vector3[segments + 2];
+            var vertices = new Vector3[segments + 2];
             vertices[0] = Vector3.zero; // Cone tip
             vertices[1] = Vector3.forward * height; // Center of the base
 
-            float angleStep = 2 * Mathf.PI / segments;
+            var angleStep = 2 * Mathf.PI / segments;
 
-            for (int i = 0; i < segments; i++)
+            for (var i = 0; i < segments; i++)
             {
-                float angle = i * angleStep;
-                float x = Mathf.Cos(angle) * radius;
-                float y = Mathf.Sin(angle) * radius;
+                var angle = i * angleStep;
+                var x = Mathf.Cos(angle) * radius;
+                var y = Mathf.Sin(angle) * radius;
                 vertices[i + 2] = new Vector3(x, y, 0);
             }
 
             // Triangles
-            int[] triangles = new int[segments * 3 * 2];
+            var triangles = new int[segments * 3 * 2];
 
             // Side triangles
-            for (int i = 0; i < segments; i++)
+            for (var i = 0; i < segments; i++)
             {
-                int current = i + 2;
-                int next = i + 3 > segments + 1 ? 2 : i + 3;
+                var current = i + 2;
+                var next = i + 3 > segments + 1 ? 2 : i + 3;
 
                 triangles[i * 3] = 0;       // Cone tip
                 triangles[i * 3 + 1] = next;
@@ -115,11 +113,11 @@ namespace Game.Systems.Waypoint
             }
 
             // Base triangles
-            int offset = segments * 3;
-            for (int i = 0; i < segments; i++)
+            var offset = segments * 3;
+            for (var i = 0; i < segments; i++)
             {
-                int current = i + 2;
-                int next = i + 3 > segments + 1 ? 2 : i + 3;
+                var current = i + 2;
+                var next = i + 3 > segments + 1 ? 2 : i + 3;
 
                 triangles[offset + i * 3] = 1; // Center of the base
                 triangles[offset + i * 3 + 1] = current;

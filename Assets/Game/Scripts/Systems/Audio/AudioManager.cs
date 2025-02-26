@@ -1,9 +1,8 @@
 using System;
-using FMOD;
 using FMOD.Studio;
 using FMODUnity;
+using Game.Utilities;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Game.Systems.Audio
@@ -63,7 +62,7 @@ namespace Game.Systems.Audio
 			{
 				return RuntimeManager.GetBus(path);
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 				return null;
 			}

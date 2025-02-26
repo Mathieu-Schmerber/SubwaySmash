@@ -1,4 +1,5 @@
 using Game.Entities.Ai;
+using Game.Entities.Shared;
 using Game.Systems.StateMachine;
 using UnityEngine;
 

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Databases;
 using Game.Entities.Ai;
+using Game.Systems;
 using UnityEngine;
 
 namespace Game.Entities.GPE.BBQ

@@ -3,7 +3,6 @@ using Game.Entities.Ai;
 using Game.Systems.Alert;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Game.Systems.Tutorial
 {

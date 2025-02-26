@@ -1,4 +1,3 @@
-using System;
 using Game.Entities.Player;
 using Sirenix.OdinInspector;
 using UnityEngine;

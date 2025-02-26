@@ -1,5 +1,6 @@
 using Databases;
 using Game.Entities.Player.Abilities;
+using Game.Entities.Shared;
 using Game.Systems.Inputs;
 using Game.Systems.StateMachine;
 

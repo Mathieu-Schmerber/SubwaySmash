@@ -1,5 +1,6 @@
 using Game.Entities.Ai.Abilities;
 using Game.Entities.Player;
+using Game.Entities.Shared;
 using Game.Systems.Inputs;
 using Game.Systems.StateMachine;
 using UnityEngine;

@@ -108,16 +108,13 @@ namespace Game.Systems.Waypoint
                         var start = position;
                         var end = _wayPoints[nextIndex].position;
 
-                        // Adjust the line to account for the sphere radius
                         var direction = (end - start).normalized;
                         var startOffset = start + direction * _wayPointRadius;
                         var endOffset = end - direction * _wayPointRadius;
 
-                        // Draw the line
                         Gizmos.DrawLine(startOffset, endOffset);
 
-                        // Draw the arrowhead at the `endOffset` position
-                        var arrowDirection = (end - start).normalized; // Reverse the direction for the arrowhead
+                        var arrowDirection = (end - start).normalized;
                         var right = Quaternion.LookRotation(arrowDirection) * Quaternion.Euler(0, 150, 0) *
                                     Vector3.forward * 0.2f;
                         var left = Quaternion.LookRotation(arrowDirection) * Quaternion.Euler(0, -150, 0) *

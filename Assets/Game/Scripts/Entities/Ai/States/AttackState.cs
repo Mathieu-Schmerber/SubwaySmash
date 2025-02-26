@@ -1,4 +1,5 @@
 using Game.Entities.Ai.Abilities;
+using Game.Entities.Shared;
 using Game.Systems.Push;
 using Game.Systems.StateMachine;
 

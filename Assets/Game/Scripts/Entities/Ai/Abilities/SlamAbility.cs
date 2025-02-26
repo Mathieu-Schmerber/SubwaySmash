@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using FMODUnity;
 using Game.Entities.Player.Abilities;
+using Game.Entities.Shared;
 using Game.Systems.Audio;
 using MoreMountains.Feedbacks;
 using UnityEngine;

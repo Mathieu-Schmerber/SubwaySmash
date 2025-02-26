@@ -1,6 +1,6 @@
-using System;
 using FMODUnity;
 using Game.Systems.Audio;
+using Game.Systems.Kill;
 using LemonInc.Core.Utilities.Extensions;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -24,7 +24,6 @@ namespace Game.Entities.GPE.Train
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log(other.gameObject.name);
             var killable = other.GetComponent<IKillable>();
             if (killable == null) 
                 return;

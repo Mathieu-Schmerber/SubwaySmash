@@ -1,3 +1,4 @@
+using Game.Entities.Shared;
 using Game.Systems.Inputs;
 using Game.Systems.StateMachine;
 using UnityEngine;

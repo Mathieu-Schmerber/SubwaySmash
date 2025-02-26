@@ -1,17 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Game.Entities;
 using Game.Entities.Player;
 using Game.Inputs;
-using Game.Systems.Waypoint;
-using LemonInc.Core.Utilities;
 using Pixelplacement;
-using Sirenix.OdinInspector;
-using Sirenix.Utilities;
-using TMPro;
-using Unity.VisualScripting;
 
 namespace Game.Systems.Tutorial
 {
